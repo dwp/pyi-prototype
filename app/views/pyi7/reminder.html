@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Use your bank account - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi7/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.reminder %}
+
+  {{ elements.account() }}
+<div class="main" id="content" role="main">
+  {{ elements.banner() }}
+
+{{ elements.openGridForm('reminder') }}
+
+<h2 class="heading-large lower-space">You have until <strong class="addSeven">a week from today</strong> to enter your reference to prove your identity.</h2>
+
+<p class="lede">If you don’t you might not get paid.</p>
+
+        {{ elements.continue(content,'bank_submitted','side') }}
+
+{{ elements.closeGridForm() }}
+</div>
+
+
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

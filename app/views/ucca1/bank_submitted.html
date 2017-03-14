@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Bank details submitted - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "ucca1/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.bank_submitted %}
+
+    {{ elements.account() }}
+    <div class="main" id="content" role="main">
+    {{ elements.banner() }}
+
+{{ elements.openGridForm('bank_submitted') }}
+
+        {{ elements.header(content) }}
+        {{ elements.helpImage(content.imageText,content.imageText2,'/public/images/transaction.png',content.altText) }}
+        {{ elements.content(content.info,content.info2) }}
+        {{ elements.continue(content,'to_do_page') }}
+
+{{ elements.closeGridForm() }}
+    </div>
+
+  {% endfor %}
+    {% endfor %}
+      {% endblock %}

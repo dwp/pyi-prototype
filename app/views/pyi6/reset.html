@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Reset data - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi6/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.reset %}
+
+{{ elements.account() }}
+<div class="main" id="content" role="main">
+{{ elements.banner() }}
+
+{{ elements.openGridForm('reset') }}
+
+        {{ elements.header(content) }}
+        {{ elements.continue(content) }}
+
+{{ elements.closeGridForm() }}
+</div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

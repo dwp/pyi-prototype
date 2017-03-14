@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Enter reference number - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi5/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.enter_reference %}
+
+    {{ elements.account() }}
+    <div class="main" id="content" role="main">
+    {{ elements.banner() }}
+
+{{ elements.openGridForm('enter_reference') }}
+
+        {{ elements.header(content) }}
+  <!--      {{ elements.inputField('codeInput',content.question,'Eg UC12345') }} -->
+
+        <div class="form-group" id="form-group-test">
+          <label class="form-label-bold" for="codeInputTest">Enter your reference to prove your identity</label>
+          <div id="preInput">UC</div>
+          <input id="codeInputTest" name="codeTestInput" type="text" class="form-control form-control-1-8" value="" maxlength="5">
+        </div>
+
+      <!--  {{ elements.content(content.extra) }} -->
+      <!--  {{ elements.toggle(content.toggle,'',content.toggleContent   | safe,'','UC_transaction3.png',content.altText) }} -->
+        {{ elements.continue(content,'reminder', 'side') }}
+
+{{ elements.closeGridForm() }}
+    </div>
+
+    {% endfor %}
+    {% endfor %}
+      {% endblock %}

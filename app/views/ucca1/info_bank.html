@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Information about bank verification - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "ucca1/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.info_bank %}
+
+  {{ elements.account() }}
+<div class="main" id="content" role="main">
+  {{ elements.banner() }}
+
+{{ elements.openGridForm('info_bank') }}
+
+        {{ elements.header(content) }}
+        {{ elements.info('info2',content.heading2,content.info2) }}
+        {{ elements.toggle(content.toggle,content.heading3,content.info3) }}
+        {{ elements.info('info4',content.heading4,content.info4) }}
+        {{ elements.continue(content,'how_verify','side') }}
+        {{ elements.addendum(content,'enter_reference') }}
+
+{{ elements.closeGridForm() }}
+</div>
+
+
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

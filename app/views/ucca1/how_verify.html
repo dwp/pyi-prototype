@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  How to verify - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+{% import "ucca1/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.how_verify %}
+
+    {{ elements.account() }}
+<div class="main" id="content" role="main">
+    {{ elements.banner() }}
+
+{{ elements.openGridForm('how_verify') }}
+
+        {{ elements.header(content) }}
+        {{ elements.radioButtons('howVerify',content.question,'',content.radios) }}
+        {{ elements.continue(content) }}
+
+{{ elements.closeGridForm() }}
+</div>
+    {% endfor %}
+    {% endfor %}
+    {% endblock %}

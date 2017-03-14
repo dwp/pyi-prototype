@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  To do page - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "ucca1/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.to_do_page %}
+
+{{ elements.account() }}
+<div class="main" id="content" role="main">
+{{ elements.banner() }}
+
+  <div class="grid-row">
+    <div class="column-full">
+
+      {{ elements.toDoSection() }}
+      {{ elements.panel (content.alert,'blue') }}
+
+      {% if not bank_details.submit and not success.submit %}
+      {{ elements.panel (content.alert2,'','how_verify') }}
+      {% elif bank_details.submit and not success.submit %}
+      {{ elements.panel (content.alert5,'','enter_reference') }}
+      {% endif %}
+
+      {{ elements.panel (content.alert3,'','no_page_exists') }}
+      {{ elements.panel (content.alert4,'','no_page_exists') }}
+
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+        {% endfor %}
+        {% endblock %}

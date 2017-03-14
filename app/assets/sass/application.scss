@@ -1,0 +1,373 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: '/public/images/';
+
+// Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
+// Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
+
+// Take a look at in app/assets/sass/patterns/ to see which files are imported.
+@import 'patterns/check-your-answers';
+// Related items
+// (These styles will be moved to GOV.UK elements, duplicating here for now.)
+
+
+/// Style specifically for index page
+.index-page-banner {
+  background-color: $govuk-blue;
+  color: $white;
+  margin-bottom: $gutter;
+}
+
+.index-heading-wrapper {
+  margin: 0 auto;
+  max-width: 968px;
+}
+
+.index-heading-xlarge {
+  margin: 0;
+  padding: 3rem 0 1rem;
+}
+
+.index-heading-large {
+  margin: 0;
+  padding: 1rem 0 3rem;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 1020px) {
+  .index-heading-xlarge,
+  .index-heading-large {
+    margin-left: $gutter;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .index-heading-xlarge,
+  .index-heading-large {
+    margin-left: $gutter / 2;
+  }
+}
+
+.index-heading-medium {
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.index-p {
+  margin: 0;
+}
+
+.clearfix {
+  clear: both;
+  display: block;
+}
+
+.current-version {
+  border-bottom: 1px solid $border-colour;
+  padding-bottom: $gutter;
+}
+
+.older-versions {
+  padding: $gutter / 2 0;
+}
+
+.older-version {
+  border-bottom: 1px solid $border-colour;
+  padding: 2rem 0 3rem;
+}
+
+.version-number {
+  float: left;
+}
+
+.release-date {
+  float: right;
+  margin-right: 23%;
+}
+
+.start-journey {
+  background: $green url('../images/icon-pointer.png') no-repeat right;
+  font-size: 115%;
+  font-weight: bold;
+  margin: 1rem 0;
+  padding-right: 4rem;
+}
+
+.older-toggle {
+  padding-top: $gutter / 2;
+  text-decoration: underline;
+}
+
+.grey-button {
+  @include button($panel-colour);
+  margin: 2rem 0;
+}
+
+// End of Index page styles
+
+
+.govuk-related-items {
+  margin-top: $gutter;
+  border-top: 10px solid $govuk-blue;
+  padding-top: 5px;
+
+  .heading-medium {
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+  }
+
+  li {
+    margin-bottom: 10px;
+    list-style-type: none;
+  }
+}
+
+.special-button {
+  width: 300px;
+  text-align: center;
+}
+
+// Account section from universal credit
+.account-wrapper {
+  background-color: $panel-colour;
+  height: 40px;
+  text-align: right;
+  font-size: 16px;
+  width: 100%;
+}
+
+.account-section {
+  margin: auto;
+  width: 100%;
+  max-width: 1020px;
+}
+
+.account-section ul {
+  margin-top: 0;
+}
+
+.account-section li {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 10px;
+}
+
+ // panels and alerts
+.panel.blue-alert {
+  border-color: $light-blue;
+  background-color: mix($white, $light-blue, 90%);
+  padding: 20px 30px 35px 30px;
+  margin-bottom: 30px;
+}
+
+.panel.red-alert {
+  border-color: $red;
+  background-color: mix($white, $mellow-red, 90%);
+  padding: 20px 30px 35px 30px;
+  margin-bottom: 30px;
+}
+
+.panel.panel-grey {
+  border-color: $black;
+  background-color: $highlight-colour;
+  padding: 15px 0 20px 15px;
+  border-bottom: 1px solid $grey-2;
+}
+
+//replacement for global-header-bar on index page
+#global-header-show {
+  height: 10px;
+  background-color: $govuk-blue;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+//remove global-header-bar
+#global-header-bar {
+  display: none;
+}
+
+// To do bar
+#app-menu {
+  border-bottom: 1px solid $border-colour;
+  clear: both;
+  margin: $gutter 0;
+}
+
+#app-menu li {
+  display: table-cell;
+  width: 1%;
+  list-style-type: none;
+  text-align: center;
+}
+
+#app-menu li a {
+  background-color: $highlight-colour;
+  padding: 10px 15px 8px 15px;
+  display: block;
+  font-weight: bold;
+}
+
+#app-menu li.active a {
+  background-color: $govuk-blue;
+  color: $page-colour;
+  text-decoration: none;
+}
+
+// Eddies design changes
+.addendum {
+  border-top: 2px solid $border-colour;
+  margin-top: 40px;
+
+  .button {
+    @include button($panel-colour);
+  }
+}
+
+.form-label-bold {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.lower-space {
+  margin-bottom: $gutter;
+}
+
+.no-margin {
+  margin-top: 0;
+}
+
+// For reducing space between heading and lede/question
+.form-title {
+  margin-bottom: 35px;
+}
+
+// buttons
+.exit-link {
+  margin-top: 20px;
+}
+
+.inline-button {
+  display: inline;
+  margin-right: $gutter / 2;
+}
+
+.exit-link-side {
+  padding-top: 10px;
+}
+
+.exit-link-side a {
+  position: relative;
+  top: 8px;
+}
+
+.success {
+  background: url(../images/large_tick.png) no-repeat 7% center;
+  background-size: 80px;
+  background-color: #005F9E;
+  color: $white;
+  padding: 60px 60px 60px 180px;
+}
+
+.lede-success {
+  max-width: 600px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.main {
+  @include core-19;
+  -webkit-font-smoothing: antialiased;
+}
+
+strong {
+  font-weight: 600;
+}
+
+// Changes for prototype 2
+
+.addSeven {
+  font-weight: 600;
+}
+
+table.bank-details-table {
+  width: 75%;
+  margin-bottom: $gutter;
+}
+
+.bank-details-table td {
+  border-bottom: 0;
+  width: 1%;
+}
+
+.bank-details-table td:first-child {
+  font-weight: 600;
+}
+
+#preInput {
+  background-color: $panel-colour;
+  float: left;
+  width: 45px;
+  text-align: center;
+  padding: 4.5px 0;
+  padding: 6.5px 0;
+}
+
+#codeInputTest {
+  max-width: 85%;
+  min-width: 100px;
+}
+
+.graphic-heading {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.approve-payment-graphic {
+  background-color: $govuk-blue;
+  color: $white;
+  margin-bottom: $gutter;
+  padding: $gutter 2 * $gutter;
+}
+
+.approve-graphic-wrapper {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 50px;
+}
+
+@media screen and (max-width: 650px) {
+  .approve-graphic-wrapper {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.remove-padding {
+  padding-left: 0;
+}
+
+.pad-below {
+  padding-bottom: $gutter / 4;
+}
+
+.reduce-margin {
+  margin-bottom: 0.6em;
+}
+
+.button-white {
+  background-color: $white;
+  color: $govuk-blue;
+}
+
+// UC Login page
+
+.uc-login-details {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}

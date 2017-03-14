@@ -1,0 +1,298 @@
+{# Macros for index page #}
+
+{% macro current(versionNumber, releaseDate, startLink, changeArray, researchDlLink, dlSize) %}
+<div class="current-version">
+  <div class="version-number">
+    <p class="index-p">Current version</p>
+    <h3 class="heading-medium index-heading-medium">Prototype {{ versionNumber }}</h3>
+  </div>
+  <div class="release-date">
+    <p class="index-p">Date of release</p>
+    <h3 class="heading-medium index-heading-medium">{{ releaseDate }}</h3>
+  </div>
+  <div class="start-now clearfix">
+    <a class="button start-journey" href="{{ startLink }}">Start now</a>
+  </div>
+  <div class="changes-made">
+    <h4 class="heading-small">Changes made</h4>
+    <ul class="list list-bullet">
+      {% for item in changeArray %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="research-findings">
+    <h4 class="heading-small">Research findings</h4>
+    <a href="{{ researchDlLink }}" download>Download research findings (PDF {{ dlSize }})</a>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro older(versionNumber, releaseDate, startLink, changeArray, researchDlLink, dlSize ) %}
+<div class="older-version">
+  <div class="version-number">
+    <p class="index-p">Version</p>
+    <h4 class="heading-small index-heading-medium">Prototype {{ versionNumber }}</h4>
+  </div>
+  <div class="release-date">
+    <p class="index-p">Date of release</p>
+    <h4 class="heading-small index-heading-medium">{{ releaseDate }}</h4>
+  </div>
+  <div class="start-now clearfix">
+    <a class="button grey-button" href="{{ startLink }}">Launch prototype</a>
+  </div>
+  <div class="changes-made">
+    <h4 class="heading-small">Changes made</h4>
+    <ul class="list list-bullet">
+      {% if changeArray[0].length > 1 %}
+      {% for item in changeArray %}
+      <li>{{ item }}</li>
+      {% endfor %}
+      {% else %}
+      <li>{{ changeArray }}</li>
+      {% endif %}
+    </ul>
+  </div>
+  <div class="research-findings">
+    <h4 class="heading-small">Research findings</h4>
+    <a href="{{ researchDlLink }}" download>Download research findings ({{ dlSize }})</a>
+  </div>
+</div>
+{% endmacro %}
+
+
+{% macro account() %}
+<div class="account-wrapper">
+<div class="account-section">
+  <ul>
+    <li>testaccount123: <a href="/ucca2/no_page_exists">Sign Out</a></li>
+  </ul>
+</div>
+</div>
+{% endmacro %}
+
+{% macro banner() %}
+<div class="phase-banner-beta">
+<p><strong class="phase-tag" style="background-color:#1562A1;">Prototype</strong>
+<span>This is being used to test out a new element of the service</span>
+</p>
+</div>
+{% endmacro %}
+
+<!-- To-Do section -->
+{% macro toDoSection() %}
+<div id="app-menu" role="navigation"><div class="content">
+<ul>
+    <li><a href="/ucca2/reset">Home</a></li>
+    <li class="active"><a href="/ucca2/to_do_page" class="todo">To-do list</a></li>
+    <li><a href="/ucca2/no_page_exists">Journal</a></li>
+</ul>
+</div></div>
+{% endmacro %}
+
+<!--  Main heading and opening sentence  -->
+{% macro header(content,special) %}
+<header>
+<h1 class="heading-xlarge form-title {% if special %}{{ special }}{% endif %}">
+{{ content.heading }}</h1>
+</header>
+<p class="lede {% if special %}lede-{{ special }}{% endif %}">{{ content.lede  | safe }}</p>
+<p>{{ content.additional}}</p>
+{% endmacro %}
+
+<!-- for lone text -->
+{% macro content(content,content2,content3) %}
+<p>{{ content }}</p>
+{% if content2 %}<p>{{ content2 }}</p>{% endif %}
+{% if content3 %}<p>{{ content3 }}</p>{% endif %}
+{% endmacro %}
+
+<!-- Information sections -->
+{% macro info(id,heading,content,toggle,toggleContent) %}
+<div id="{{ id }}">
+<h4 class="heading-small">{{ heading }}</h4>
+<p>{{ content }}</p>
+</div>
+{% endmacro %}
+
+{% macro orderList(content,listItems) %}
+<div class="form-group">
+{% if content %}<h4 class="heading-small">{{ content }}</h4>{% endif %}
+<ol class="list list-number">
+  {% for item in listItems %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ol>
+</div>
+{% endmacro %}
+
+{% macro unorderedList(content,listItems,soft) %}
+<div class="form-group">
+{% if content %}<h4 class="heading-small">{{ content }}</h4>{% endif %}
+<ul class="list list-bullet">
+  {% for item in listItems %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+</div>
+{% endmacro %}
+
+{% macro helpImage(content,content2,imageSrc,alt) %}
+<div>
+<p>{{ content }}</p>
+{% if content2 %}<p>{{ content2 }}</p>{% endif %}
+<img src="{{ imageSrc }}" alt="{{ alt }}">
+</div>
+{% endmacro %}
+
+<!--  Input types  -->
+{% macro inputField(id,content,hint,size,value,type='text') %}
+<div class="form-group" id="form-group-{{ id }}">
+  <label class="form-label-bold" for="{{ id }}">{{ content }}
+  {% if hint %} <span class="form-hint">{{ hint }}</span> {% endif %}
+  </label>
+  <input id="{{ id }}" type="{{ type }}" class="form-control {% if size %}form-control-{{ size }}{% endif %}" name="{{ id }}" value="{{ value }}">
+</div>
+{% endmacro %}
+
+{% macro radioButtons(id,content,hint,radios,inline,type='radio') %}
+<div>
+<fieldset class="form-group{% if inline %} inline{% endif %}">
+<legend>
+<span class="form-label-bold">{{ content }}</span>
+{% if hint %}<span class="form-hint">{{ hint }}</span>{% endif %}
+</legend>
+{% for item in radios %}
+<label class="block-label form-label {% if item.selected %}selected{% endif %}" for="{{ id }}_{{ loop.index }}"
+{% if item.dataTarget %}data-target="{{ item.dataTarget }}"{% endif %}>{{ item.value }}
+<input type="{{ type }}" id="{{ id }}_{{ loop.index }}" name="{{ id }}" value="{{ item.value }}" {% if item.selected %}checked="checked"{% endif %}>
+</label>
+{% endfor %}
+</fieldset>
+</div>
+{% endmacro %}
+
+<!-- Buttons and links -->
+{% macro continue(content,pageName,side) %}
+<div><input type="submit" class="button" value="{{ content.button }}" name="submit"></div>
+{% if pageName %}
+<div class="exit-link{% if side %}-side{% endif %}"><a href="/ucca2/{{ pageName }}">{{ content.exitLink }}</a></div>
+{% endif %}
+{% endmacro %}
+
+<!--  Panels and alerts  -->
+{% macro panel(content,colour,pageName) %}
+{% if colour %}
+<div class="panel panel-border-wide {{ colour }}-alert">
+{% else %}
+<div class="panel panel-grey">
+{% endif %}
+{% if content[0].length != 1 %}
+{% for item in content %}
+<p>{{ item | safe }}</p>
+{% endfor %}
+{% else %}
+{% if pageName %}<a href="/ucca2/{{ pageName}}">{{ content | safe }}</a>
+{% else %}
+{{ content }}{% endif %}
+{% endif %}
+</div>
+{% endmacro %}
+
+<!-- Macro for attempts at something -->
+{% macro attempts(attempts,maxAttempts,attemptsText) %}
+{% if attempts < maxAttempts %}
+<p>You've entered the reference {% if attempts === 1 %}{{ attemptsText[0] }}{% elif attempts === 2 %}{{ attemptsText[1] }}{% endif %}.
+   You have {{ maxAttempts - attempts }} more {% if attempts === 2 %}try{% else %}tries{% endif %}.</p>
+{% elif attempts == maxAttempts %}
+<p>You have used all your attempts</p>
+{% else %}
+<p>Please <a href="/ucca2/reset">reset</a> your data</p>
+{% endif %}
+{% endmacro %}
+
+<!-- Macro for tables -->
+{% macro table(tableContent,class,tableHead) %}
+<table{% if class %} class="{{ class }}"{% endif %}>
+{% if tableHead %}
+<thead>
+<tr>{% for item in tableHead %}<th>{{ item }}</th>{% endfor %}</tr>
+</thead>
+{% endif %}
+<tbody>
+{% for item in tableContent %}<tr>{% for item in tableContent[loop.index -1] %}<td>{{ item }}</td>{% endfor %}</tr>{% endfor %}
+</tbody>
+</table>
+{% endmacro %}
+
+<!--  index page  -->
+{% macro currentVersion(version,link,link2,link3) %}
+<div class="current-version">
+<p>Current version</p>
+<h3 class="heading-medium">{{ version }}</h3>
+  <h4 class="heading-small">Research Findings</h4>
+  <ul class="list list-bullet"><li><a href="{{ link2 }}">Findings</a></li></ul>
+  <h4 class="heading-small">Changes</h4>
+  <ul class="list list-bullet"><li><a href="{{ link3 }}">Changes</a></li></ul>
+  <a href="{{ link }}" class="button special-button">Start Journey</a>
+</div>
+{% endmacro %}
+
+<!-- Proabably a better way of doing this -->
+{% macro openGridForm(pageName,columns='two-thirds') %}
+<div class="grid-row">
+<div class="column-{{ columns }}">
+<form action="/ucca2/{{ pageName }}" method="post" class="form">
+{% endmacro %}
+
+{% macro closeGridForm() %}
+</form>
+</div>
+</div>
+{% endmacro %}
+
+<!--
+************************************************************************
+************************************************************************
+
+   Macros that have been used previously but are not currently in use
+
+************************************************************************
+************************************************************************
+-->
+
+<!-- Extra section at the bottom -->
+{% macro addendum(content,pageName) %}
+<div class="addendum">
+  <h4 class="heading-small">{{ content.addendum }}</h4>
+  <a href="/ucca2/{{ pageName }}" class="button">{{ content.addButton }}</a>
+</div>
+{% endmacro %}
+
+<!-- Sort code or date Macro -->
+{% macro sortCode(id,content,fields) %}
+<div>
+<fieldset class="form-date lower-space" id="{{ id }}">
+  <legend class="form-label-bold">{{ content }}</legend>
+  {% for item in fields %}
+<div class="form-group">
+<label for="{{ id }}_{{ loop.index }}"></label>
+<input class="form-control" id="{{ id }}_{{ loop.index }}" name="{{ item.name }}" {% if item.value %}value="{{ item.value }}"{% endif %} type="number">
+</div>
+{% endfor %}
+</fieldset>
+</div>
+{% endmacro %}
+
+<!-- toggle to reveal content -->
+{% macro toggle(toggleText,revealHeading,revealContent,revealContent2,image,alt) %}
+<details role="group" {% if image %}class="lower-space"{% endif %}>
+<summary role="button"><span class="summary">{{ toggleText }}</span></summary>
+{% if revealHeading %}<h4 class="heading-small">{{ revealHeading }}</h4>{% endif %}
+<p>{{ revealContent }}</p>
+{% if revealContent2 %}<p>{{ revealContent2 }}</p>{% endif %}
+{% if image %}
+<img src="/public/images/{{ image }}" alt="{{ alt }}">
+{% endif %}
+</details>
+{% endmacro %}

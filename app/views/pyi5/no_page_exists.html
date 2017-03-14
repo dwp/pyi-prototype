@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Page not made - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi5/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.no_page_exists %}
+
+{{ elements.account() }}
+<div class="main" id="content" role="main">
+{{ elements.banner() }}
+{{ elements.openGridForm('no_page_exists') }}
+
+{{ elements.header(content) }}
+
+<input type="submit" class="button browser-back" value="Go back">
+
+{{ elements.closeGridForm() }}
+</div>
+
+{% endfor %}
+{% endfor %}
+  {% endblock %}

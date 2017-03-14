@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Enter reference number - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "ucca1/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.enter_reference %}
+{% for rehash in page.bank_submitted %}
+
+    {{ elements.account() }}
+    <div class="main" id="content" role="main">
+    {{ elements.banner() }}
+
+{{ elements.openGridForm('enter_reference') }}
+
+        {{ elements.header(content) }}
+        {{ elements.inputField('codeInput',content.question) }}
+        {{ elements.toggle(content.toggle,'',rehash.imageText,rehash.imageText2,'transaction2.png',rehash.altText) }}
+        {{ elements.continue(content,'to_do_page') }}
+
+{{ elements.closeGridForm() }}
+    </div>
+
+  {% endfor %}
+    {% endfor %}
+    {% endfor %}
+      {% endblock %}

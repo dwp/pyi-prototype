@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Bank details - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "ucca1/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.bank_details %}
+
+    {{ elements.account() }}
+    <div class="main" role=main id="content">
+    {{ elements.banner() }}
+
+{{ elements.openGridForm('bank_details') }}
+
+        {{ elements.header(content) }}
+        {{ elements.inputField('accountName',content.question,'','','Adam Jones') }}
+        {{ elements.sortCode('sortCode',content.question2,content.fields) }}
+        {{ elements.inputField('accountNunmber',content.question3,'','1-4','18453431') }}
+        {{ elements.radioButtons('jointAccount',content.question4,'',content.radios,'inline') }}
+        {{ elements.continue(content,'info_bank') }}
+
+
+{{ elements.closeGridForm() }}
+    </div>
+
+{% endfor %}
+ {% endfor %}
+  {% endblock %}

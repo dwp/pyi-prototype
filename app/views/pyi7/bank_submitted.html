@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Find your reference - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi7/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.bank_submitted %}
+
+    {{ elements.account() }}
+    <div class="main" id="content" role="main">
+    {{ elements.banner() }}
+
+{{ elements.openGridForm('bank_submitted') }}
+
+        {{ elements.header(content) }}
+        {{ elements.helpImage('',content.imageText2  | safe,'/public/images/UC_transaction3.png',content.altText) }}
+        {{ elements.continue(content,'reminder', 'side') }}
+
+{{ elements.closeGridForm() }}
+    </div>
+
+  {% endfor %}
+    {% endfor %}
+      {% endblock %}

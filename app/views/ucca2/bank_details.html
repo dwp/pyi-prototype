@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Confirm the payment - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "ucca2/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.bank_details %}
+
+    {{ elements.account() }}
+    <div class="main" role="main" id="content">
+    {{ elements.banner() }}
+
+{{ elements.openGridForm('bank_details') }}
+
+        {{ elements.header(content) }}
+        {{ elements.table(content.tabContent,'bank-details-table') }}
+        {{ elements.continue(content,'info_bank') }}
+
+{{ elements.closeGridForm() }}
+    </div>
+
+{% endfor %}
+ {% endfor %}
+  {% endblock %}

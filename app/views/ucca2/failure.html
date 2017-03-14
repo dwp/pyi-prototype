@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Reference not recognised - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "ucca2/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.failure %}
+
+{{ elements.account() }}
+<div class="main" id="content" role="main">
+{{ elements.banner() }}
+
+{{ elements.openGridForm('failure') }}
+
+        {{ elements.header(content) }}
+        {{ elements.content(content.info) }}
+        {{ elements.attempts(attempts,3,content.attemptsText) }}
+        {{ elements.continue(content) }}
+
+{{ elements.closeGridForm() }}
+</div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

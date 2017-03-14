@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Confirm the payment - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi6/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.bank_details %}
+
+    {{ elements.account() }}
+    <div class="main" role="main" id="content">
+    {{ elements.banner() }}
+
+    <div class="grid-row">
+    <div class="column-full">
+    <form action="/pyi6/bank_details" method="post" class="form">
+
+<div class="approve-payment-graphic">
+  <h1 class="heading-xlarge graphic-heading">Approve the payment</h1>
+
+
+    <div class="grid-row">
+  <div class="approve-graphic-wrapper">
+  <div class="column-half">
+  <p>1. You’ll get a payment of 1 penny from Universal Credit into your bank account along with a reference code.</p>
+</div>
+<div class="column-half">
+<img class="" src="/public/images/our-bank.png" alt="">
+</div>
+</div>
+</div>
+
+    <div class="grid-row">
+<div class="approve-graphic-wrapper">
+<div class="column-half">
+  <p>2. You can find the unique reference for this payment by logging into your online bank account, phoning your bank or visiting a branch.</p>
+  </div>
+  <div class="column-half">
+  <img class="" src="/public/images/find-reference.png" alt="">
+</div>
+</div>
+</div>
+
+    <div class="grid-row">
+<div class="approve-graphic-wrapper">
+  <div class="column-half">
+  <p>3. You enter the reference in your Universal Credit account. Your identity is proved and you continue with your Universal Credit application.</p>
+</div>
+<div class="column-half">
+  <img class="" src="/public/images/enter-reference.png" alt="">
+</div>
+</div>
+</div>
+
+<div><input type="submit" class="button button-white" value="Ok - pay me 1 penny" name="submit"></div>
+<div class="exit-link"><a href="/pyi6/how_verify"></a></div>
+
+</div>
+
+
+
+
+</form>
+</div>
+</div>
+    </div>
+
+{% endfor %}
+ {% endfor %}
+  {% endblock %}

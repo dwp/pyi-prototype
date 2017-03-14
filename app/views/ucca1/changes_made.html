@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Confirm the payment - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "ucca1/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.changes_made %}
+
+  <div class="main" role="main" id="content">
+
+    {{ elements.header(content) }}
+
+        <a class="button browser-back">Back</a>
+
+</div>
+{% endfor %}
+ {% endfor %}
+  {% endblock %}

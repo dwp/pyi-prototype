@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Confirm the payment - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi7/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.bank_details %}
+
+    {{ elements.account() }}
+    <div class="main" role="main" id="content">
+    {{ elements.banner() }}
+
+    {{ elements.openGridForm('bank_details') }}
+
+    <div class="exit-link-side inline-button"><a href="/pyi7/how_verify">< Back</a></div>
+
+            {{ elements.header(content) }}
+          <!--  {{ elements.table(content.tabContent,'bank-details-table') }} -->
+          <div class="form-group">
+          <h4 class="heading-small">How it works</h4>
+          <ol class="list list-number">
+            <li>Get a penny paid into your bank account</li>
+            <li>Find the reference next to it by checking your bank statement</li>
+            <ul class="list list-bullet">
+              <li>online</li>
+              <li>on your mobile</li>
+              <li>at your branch</li>
+              <li>at the cashpoint</li>
+              <li>by phoning your bank</li>
+            </ul>
+            <li>Enter your reference in your Universal Credit Account and your identity is proved.</li>
+          </ol>
+          </div>
+
+            {{ elements.continue(content) }}
+
+    {{ elements.closeGridForm() }}
+  </div>
+
+{% endfor %}
+ {% endfor %}
+  {% endblock %}
