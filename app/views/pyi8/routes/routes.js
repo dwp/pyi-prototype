@@ -99,7 +99,7 @@ app.get('/pyi8/enter_reference', function(req,res) {
     });
 });
 app.post('/pyi8/enter_reference', function(req,res) {
-  if (req.body.codeTestInput.toLowerCase() == 'P997630') {
+  if (req.body.codeTestInput.toLowerCase() == 'p997630') {
     res.redirect('/pyi8/success');
   } else {
     res.redirect('/pyi8/failure');
