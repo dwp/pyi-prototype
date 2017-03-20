@@ -29,15 +29,6 @@ $(document).ready(function () {
 
 // Show/Hide for index page
 
-  $('.show-older').click(function() {
-    if ($('#olderVersions' + '.js-hidden').length !== 0) {
-    $('#olderVersions').removeClass('js-hidden');
-    } else {
-    $('#olderVersions').addClass('js-hidden');
-    }
-    return false;
-  });
-
   $('.browser-back').click(function() {
     history.back();
     return false;
