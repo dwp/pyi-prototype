@@ -7,7 +7,7 @@ var data = [ {
     "question2"   : "Password",
     "toggleText"  : "Problems signing in?",
     "revealHead"  : "Don't have an online account?",
-    "revealCont" : "You may be able to use the <a href='#'>Universal Credit online service</a> to:"
+    "revealCont" : "You may be able to use the <a href='#'>Universal Credit online service</a> to:",
     "button"      : "Sign In"
   },
 ],
