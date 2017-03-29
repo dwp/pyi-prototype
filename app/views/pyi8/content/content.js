@@ -5,9 +5,9 @@ var data = [ {
     "heading"     : "Sign in to your Universal Credit account",
     "question"    : "Username",
     "question2"   : "Password",
-    "toggleText"  : "Promblems signing in?",
+    "toggleText"  : "Problems signing in?",
     "revealHead"  : "Don't have an online account?",
-    "revealCont" : "You may be able to use the <a href='#'>Universal Credit online service</a> to:",
+    "revealCont" : "You may be able to use the <a href='#'>Universal Credit online service</a> to:"
     "button"      : "Sign In"
   },
 ],
