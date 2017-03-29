@@ -17,19 +17,15 @@
 
     <div class="exit-link-side inline-button"><a href="/pyi8/how_verify">< Back</a></div>
 
-            {{ elements.header(content) }}
-          <!--  {{ elements.table(content.tabContent,'bank-details-table') }} -->
-          <div class="form-group">
-          <h2 class="heading-large no-margin">How it works</h4>
-          <p>Check your bank account using online, mobile or telephone banking to find the reference.</p>
-          <p>Tell us the reference and you've proved your identity.</p>
-          </div>
+      {{ elements.header(content) }}
+      {{ elements.heading('2', 'large no-margin', content.heading2) }}
+      {{ elements.content(content.text, content.text2) }}
 
-            {{ elements.continue(content) }}
+      {{ elements.continue(content) }}
 
     {{ elements.closeGridForm() }}
-  </div>
+    </div>
 
 {% endfor %}
- {% endfor %}
-  {% endblock %}
+{% endfor %}
+{% endblock %}

@@ -46,9 +46,14 @@
 {% if additionalReplace %}<p>{{ additionalReplace }}</p>{% endif %}
 {% endmacro %}
 
+<!-- for headings -->
+{% macro heading(type, size, content) %}
+  <h{{ type }} class="heading-{{ size }}">{{ content | safe}}</h{{ type }}>
+{% endmacro %}
+
 <!-- for lone text -->
-{% macro content(content,content2,content3) %}
-<p>{{ content }}</p>
+{% macro content(content,content2,content3, lede) %}
+<p {% if lede %}class="lede"{% endif %}>{{ content }}</p>
 {% if content2 %}<p>{{ content2 }}</p>{% endif %}
 {% if content3 %}<p>{{ content3 }}</p>{% endif %}
 {% endmacro %}

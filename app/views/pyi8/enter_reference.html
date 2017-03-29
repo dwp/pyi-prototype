@@ -13,24 +13,14 @@
     <div class="main" id="content" role="main">
     {{ elements.banner() }}
 
-{{ elements.openGridForm('enter_reference') }}
+    {{ elements.openGridForm('enter_reference') }}
+    {{ elements.header(content) }}
+    {{ elements.inputField('codeTestInput','','','1-4') }}
+    {{ elements.continue(content,'reminder', 'side') }}
 
-        {{ elements.header(content) }}
-  <!--      {{ elements.inputField('codeInput',content.question,'Eg UC12345') }} -->
-
-        <div class="form-group" id="form-group-test">
-          <label class="form-label-bold" for="codeInputTest"></label>
-          <!-- <div id="preInput">P</div> -->
-          <input id="codeInputTest" name="codeTestInput" type="text" class="form-control form-control-1-4" value="" maxlength="8">
-        </div>
-
-      <!--  {{ elements.content(content.extra) }} -->
-      <!--  {{ elements.toggle(content.toggle,'',content.toggleContent   | safe,'','UC_transaction3.png',content.altText) }} -->
-        {{ elements.continue(content,'reminder', 'side') }}
-
-{{ elements.closeGridForm() }}
+    {{ elements.closeGridForm() }}
     </div>
 
-    {% endfor %}
-    {% endfor %}
-      {% endblock %}
+{% endfor %}
+{% endfor %}
+{% endblock %}

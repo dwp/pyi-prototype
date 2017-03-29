@@ -13,13 +13,13 @@
     <div class="main" id="content" role="main">
     {{ elements.banner() }}
 
-{{ elements.openGridForm('bank_submitted') }}
+    {{ elements.openGridForm('bank_submitted') }}
 
-        {{ elements.header(content) }}
-        {{ elements.helpImage('','','/public/images/Example_transaction_testing.png','') }}
-        {{ elements.continue(content,'reminder', 'side') }}
+      {{ elements.header(content) }}
+      {{ elements.helpImage('','','/public/images/Example_transaction_testing.png',altText) }}
+      {{ elements.continue(content,'reminder', 'side') }}
 
-{{ elements.closeGridForm() }}
+    {{ elements.closeGridForm() }}
     </div>
 
   {% endfor %}
