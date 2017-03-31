@@ -96,6 +96,7 @@ Enter Reference
 app.get('/pyi8/enter_reference', function(req,res) {
     res.render('pyi8/enter_reference', {
     data     :   content.getTableData(),
+    second_entry  : req.session['pyi8-second_entry']
     });
 });
 app.post('/pyi8/enter_reference', function(req,res) {
@@ -189,6 +190,7 @@ app.get('/pyi8/second_entry', function(req,res) {
 });
 app.post('/pyi8/second_entry', function(req,res) {
   if (req.body.howVerify == 'Continue using your bank account' ){
+  req.session['pyi8-second_entry'] = req.body;
   res.redirect('/pyi8/enter_reference');
 } else {
 res.redirect('/pyi8/no_page_exists');
