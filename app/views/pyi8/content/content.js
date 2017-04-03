@@ -24,7 +24,7 @@ var data = [ {
     {
       "heading"   : "Prove your identity",
       "lede"      : "You need to prove who you are by <strong class='addSeven'>a week from today</strong>. If you don’t you won't get paid.",
-      "revealContent" : "You can prove your identity online. You'll need to check the bank account you use for Universal Credit for a reference that we'll send",
+      "revealContent" : "You can prove your identity online. You'll need to check the bank account you use for Universal Credit for a reference that we'll send.",
       "question"  : "How do you want to prove your identity?",
       "radios"    : [{"value":"Get a reference sent to your bank account"},{"value":"Try GOV.UK Verify again"}],
       "button"    : "Next"
@@ -35,8 +35,8 @@ var data = [ {
       "heading"   : "Use your bank account to prove your identity",
       "heading2"  : "How it works",
       "lede"      : "",
-      "text"      : "Check your bank account using online, mobile or telephone banking to find the reference.",
-      "text2"     : "Tell us the reference and you've proved your identity.",
+      "text"      : "Check your bank account using online, mobile or telephone banking. Or go to a cash machine or your branch to get a statement printout.",
+      "text2"     : "Find the reference and tell us what it is to prove your identity.",
       "exitLink"  : "< Back",
       "button"    : "OK - send the reference"
   },
@@ -77,8 +77,8 @@ var data = [ {
     "heading"       : "Reference not recognised",
     "heading2"      : "You haven't been able to prove your identity this time",
     "lede"          : "Check the reference and try again.",
-    "lede2"         : "You have entered the reference 3 times but it hasn't worked",
-    "additional2"   : "You still need to prove your identity before you can be paid Universal Credit",
+    "lede2"         : "You have entered the reference 3 times but it hasn't worked.",
+    "additional2"   : "You still need to prove your identity before you can be paid Universal Credit.",
     "attemptsText"  : ["once","twice"],
       "button"      : "Try again",
       "exitLink"    : "Return to your To-do list and enter the reference later",
