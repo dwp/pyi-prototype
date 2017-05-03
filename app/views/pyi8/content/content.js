@@ -45,6 +45,8 @@ var data = [ {
   {
     "heading"     : "Find your reference",
     "lede"        : "We've sent a reference to your bank account. It might take a couple of hours to appear.",
+    "heading2"    : "A reference has already been sent to your bank account",
+    "lede2"       : "The reference might take a couple of hours to appear.", 
     "altText"     : "An image of an online bank statement",
     "exitLink"    : "Go back to to-do list",
     "button"      : "Enter your reference"
@@ -112,6 +114,21 @@ var data = [ {
     "question"  : "You've already requested a reference number",
     "radios"    : [{"value":"Continue using your bank account"},{"value":"Try GOV.UK verify again"}],
     "button"    : "Continue"
+},
+],
+"expired"    : [
+  {
+    "heading"   : "Sorry, you can't use this service",
+    "lede"      : "Your 7 days to prove your identity online has run out.",
+    "additional"  : "You’ll need to book an appointment in person.",
+    "button"    : "Go back to Universal Credit"
+},
+],
+"payment_failed"    : [
+  {
+    "heading"   : "Something’s gone wrong",
+    "lede"      : "Sorry, you can’t use this service. You’ll need to book an appointment in person.",
+    "button"    : "Go back to Universal Credit"
 },
 ],
 "no_page_exists"  : [

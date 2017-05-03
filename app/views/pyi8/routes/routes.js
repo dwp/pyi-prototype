@@ -69,7 +69,8 @@ bank_submitted
 
 app.get('/pyi8/bank_submitted', function(req,res) {
     res.render('pyi8/bank_submitted', {
-      data    : content.getTableData()
+      data    : content.getTableData(),
+      twoPayments : false
     });
 });
 app.post('/pyi8/bank_submitted', function(req,res) {
@@ -86,6 +87,32 @@ app.get('/pyi8/reminder', function(req,res) {
     });
 });
 app.post('/pyi8/reminder', function(req,res) {
+  res.redirect('/pyi8/to_do_page');
+});
+
+/*****
+Expired
+******/
+
+app.get('/pyi8/expired', function(req,res) {
+    res.render('pyi8/expired', {
+     data     :   content.getTableData()
+    });
+});
+app.post('/pyi8/expired', function(req,res) {
+  res.redirect('/pyi8/to_do_page');
+});
+
+/*****
+Payment Failed
+******/
+
+app.get('/pyi8/payment_failed', function(req,res) {
+    res.render('pyi8/payment_failed', {
+     data     :   content.getTableData()
+    });
+});
+app.post('/pyi8/payment_failed', function(req,res) {
   res.redirect('/pyi8/to_do_page');
 });
 
