@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Reference not recognised - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi9/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.expired %}
+
+{{ elements.account() }}
+<div class="main" id="content" role="main">
+{{ elements.banner() }}
+
+    {{ elements.openGridForm('expired') }}
+
+
+        {{ elements.header(content) }}
+        {{ elements.continue(content) }}
+
+
+    {{ elements.closeGridForm() }}
+</div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

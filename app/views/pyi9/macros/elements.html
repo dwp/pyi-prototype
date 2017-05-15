@@ -1,0 +1,261 @@
+
+<!--  Phase banner and account section (top of each page) -->
+{% macro account() %}
+<div class="account-wrapper">
+<div class="account-section">
+  <ul>
+    <li>testaccount123: <a href="/pyi9/404">Sign Out</a></li>
+  </ul>
+</div>
+</div>
+{% endmacro %}
+
+{% macro banner() %}
+<div class="phase-banner-beta">
+<p><strong class="phase-tag" style="background-color:#1562A1;"><a class="settings-link" href="/pyi9/settings">Prototype</a></strong>
+<span>This is being used to test out a new element of the service</span>
+</p>
+</div>
+{% endmacro %}
+
+<!-- To-Do section -->
+{% macro toDoSection() %}
+<div id="app-menu" role="navigation"><div class="content">
+<ul>
+    <li><a href="/pyi9/reset">Home</a></li>
+    <li class="active"><a href="/pyi9/to_do_page" class="todo">To-do list</a></li>
+    <li><a href="/pyi9/404">Journal</a></li>
+</ul>
+</div></div>
+{% endmacro %}
+
+<!--  Main heading and opening sentence  -->
+{% macro header(content,special,headingReplace,ledeReplace,additionalReplace) %}
+<header>
+<h1 class="heading-xlarge form-title {% if special %}{{ special }}{% endif %}">
+{% if content %}{{ content.heading }}
+{% elif headingReplace %}{{ headingReplace }}
+{% endif %}
+</h1>
+</header>
+<p class="lede {% if special %}lede-{{ special }}{% endif %}">
+{% if content %}{{ content.lede  | safe }}
+{% elif ledeReplace %}{{ ledeReplace  | safe }}
+{% endif %}</p>
+<p>{{ content.additional | safe }}</p>
+{% if additionalReplace %}<p>{{ additionalReplace }}</p>{% endif %}
+{% endmacro %}
+
+<!-- for headings -->
+{% macro heading(type, size, content) %}
+  <h{{ type }} class="heading-{{ size }}">{{ content | safe}}</h{{ type }}>
+{% endmacro %}
+
+<!-- for lone text -->
+{% macro content(content,content2,content3, lede) %}
+<p {% if lede %}class="lede"{% endif %}>{{ content }}</p>
+{% if content2 %}<p>{{ content2 }}</p>{% endif %}
+{% if content3 %}<p>{{ content3 }}</p>{% endif %}
+{% endmacro %}
+
+<!-- Information sections -->
+{% macro info(id,heading,content,toggle,toggleContent) %}
+<div id="{{ id }}">
+<h4 class="heading-small">{{ heading }}</h4>
+<p>{{ content }}</p>
+</div>
+{% endmacro %}
+
+{% macro orderList(content,listItems) %}
+<div class="form-group">
+{% if content %}<h4 class="heading-small">{{ content }}</h4>{% endif %}
+<ol class="list">
+  {% for item in listItems %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ol>
+</div>
+{% endmacro %}
+
+{% macro unorderedList(content,listItems,soft) %}
+<div class="form-group">
+{% if content %}<h4 class="heading-small">{{ content }}</h4>{% endif %}
+<ul class="list list-bullet">
+  {% for item in listItems | safe %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+</div>
+{% endmacro %}
+
+{% macro helpImage(content,content2,imageSrc,alt) %}
+<div class="lower-space">
+<p>{{ content }}</p>
+{% if content2 %}<p>{{ content2 }}</p>{% endif %}
+<img src="{{ imageSrc }}" alt="{{ alt }}">
+</div>
+{% endmacro %}
+
+<!--  Input types  -->
+{% macro inputField(id,content,hint,size,value,type='text') %}
+<div class="form-group" id="form-group-{{ id }}">
+  <label class="form-label-bold" for="{{ id }}">{{ content }}
+  {% if hint %} <br><span>{{ hint }}</span> {% endif %}
+  </label>
+  <input id="{{ id }}" type="{{ type }}" class="form-control {% if size %}form-control-{{ size }}{% endif %}" name="{{ id }}" value="{{ value }}">
+</div>
+{% endmacro %}
+
+{% macro radioButtons(id,content,hint,radios,inline,type='radio') %}
+<div>
+<fieldset class="form-group{% if inline %} inline{% endif %}">
+<legend>
+<span class="form-label-bold">{{ content }}</span>
+{% if hint %}<span class="form-hint">{{ hint }}</span>{% endif %}
+</legend>
+{% for item in radios %}
+<label class="block-label form-label {% if item.selected %}selected{% endif %}" for="{{ id }}_{{ loop.index }}"
+{% if item.dataTarget %}data-target="{{ item.dataTarget }}"{% endif %}>{{ item.value }}
+<input type="{{ type }}" id="{{ id }}_{{ loop.index }}" name="{{ id }}" value="{{ item.value }}" {% if item.selected %}checked="checked"{% endif %}>
+</label>
+{% if item.showOr %}<p class="form-block">or</p>{% endif %}
+{% endfor %}
+</fieldset>
+</div>
+{% endmacro %}
+
+<!-- Buttons and links -->
+{% macro continue(content,pageName,side,buttonReplace, exitReplace) %}
+<div{% if side %} class="inline-button"{% endif %}><input type="submit" class="button" value="{% if content %}{{ content.button }}{% elif buttonReplace %}{{ buttonReplace }}{% endif %}" name="submit"></div>
+{% if pageName %}
+<div class="exit-link{% if side %}-side inline-button{% endif %}"><a href="/pyi9/{{ pageName }}">{% if content %}{{ content.exitLink }}{% elif exitReplace %}{{ exitReplace }}{% endif %}</a></div>
+{% endif %}
+{% endmacro %}
+
+<!--  Panels and alerts  -->
+{% macro panel(content,colour,pageName) %}
+{% if colour %}
+<div class="panel panel-border-wide {{ colour }}-alert">
+{% else %}
+<div class="panel panel-grey">
+{% endif %}
+{% if content[0].length != 1 %}
+{% for item in content %}
+<p>{{ item | safe }}</p>
+{% endfor %}
+{% else %}
+{% if pageName %}<a href="/pyi9/{{ pageName}}">{{ content | safe }}</a>
+{% else %}
+{{ content }}{% endif %}
+{% endif %}
+</div>
+{% endmacro %}
+
+<!-- Macro for attempts at something -->
+{% macro attempts(attempts,maxAttempts,attemptsText) %}
+{% if attempts < maxAttempts %}
+<p>You've entered the reference {% if attempts === 1 %}{{ attemptsText[0] }}{% elif attempts === 2 %}{{ attemptsText[1] }}{% endif %}.
+   You have {{ maxAttempts - attempts }} more {% if attempts === 2 %}try{% else %}tries{% endif %}.</p>
+{% elif attempts == maxAttempts %}
+<p>You have used all your attempts</p>
+{% else %}
+<p>Please <a href="/pyi9/reset">reset</a> your data</p>
+{% endif %}
+{% endmacro %}
+
+<!-- Macro for tables -->
+{% macro table(tableContent,class,tableHead) %}
+<table{% if class %} class="{{ class }}"{% endif %}>
+{% if tableHead %}
+<thead>
+<tr>{% for item in tableHead %}<th>{{ item }}</th>{% endfor %}</tr>
+</thead>
+{% endif %}
+<tbody>
+{% for item in tableContent %}<tr>{% for item in tableContent[loop.index -1] %}<td>{{ item }}</td>{% endfor %}</tr>{% endfor %}
+</tbody>
+</table>
+{% endmacro %}
+
+<!--  index page  -->
+{% macro currentVersion(version,link,link2,link3) %}
+<div class="current-version">
+<p>Current version</p>
+<h3 class="heading-medium">{{ version }}</h3>
+  <h4 class="heading-small">Research Findings</h4>
+  <ul class="list list-bullet"><li><a href="{{ link2 }}">Findings</a></li></ul>
+  <h4 class="heading-small">Changes</h4>
+  <ul class="list list-bullet"><li><a href="{{ link3 }}">Changes</a></li></ul>
+  <a href="{{ link }}" class="button special-button">Start Journey</a>
+</div>
+{% endmacro %}
+
+{% macro olderVersion(version,link,link2,link3) %}
+<div class="older-version">
+  <h3 class="heading-medium">{{ version }}</h3>
+    <ul class="list list-bullet"><li><a href="{{ link }}">Start Journey</a></li></ul>
+    <h4 class="heading-small">Research Findings</h4>
+    <ul class="list list-bullet"><li><a href="{{ link2 }}">Findings</a></li></ul>
+    <h4 class="heading-small">Changes</h4>
+    <ul class="list list-bullet"><li><a href="{{ link3 }}">Changes</a></li></ul>
+</div>
+{% endmacro %}
+
+<!-- toggle to reveal content -->
+{% macro toggle(toggleText,revealHeading,revealContent,revealContent2,image,alt,space) %}
+<details role="group" {% if image %}class="lower-space"{% endif %}{% if space %}class="lower-space"{% endif %}>
+<summary role="button"><span class="summary">{{ toggleText }}</span></summary>
+{% if revealHeading %}<h4 class="heading-small">{{ revealHeading }}</h4>{% endif %}
+<p>{{ revealContent | safe }}</p>
+{% if revealContent2 %}<p>{{ revealContent2 }}</p>{% endif %}
+{% if image %}
+<img src="/public/images/{{ image }}" alt="{{ alt }}">
+{% endif %}
+</details>
+{% endmacro %}
+
+<!-- Proabably a better way of doing this -->
+{% macro openGridForm(pageName,columns='two-thirds') %}
+<div class="grid-row">
+<div class="column-{{ columns }}">
+<form action="/pyi9/{{ pageName }}" method="post" class="form">
+{% endmacro %}
+
+{% macro closeGridForm() %}
+</form>
+</div>
+</div>
+{% endmacro %}
+
+<!--
+************************************************************************
+************************************************************************
+
+   Macros that have been used previously but are not currently in use
+
+************************************************************************
+************************************************************************
+-->
+
+<!-- Extra section at the bottom -->
+{% macro addendum(content,pageName) %}
+<div class="addendum">
+  <h4 class="heading-small">{{ content.addendum }}</h4>
+  <a href="/pyi9/{{ pageName }}" class="button">{{ content.addButton }}</a>
+</div>
+{% endmacro %}
+
+<!-- Sort code or date Macro -->
+{% macro sortCode(id,content,fields) %}
+<div>
+<fieldset class="form-date lower-space" id="{{ id }}">
+  <legend class="form-label-bold">{{ content }}</legend>
+  {% for item in fields %}
+<div class="form-group">
+<label for="{{ id }}_{{ loop.index }}"></label>
+<input class="form-control" id="{{ id }}_{{ loop.index }}" name="{{ item.name }}" {% if item.value %}value="{{ item.value }}"{% endif %} type="number">
+</div>
+{% endfor %}
+</fieldset>
+</div>
+{% endmacro %}

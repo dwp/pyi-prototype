@@ -38,5 +38,10 @@ module.exports = {
     version: 8,
     release: "07 March 2017",
     changes: ["Updated enter reference input field to start TN", "Updated enter reference field to 7 digits", "Changed all references to not completing the journey in time from 'You might not get paid' to 'You wont get paid'", "Reduced content significantly on most pages", "Removed most references to the penny transaction, instead referring to the reference number"]
+  },
+  pyi9: {
+    version: 9,
+    release: "15 May 2017",
+    changes: ["Updated image to match image likely to appear in live", "Added failure page", "Added Reference expiry page", "Added 404 page", "Added configirable settings to route to failure and expiry pages"]
   }
 };

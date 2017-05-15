@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Confirm the payment - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi9/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.bank_details %}
+
+    {{ elements.account() }}
+    <div class="main" role="main" id="content">
+    {{ elements.banner() }}
+
+    {{ elements.openGridForm('bank_details') }}
+
+    <div class="exit-link-side inline-button"><a href="/pyi9/how_verify">< Back</a></div>
+
+      {{ elements.header(content) }}
+      {{ elements.heading('2', 'large no-margin', content.heading2) }}
+      {{ elements.content(content.text, content.text2) }}
+
+      {{ elements.continue(content) }}
+
+    {{ elements.closeGridForm() }}
+    </div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

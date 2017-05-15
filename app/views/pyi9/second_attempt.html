@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Prove your identity - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pyi9/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.second_attempt %}
+
+    {{ elements.account() }}
+<div class="main" id="content" role="main">
+    {{ elements.banner() }}
+
+{{ elements.openGridForm('second_attempt') }}
+
+        {{ elements.header(content) }}
+        {{ elements.radioButtons('howVerify',content.question,'',content.radios) }}
+        {{ elements.continue(content) }}
+
+{{ elements.closeGridForm() }}
+</div>
+    {% endfor %}
+    {% endfor %}
+    {% endblock %}

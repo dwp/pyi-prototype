@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  System failure - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi9/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.system_failure %}
+
+{{ elements.account() }}
+<div class="main" id="content" role="main">
+{{ elements.banner() }}
+
+    {{ elements.openGridForm('expired') }}
+
+        {{ elements.header(content) }}
+
+    {{ elements.closeGridForm() }}
+</div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

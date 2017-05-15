@@ -18,12 +18,13 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      {{ elements.current(content.pyi8.version, content.pyi8.release, '/pyi8/to_do_page', content.pyi8.changes, '#', '0Kb') }}
+      {{ elements.current(content.pyi9.version, content.pyi9.release, '/pyi9/to_do_page', content.pyi9.changes, '#', '0Kb') }}
 
       <div class="older-versions">
         <h3 class="heading-medium index-heading-medium">Older versions</h3>
         <details>
           <summary class="older-toggle">Toggle older versions</summary>
+          {{ elements.older(content.pyi8.version, content.pyi8.release, '/pyi8/to_do_page', content.pyi8.changes, '#', '0kb')}}
           {{ elements.older(content.pyi7.version, content.pyi7.release, '/pyi7/to_do_page', content.pyi7.changes, '#', '0Kb') }}
           {{ elements.older(content.pyi6.version, content.pyi6.release, '/pyi6/to_do_page', content.pyi6.changes, '#', '0Kb') }}
           {{ elements.older(content.pyi5.version, content.pyi5.release, '/pyi5/to_do_page', content.pyi5.changes, '#', '0Kb') }}
