@@ -295,6 +295,9 @@ app.get('/pyi9/404', function(req,res) {
     data     : content.getTableData()
     });
 });
+app.post('/pyi9/404', function(req,res) {
+  res.redirect('/pyi9/to_do_page');
+});
 
 /*****
 Expired
