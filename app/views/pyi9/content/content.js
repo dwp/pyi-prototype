@@ -147,7 +147,7 @@ var data = [ {
   {
     "heading"     : "Settings page",
     "lede"        : "You can change the settings here",
-    "label"       : "Click the buttons, win a prize",
+    "label"       : "Select the user journey path you wish to use",
     "radios"      : [{"value":"Default"}, {"value":"Expired reference"}, {"value":"Payment failed"}, {"value":"System failure"}],
     "button"      : "Change settings"
   }
