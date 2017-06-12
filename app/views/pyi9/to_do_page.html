@@ -19,7 +19,16 @@
       {{ elements.toDoSection() }}
 
       {% if not bank_details.submit and not success.submit and not returning.submit %}
-      {{ elements.panel (content.alert,'blue') }}
+      <!-- {{ elements.panel (content.alert,'blue') }} -->
+      <div class="bordered-alert">
+        <div class="icon-div">
+          <i class="icon icon-important">
+            <span class="visually-hidden">Warning</span>
+          </i>
+        </div>
+        <h2> Confirm your details are correct</h2>
+        <p class="grey-text-small">This task is now complete</p>
+    </div>
       {% endif %}
 
       {% if payment_failed.submit or expired.submit %}
@@ -34,8 +43,10 @@
       {% endif %}
 
 
-      {{ elements.panel (content.alert3,'','404') }}
+      <!-- {{ elements.panel (content.alert3,'','404') }} -->
       {{ elements.panel (content.alert4,'','404') }}
+
+      <p class="grey-text-small">Completed items appear in your <a href="/pyi9/404">journal.</a></p>
 
             </div>
           </div>

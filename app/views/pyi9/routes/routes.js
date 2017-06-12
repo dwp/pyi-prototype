@@ -45,8 +45,13 @@ app.get('/pyi9/how_verify', function(req,res) {
     });
 });
 app.post('/pyi9/how_verify', function(req,res) {
-  if (req.body.howVerify == 'Get a reference sent to your bank account' ){
-  res.redirect('/pyi9/bank_details');
+//   if (req.body.howVerify == 'Get a reference sent to your bank account' ){
+//   res.redirect('/pyi9/bank_details');
+// } else {
+// res.redirect('/pyi9/404');
+// }
+if (req.body.submit == 'Go to Prove Your Identity' ){
+res.redirect('/pyi9/bank_details');
 } else {
 res.redirect('/pyi9/404');
 }

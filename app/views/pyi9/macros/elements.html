@@ -146,7 +146,7 @@
 {% else %}
 {% if pageName %}<a href="/pyi9/{{ pageName}}">{{ content | safe }}</a>
 {% else %}
-{{ content }}{% endif %}
+{{ content | safe }}{% endif %}
 {% endif %}
 </div>
 {% endmacro %}

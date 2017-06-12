@@ -14,19 +14,22 @@ var data = [ {
   "to_do_page"    : [
     {
     "alert"       : ["This is your to-do list.","You have to work through the items below. If you don't you might not get paid.","Completed items appear in your <a href='/pyi9/no_page_exists'>journal.</a>"],
-    "alert2"      : "Prove your identity",
+    "alert2"      : "Verify your identity online",
     "alert3"      : "Attend your interview",
     "alert4"      : "Answer a few equality questions(optional)",
-    "alert5"      : "Prove your identity"
+    "alert5"      : "Verify your identity online"
   },
 ],
   "how_verify"    : [
     {
-      "heading"   : "Prove your identity",
-      "lede"      : "You need to prove who you are by <strong class='addSeven'>a week from today</strong>. If you don’t you won't get paid.",
-      "revealContent" : "You can prove your identity online. You'll need to check the bank account you use for Universal Credit for a reference that we'll send.",
-      "question"  : "How do you want to prove your identity?",
-      "radios"    : [{"value":"Get a reference sent to your bank account"},{"value":"Try GOV.UK Verify again"}],
+      "heading"   : "Verify your identity online",
+    //  "lede"      : "You need to prove who you are by <strong class='addSeven'>a week from today</strong>. If you don’t you won't get paid.",
+    //  "lede"      : "Do this online with GOV.UK Verify - it'll save you spending extratime in the jobcentre",
+      "toDoTask"  : "To do",
+      "panelText" : "You'll need to <a href='/pyi9/to_do_page'>book an ID interview</a> at a jobcentre.",
+      // "revealContent" : "You can prove your identity online. You'll need to check the bank account you use for Universal Credit for a reference that we'll send.",
+      // "question"  : "How do you want to prove your identity?",
+      // "radios"    : [{"value":"Get a reference sent to your bank account"},{"value":"Try GOV.UK Verify again"}],
       "button"    : "Next"
   },
 ],
@@ -47,7 +50,8 @@ var data = [ {
     "lede"        : "We've sent a reference to your bank account. It might take a couple of hours to appear.",
     "heading2"    : "A reference has already been sent to your bank account",
     "lede2"       : "The reference might take a couple of hours to appear.",
-    "altText"     : "An image of an online bank statement",
+    "altText"     : "#",
+    "description" : "It will be a 7-digit code starting with P, for example P1234567.",
     "exitLink"    : "Go back to to-do list",
     "button"      : "Enter your reference"
   },

@@ -381,3 +381,35 @@ table.bank-details-table {
   color: $white;
   text-decoration: none;
 }
+
+.heading-interim {
+  font-size: 2.5rem;
+  color: grey;
+  margin-bottom: -2.5rem;
+}
+
+.button-break {
+  margin: 0 1.5rem 2rem 0;
+}
+
+details {
+  margin-bottom: 2.5rem;
+}
+
+.bordered-alert {
+  border: 1px solid $panel-colour;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 2.5rem 0;
+}
+
+.grey-text-small {
+  color: $secondary-text-colour;
+  font-size: 80%;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
+
+.icon-div {
+  float: left;
+  margin-right: $gutter;
+}

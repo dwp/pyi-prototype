@@ -21,7 +21,9 @@
       {% endif %}
 
 
-      {{ elements.helpImage('','','/public/images/transaction-final.png',altText) }}
+      {{ elements.helpImage('','','/public/images/transaction-final.png',content.altText) }}
+      {{ elements.content(content.description) }}
+
       {{ elements.continue(content,'reminder', 'side') }}
 
     {{ elements.closeGridForm() }}
