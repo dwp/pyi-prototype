@@ -54,6 +54,13 @@ researchFindings: ["Users said they wouldn’t read all of the information, that
     version: 9,
     release: "15 May 2017",
     changes: ["Reference: p9979630","Added sentence about going to a cashpoint or your bank branch to check statement [UR]", "Added bank statement image to 'enter your reference page' for people who choose the save and return option [UR]","Added ability to configure prototype settings to route users to failure and expiry pages", "Added payment failure page", "Added reference expiry page",
-"Added 404 page (system failure)"]
+"Added 404 page (system failure)"],
+    researchFindings: []
+  },
+  pyi10: {
+    version: 10,
+    release: "13 July 2017",
+    changes: ["none yet"],
+    researchFindings: ["none yet"]
   }
 };

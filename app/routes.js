@@ -21,3 +21,4 @@ require('./views/pyi6/routes/routes')(app);
 require('./views/pyi7/routes/routes')(app);
 require('./views/pyi8/routes/routes')(app);
 require('./views/pyi9/routes/routes')(app);
+require('./views/pyi10/routes/routes')(app);

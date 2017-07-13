@@ -18,10 +18,11 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      {{ elements.current(content.pyi9.version, content.pyi9.release, '/pyi9/to_do_page', content.pyi9.changes, '#', '0Kb') }}
+      {{ elements.current(content.pyi10.version, content.pyi10.release, '/pyi10/to_do_page', content.pyi10.changes, content.pyi10.researchFindings, '0Kb') }}
 
       <div class="older-versions">
         <h3 class="heading-medium index-heading-medium">Older versions</h3>
+          {{ elements.older(content.pyi9.version, content.pyi9.release, '/pyi9/to_do_page', content.pyi9.changes, content.pyi9.researchFindings, '0Kb') }}
           {{ elements.older(content.pyi8.version, content.pyi8.release, '/pyi8/to_do_page', content.pyi8.changes, content.pyi8.researchFindings, '0kb')}}
           {{ elements.older(content.pyi7.version, content.pyi7.release, '/pyi7/to_do_page', content.pyi7.changes, content.pyi7.researchFindings, '0Kb') }}
           {{ elements.older(content.pyi6.version, content.pyi6.release, '/pyi6/to_do_page', content.pyi6.changes, content.pyi6.researchFindings, '0Kb') }}

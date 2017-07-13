@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  To do page - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi10/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.to_do_page %}
+
+{{ elements.account() }}
+<div class="main" id="content" role="main">
+{{ elements.banner() }}
+
+  <div class="grid-row">
+    <div class="column-full">
+
+      {{ elements.toDoSection() }}
+
+      {% if not bank_details.submit and not success.submit and not returning.submit %}
+      <!-- {{ elements.panel (content.alert,'blue') }} -->
+      <div class="bordered-alert">
+        <div class="icon-div">
+          <i class="icon icon-important">
+            <span class="visually-hidden">Warning</span>
+          </i>
+        </div>
+        <h2> Confirm your details are correct</h2>
+        <p class="grey-text-small">This task is now complete</p>
+    </div>
+      {% endif %}
+
+
+      {% if not success.submit %}
+      {{ elements.panel (content.alert6,'','404') }}
+      {% endif %}
+      {% if payment_failed or expired.submit %}
+      {{ elements.panel (content.alert7,'','404') }}
+
+      {% elif returning.login === 'returned' %}
+      {{ elements.panel (content.alert5,'','second_entry') }}
+      {% elif not bank_details.submit and not success.submit and not returning.login %}
+      {{ elements.panel (content.alert2,'','how_verify') }}
+      {% elif bank_details.submit.length and not success.submit %}
+      {{ elements.panel (content.alert5,'','second_entry') }}
+      {% elif success.submit or payment_failed %}
+      {{ elements.panel (content.alert7,'','404') }}
+
+      {% endif %}
+
+
+      <!-- {{ elements.panel (content.alert3,'','404') }} -->
+      {{ elements.panel (content.alert4,'','404') }}
+
+
+      <p class="grey-text-small">Completed items appear in your <a href="/pyi10/404">journal.</a></p>
+
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+        {% endfor %}
+        {% endblock %}
