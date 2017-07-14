@@ -80,7 +80,7 @@ var data = [ {
 ],
 "reminder"      : [
   {
-    "heading"   : "You have until <strong class='addSeven'>a week from today</strong> to enter your reference to prove your identity.",
+    "heading"   : "You have until <strong class='addSeven'>a week from today</strong> to enter your reference to link your bank account.",
     "lede"      : "If you don’t you won't get paid.",
     "button"    : "Continue to your to-do list"
   },
@@ -188,7 +188,7 @@ var data = [ {
 "expired"    : [
   {
     "heading"   : "Sorry, you can't use this service",
-    "lede"      : "Your 7 days to prove your identity online has run out.",
+    "lede"      : "Your 7 days to link your bank account has run out.",
     "additional"  : "You’ll need to book an appointment in person.",
     "button"    : "Go back to Universal Credit"
 },

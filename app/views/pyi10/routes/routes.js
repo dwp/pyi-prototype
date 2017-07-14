@@ -27,6 +27,7 @@ app.get('/pyi10/to_do_page', function(req,res) {
       bank_details  : req.session['pyi10-bank_details'],
       enter_bank_details: req.session['pyi10-enter_bank_details'],
       success       : req.session['pyi10-success'],
+      failure       : req.session['pyi10-failure'],
       returning     : req.session['pyi10-uc_login'],
       payment_failed: req.session['pyi10-payment_failed'],
       expired       : req.session['pyi10-expired']
@@ -69,11 +70,7 @@ app.get('/pyi10/bank_details', function(req,res) {
 });
 app.post('/pyi10/bank_details', function(req,res) {
   req.session['pyi10-bank_details'] = req.body;
-  if(routeSettings === "failedPayment") {
-    res.redirect('/pyi10/payment_failed');
-  } else {
   res.redirect('/pyi10/has_roll_number');
-}
 });
 
 /*****
@@ -105,7 +102,11 @@ app.get('/pyi10/enter_bank_details', function(req,res) {
 });
 app.post('/pyi10/enter_bank_details', function(req,res) {
   req.session['pyi10-enter_bank_details'] = req.body;
+  if(routeSettings === "failedPayment") {
+    res.redirect('/pyi10/payment_failed');
+  } else {
   res.redirect('/pyi10/bank_submitted');
+}
 });
 
 /*****
