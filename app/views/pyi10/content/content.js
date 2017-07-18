@@ -110,7 +110,7 @@ var data = [ {
     "attemptsText"  : ["once","twice"],
       "button"      : "Try again",
       "exitLink"    : "Return to your To-do list and enter the reference later",
-      "button2"     : "Try another option",
+      "button2"     : "Go back to to-do list",
       "exitLink2"   : "",
   },
 ],

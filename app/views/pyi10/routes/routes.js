@@ -218,7 +218,7 @@ app.post('/pyi10/failure', function(req,res) {
     if (req.body.verifyAgain == 'Try GOV.UK Verify again') {
       res.redirect('/pyi10/404');
     } else if (req.body.verifyAgain == 'Try using your bank account again') {
-      res.redirect('/pyi10/second_attempt');
+      res.redirect('/pyi10/to_do_page');
     } else if (req.body.verifyAgain == 'Attend a face to face interview') {
       res.redirect('/pyi10/404');
     } else {

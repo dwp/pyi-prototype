@@ -45,7 +45,7 @@
       {{ elements.panel (content.alert2,'','how_verify') }}
       {% elif bank_details.submit.length and not success.submit %}
       {{ elements.panel (content.alert5,'','second_entry') }}
-      {% elif success.submit or payment_failed %}
+      {% elif success.submit or payment_failed or failure.submit %}
       {{ elements.panel (content.alert7,'','404') }}
 
       {% endif %}
