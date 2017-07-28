@@ -62,5 +62,11 @@ researchFindings: ["Users said they wouldn’t read all of the information, that
     release: "13 July 2017",
     changes: ["none yet"],
     researchFindings: ["none yet"]
+},
+  pyi11: {
+    version: 11,
+    release: "28 July 2017",
+    changes: ["none yet"],
+    researchFindings: ["none yet"]
   }
 };
