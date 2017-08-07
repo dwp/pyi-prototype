@@ -83,7 +83,7 @@ var data = [ {
 ],
 "reminder"      : [
   {
-    "heading"   : "You have until <strong class='addSeven'>a week from today</strong> to link your bank account.",
+    "heading"   : "You have until <strong class='addSeven'>a week from today</strong> to use your bank account to help prove your identity.",
     "lede"      : "In the meantime you can book your interview at the jobcentre to make sure there are no delays.",
     "button"    : "Book interview",
     "exitLink"    : "Continue to your to-do list",
