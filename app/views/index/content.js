@@ -47,26 +47,26 @@ researchFindings: ["Users said they wouldn’t read all of the information, that
     release: "07 March 2017",
     changes: ["Reference: p9979630","Removed references to the penny transaction, instead referring to the reference number [UR]","Changed 'Use your bank account' on initial radio buttons to 'Get a reference sent to your bank account' [UR]",
 "Reduced content significantly on most pages [UR]", "Changed all references to not completing the journey in time from 'You might not get paid' to 'You won't get paid' as a result of advice from OED"],
-  researchFindings: ["People don't fully understand what will be happening", "Many users don't read lengthy text and therefore don't understand the process", "A few people thought they couldn't use the system as their preferred method of banking wasn't listed", "People were able to successfully locate and enter the reference with support", "People weren't sure what format the reference should be entered in or how to return to the screen to enter the reference"
-]
+  researchFindings: ["https://confluence.burbank.working-age.digital/confluence/display/PYID/1p+Phase+One+Pilot", "People don't fully understand what will be happening", "Many users don't read lengthy text and therefore don't understand the process", "A few people thought they couldn't use the system as their preferred method of banking wasn't listed", "People were able to successfully locate and enter the reference with support", "People weren't sure what format the reference should be entered or how to return to the screen to enter the reference", "Of the 15 participants sent a reference: 10 successfully found and entered the reference into the prototype; 4 did not return to enter their reference number and couldn't be reached by telephone; 1 hadn't had time to find their reference number when we called"]
   },
   pyi9: {
     version: 9,
     release: "15 May 2017",
-    changes: ["Reference: p9979630","Added sentence about going to a cashpoint or your bank branch to check statement [UR]", "Added bank statement image to 'enter your reference page' for people who choose the save and return option [UR]","Added ability to configure prototype settings to route users to failure and expiry pages", "Added payment failure page", "Added reference expiry page",
+    changes: ["Reference: p9979630","Added sentence about going to a cashpoint or your bank branch to check statement [UR]", "Added bank statement image to 'enter your reference page' for people who choose the save and return option [UR]", "Added text explaining bank statement image for people who may not understand image", "Added ability to configure prototype settings to route users to failure and expiry pages", "Added payment failure page", "Added reference expiry page",
 "Added 404 page (system failure)"],
-    researchFindings: []
+    researchFindings: ["https://confluence.burbank.working-age.digital/confluence/display/PYID/Swindon+Jobcentre+and+Library+-+Phase+Two", "Issues with reference: penny coming through but reference showing as 'DWPGB - FB FUNDING' (Nationwide)"]
   },
   pyi10: {
     version: 10,
     release: "13 July 2017",
-    changes: ["none yet"],
-    researchFindings: ["none yet"]
+    changes: ["Reference: p9979630", "Changes to take account of new user journey with added manual bank checking because of less integration with Universal Credit full service", "Changed all references to proving identity to 'link your bank account' (as identity will not be proved in service - will only be proved after DWP employee has checked bank details)", "Added bank details gather screen", "Added question about roll number to exclude people with building society accounts", "Added instruction to book an ID interview after successfully completing service"],
+    researchFindings: ["https://confluence.burbank.working-age.digital/confluence/display/PYID/Southampton+Jobcentre+-+Prototype+testing", "Issues with reference: penny coming through but reference showing as 'DWPGB - FB FUNDING' (Barclays, Co-op)", "People didn't know that 'link your bank account' was to do with identity, most thought that it was about receiving their benefit payment",
+ "Most people would chose the 'Verify your identity online' to-do first", "Most people were unsure about what a roll or reference number was or how to find out if they had one", "If people could find this out, some thought they would return, but others would drop out at this point", "Some of the people we spoke to were wary about entering bank details into a website because of negative past experiences (online scams), whereas others had no problem with this", "Of the people concerned about this, some did it anyway because they felt they had to or everything else they'd done would become a waste of time", "If there was something wrong, some people would follow the instructions on the error pages and some would seek support from offline sources (phone or in jobcentre)"]
 },
   pyi11: {
     version: 11,
     release: "28 July 2017",
-    changes: ["none yet"],
-    researchFindings: ["none yet"]
+    changes: ["Reference: p9979630", "New content making it clearer that the service is to do with verifying identity and is an alternative to Verify", "Added option to come for face to face ID interview", "'Link your bank account' wording taken out","Content added to ensure people still book ID interview"],
+    researchFindings: ["Rugby job centre"]
   }
 };
