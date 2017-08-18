@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Reference not recognised - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi12a/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.failure %}
+
+{{ elements.account() }}
+<div class="main" id="content" role="main">
+{{ elements.banner() }}
+
+    {{ elements.openGridForm('failure') }}
+
+      {% if attempts < 3 %}
+
+        {{ elements.header(content) }}
+        {{ elements.content(content.info) }}
+        {{ elements.attempts(attempts,3,content.attemptsText) }}
+        {{ elements.continue(content) }}
+
+      {% else %}
+
+        {{ elements.header('','',content.heading2,content.lede2,content.additional2) }}
+      <input type="hidden" name="verifyAgain" value="Try using your bank account again">
+        {{ elements.continue('','to_do_page','',content.button2,content.exitLink2) }}
+
+      {% endif %}
+
+    {{ elements.closeGridForm() }}
+</div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

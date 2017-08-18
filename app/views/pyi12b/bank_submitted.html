@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Find your reference - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi12b/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.bank_submitted %}
+
+    {{ elements.account() }}
+    <div class="main" id="content" role="main">
+    {{ elements.banner() }}
+
+    {{ elements.openGridForm('bank_submitted') }}
+      {% if not twoPayments %}
+      {{ elements.header(content) }}
+      {% else %}
+      {{ elements.header("", "", content.heading2, content.lede2) }}
+      {% endif %}
+
+
+      {{ elements.helpImage('','','/public/images/transaction-final.png',content.altText) }}
+      {{ elements.content(content.description) }}
+
+      {{ elements.continue(content,'reminder', 'side') }}
+
+    {{ elements.closeGridForm() }}
+    </div>
+
+  {% endfor %}
+    {% endfor %}
+      {% endblock %}

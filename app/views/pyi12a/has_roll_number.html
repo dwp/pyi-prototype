@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Have a roll number - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi12a/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.has_roll_number %}
+
+    {{ elements.account() }}
+    <div class="main" role="main" id="content">
+    {{ elements.banner() }}
+
+    {{ elements.openGridForm('has_roll_number') }}
+
+      {{ elements.header(content) }}
+
+
+      {{ elements.radioButtons('rollNumber','Does your bank account have a building society roll number','', content.radios, '',type='radio') }}
+
+
+      {{ elements.continue(content, 'to_do_page', 'side') }}
+
+    {{ elements.closeGridForm() }}
+    </div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Prove your identity - Settings page
+{% endblock %}
+
+{% block content %}
+
+{% import "pyi12a/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.settings %}
+
+    {{ elements.account() }}
+<div class="main" id="content" role="main">
+    {{ elements.banner() }}
+
+{{ elements.openGridForm('settings') }}
+
+        {{ elements.header(content) }}
+        {{ elements.radioButtons('settings', content.label, '', content.radios)}}
+        {{ elements.continue(content) }}
+
+{{ elements.closeGridForm() }}
+</div>
+    {% endfor %}
+    {% endfor %}
+    {% endblock %}

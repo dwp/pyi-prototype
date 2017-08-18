@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Prove your identity - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pyi12b/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.how_verify %}
+
+    {{ elements.account() }}
+<div class="main" id="content" role="main">
+    {{ elements.banner() }}
+    {{ elements.toDoSection() }}
+    {{ elements.openGridForm('how_verify') }}
+
+
+    {{ elements.heading('3', 'interim', content.toDoTask) }}
+    {{ elements.header(content) }}
+    {{ elements.radioButtons('howVerify', 'Choose the option you prefer.', '', content.radios) }}
+        <input class="button button-break" type="submit" name="submit" value="Next">
+        <div class="exit-link-side inline-button"><a href="/pyi12b/to_do_page">Go back to to-do list</a></div>
+
+{{ elements.closeGridForm() }}
+</div>
+    {% endfor %}
+    {% endfor %}
+    {% endblock %}
