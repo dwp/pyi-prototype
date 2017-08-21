@@ -34,7 +34,7 @@ var data = [ {
   "how_verify"    : [
     {
       "heading"   : "Verify your identity",
-      "lede"      : "Use your bank account to help prove your identity - this could save you time n the jobcentre",
+      "lede"      : "Use your bank account to help prove your identity - this could save you time in the jobcentre.",
       "toDoTask"  : "To do",
       "panelText" : "You'll need to <a href='/pyi12a/to_do_page'>book an ID interview</a> at a jobcentre.",
       "button"    : "Next"
@@ -71,7 +71,7 @@ var data = [ {
 "bank_submitted"  : [
   {
     "heading"     : "Find your reference",
-    "lede"        : "A reference has been sent to your bank account.",
+    "lede"        : "A reference has been sent to your bank account. It might take up to 2 hours to appear.",
     "heading2"    : "A reference has already been sent to your bank account",
     "lede2"       : "The reference might take a couple of hours to appear.",
     "altText"     : "#",

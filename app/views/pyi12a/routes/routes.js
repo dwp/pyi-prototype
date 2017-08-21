@@ -64,11 +64,7 @@ app.get('/pyi12a/how_verify', function(req,res) {
     });
 });
 app.post('/pyi12a/how_verify', function(req,res) {
-    if (req.body.howVerify == 'Use your bank account to help prove your identity - this could save you time in the job centre' ){
     res.redirect('/pyi12a/bank_details');
-    } else {
-    res.redirect('/pyi12a/404');
-    }
 });
 
 /*****

@@ -45,8 +45,8 @@ var data = [ {
     {
       "heading"   : "Get a reference sent to your bank account",
       "lede"      : "How it works",
-      "additional" : "Check your bank account using online, mobile or telephone banking. Or go to a cash machine or your branch to get a statement printout.",
-      "additional2": "Find the reference and tell is to prove your identity.",
+      "additional" : "Enter the details of the bank account you use for Universal Credit on the next page.",
+      "additional2": "Check your bank account for a reference from Universal Credit online, on your mobile app or using telephone banking. Or get a statement printed at a cash machine or in your branch.",
       "exitLink"  : "Go back to to-do list",
       "button"    : "Enter bank details"
   },
@@ -72,7 +72,7 @@ var data = [ {
 "bank_submitted"  : [
   {
     "heading"     : "Find your reference",
-    "lede"        : "A reference has been sent to your bank account.",
+    "lede"        : "A reference has been sent to your bank account. It might take up to 2 hours to appear.",
     "heading2"    : "A reference has already been sent to your bank account",
     "lede2"       : "The reference might take a couple of hours to appear.",
     "altText"     : "#",
