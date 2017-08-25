@@ -68,7 +68,8 @@ module.exports = {
         version: 11,
         release: "28 July 2017",
         changes: ["Reference: p9979630", "New content making it clearer that the service is to do with verifying identity and is an alternative to Verify", "Added option to come for face to face ID interview", "'Link your bank account' wording taken out","Content added to ensure people still book ID interview"],
-        researchFindings: ["Rugby job centre"]
+        researchFindings: ["A large number of the people we spoke to were concerned about using their bank details online. For some of these people, they would not continue using the service. Others would consider continuing but would be wary.", "From all of the error pages, people wanted to call or visit the jobcentre to either book an appointment or ask for help.",
+        "Some people are still struggling to understand the reference."]
     },
     pyi12a: {
         version: '12a',
