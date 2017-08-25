@@ -73,7 +73,7 @@ module.exports = {
     pyi12a: {
         version: '12a',
         release: "18 August 2017",
-        changes: ["Alteration to how-verify page to remove option for face to face"],
+        changes: ["Alteration to how-verify page to remove option for face to face" ],
         researchFindings: ["Awaiting research"]
     },
     pyi12b: {
