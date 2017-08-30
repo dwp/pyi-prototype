@@ -72,7 +72,7 @@ var data = [ {
 "bank_submitted"  : [
   {
     "heading"     : "Find your reference",
-    "lede"        : "A reference has been sent to your bank account.",
+    "lede"        : "A reference has been sent to your bank account. It may take up to 2 hours to appear.",
     "heading2"    : "A reference has already been sent to your bank account",
     "lede2"       : "The reference might take a couple of hours to appear.",
     "altText"     : "#",
