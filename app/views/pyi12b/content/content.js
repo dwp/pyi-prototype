@@ -76,7 +76,7 @@ var data = [ {
     "heading2"    : "A reference has already been sent to your bank account",
     "lede2"       : "The reference might take a couple of hours to appear.",
     "altText"     : "#",
-    "description" : "It will be a 7-digit code starting with P, for example P1234567.",
+    "description" : "It will be a 6-digit code, for example 12 34 56.",
     "exitLink"    : "Enter the reference later",
     "button"      : "Enter your reference"
   },
@@ -177,14 +177,14 @@ var data = [ {
   {
     "heading"   : "Sorry, you can't use this service",
     "lede"      : "Your 7 days to link your bank account has run out.",
-    "additional"  : "You’ll need to book an appointment in person.",
+    "additional"  : "You need to book an ID interview at a jobcentre.",
     "button"    : "Go back to Universal Credit"
 },
 ],
 "payment_failed"    : [
   {
     "heading"   : "Something’s gone wrong",
-    "lede"      : "Sorry, you can’t use this service. You’ll need to book an appointment in person.",
+    "lede"      : "Sorry, you can’t use this service. You need to book an ID interview at a jobcentre.",
     "button"    : "Go back to Universal Credit"
 },
 ],
