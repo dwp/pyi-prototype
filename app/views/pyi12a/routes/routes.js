@@ -164,7 +164,7 @@ app.get('/pyi12a/enter_reference', function(req,res) {
     });
 });
 app.post('/pyi12a/enter_reference', function(req,res) {
-  if (req.body.codeTestInput.toLowerCase() == 'p9979630') {
+    if (req.body.codeTestInput.replace(/\s+/g, '') === '997963') {
     switch(routeSettings) {
       case "failedSystem":
         res.redirect('/pyi12a/system_failure');

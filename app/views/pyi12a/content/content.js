@@ -176,14 +176,14 @@ var data = [ {
   {
     "heading"   : "Sorry, you can't use this service",
     "lede"      : "Your 7 days to link your bank account has run out.",
-    "additional"  : "You need to book an ID interview at a jobcentre.",
+    "additional"  : "You need to <a href='#'>book an ID interview</a> at a jobcentre.",
     "button"    : "Go back to Universal Credit"
 },
 ],
 "payment_failed"    : [
   {
     "heading"   : "Something’s gone wrong",
-    "lede"      : "Sorry, you can’t use this service. You need to book an ID interview at a jobcentre.",
+    "lede"      : "Sorry, you can’t use this service. You need to <a href='#'>book an ID interview</a> at a jobcentre.",
     "button"    : "Go back to Universal Credit"
 },
 ],
