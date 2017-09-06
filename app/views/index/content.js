@@ -74,13 +74,13 @@ module.exports = {
     pyi12a: {
         version: '12a',
         release: "18 August 2017",
-        changes: ["Alteration to how-verify page to remove option for face to face" ],
-        researchFindings: ["Awaiting research"]
+        changes: ["On the Verify your identity to do (pyi12a/how_verify) 'Bring your documents into a jobcentre' changed to 'I can't do this online'","User research on prototype 11 showed a substantial increase in people who did not want to use PYI because of unease about using their bank account","This change is to test whether people chose not to continue because they could see that they did not have to because the option to bring documents in person was explicit", "So we have made the offline option less explicit and presented it as only if you’re unable to use online services", "If the hypothesis is correct we would expect to see an increase in people happy to continue to PYI compared with prototype 11" ],
+        researchFindings: ["Lowestoft 7-8 September"]
     },
     pyi12b: {
         version: '12b',
         release: "18 August 2017",
-        changes: ["Additional content added to bank details page explaining how the process works", "Additional content added to how verify page explaining how the proces works"],
-        researchFindings: ["Awaiting research"]
+        changes: ["On the Verify your identity to do (pyi12a/how_verify) ‘Use your bank account to help prove your identity - this could save you time in the job centre’ changed to ‘Get a reference sent to the bank account you use for Universal Credit’", "User research on prototype 11 showed a substantial increase in people who did not want to use PYI because of unease about using their bank account", "This change is to test whether people chose not to continue because the content did not explain the service well enough - and perhaps made it sound more intrusive than it is", "So we have changed the content to make it clear that the bank account use is limited to a reference being sent to the person’s UC bank account", "If the hypothesis is correct we would expect to see an increase in people happy to continue to PYI compared with prototype 11"],
+        researchFindings: ["Lowestoft 7-8 September"]
     }
 };
