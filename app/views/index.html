@@ -16,15 +16,16 @@
 
 <main id="content" role="main">
   <div class="grid-row">
-    <div class="column-two-thirds"> 
+    <div class="column-two-thirds">
 
-      {{ elements.current(content.pyi12a.version, content.pyi12a.release, '/pyi12a/to_do_page', content.pyi12a.changes, content.pyi12a.researchFindings, '0Kb') }}
       <br />
       <br />
-      {{ elements.current(content.pyi12b.version, content.pyi12b.release, '/pyi12b/to_do_page', content.pyi12b.changes, content.pyi12b.researchFindings, '0Kb') }}
+      {{ elements.current(content.pyi13.version, content.pyi13.release, '/pyi13/to_do_page', content.pyi13.changes, content.pyi13.researchFindings, '0Kb') }}
 
       <div class="older-versions">
         <h3 class="heading-medium index-heading-medium">Older versions</h3>
+        {{ elements.older(content.pyi12a.version, content.pyi12a.release, '/pyi12a/to_do_page', content.pyi12a.changes, content.pyi12a.researchFindings, '0Kb') }}
+        {{ elements.older(content.pyi12b.version, content.pyi12b.release, '/pyi12b/to_do_page', content.pyi12b.changes, content.pyi12b.researchFindings, '0Kb') }}
         {{ elements.older(content.pyi11.version, content.pyi11.release, '/pyi11/to_do_page', content.pyi11.changes, content.pyi11.researchFindings, '0Kb') }}
         {{ elements.older(content.pyi10.version, content.pyi10.release, '/pyi10/to_do_page', content.pyi10.changes, content.pyi10.researchFindings, '0Kb') }}
         {{ elements.older(content.pyi9.version, content.pyi9.release, '/pyi9/to_do_page', content.pyi9.changes, content.pyi9.researchFindings, '0Kb') }}

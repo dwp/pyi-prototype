@@ -82,5 +82,11 @@ module.exports = {
         release: "18 August 2017",
         changes: ["We’ve seen: a substantial increase in people too uneasy about using their bank account to continue to the Prove your Identity service", "We believe this is because: the content did not explain the service well enough - and perhaps made it sound more intrusive than it is", "So if we:  Change ‘Use your bank account to help prove your identity - this could save you time in the job centre’ to ‘Get a reference sent to the bank account you use for Universal Credit’ on the Verify your identity to do (pyi12b/how_verify)", "We’ll see: more people choose to use the service" ],
         researchFindings: ["Lowestoft 7-8 September 2017"]
+    },
+    pyi13: {
+        version: 13,
+        release: "12 September 2017",
+        changes: ["Delete UC full service screens", "Added explanation text to roll number page"],
+        researchFindings: [""]
     }
 };

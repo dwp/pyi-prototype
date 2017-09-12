@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Payment Failed - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi13/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.payment_failed %}
+
+{{ elements.account() }}
+<div class="main" id="content" role="main">
+{{ elements.banner() }}
+
+    {{ elements.openGridForm('payment_failed') }}
+
+        {% if rollNumber.rollNumber === 'Yes' %}
+        <h1 class="heading-xlarge form-title">Sorry, you can't use this service</h1>
+        <p>It looks like you have a building society account. People with building society accounts cannot yet use this service.</p>
+        <p>You'll need to <a href="#">book an ID interview</a> in person.</p>
+        <button name="submit" class="button" type="submit">Book an ID interview</button>
+        {% else %}
+        {{ elements.header(content) }}
+        {{ elements.continue(content) }}
+        {% endif %}
+
+    {{ elements.closeGridForm() }}
+</div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Prove your identity - Something's gone wrong
+{% endblock %}
+
+{% block content %}
+
+{% import "pyi13/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page[404] %}
+
+    {{ elements.account() }}
+      <div class="main" id="content" role="main">
+    {{ elements.banner() }}
+
+{{ elements.openGridForm('settings') }}
+
+        {{ elements.header(content) }}
+
+{{ elements.closeGridForm() }}
+</div>
+    {% endfor %}
+    {% endfor %}
+    {% endblock %}

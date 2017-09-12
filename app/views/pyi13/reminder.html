@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Use your bank account - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi13/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.reminder %}
+
+  {{ elements.account() }}
+  <div class="main" id="content" role="main">
+  {{ elements.banner() }}
+
+  {{ elements.openGridForm('reminder') }}
+
+    {{ elements.heading('2', 'large lower-space', content.heading) }}
+    {{ elements.content(content.lede,'','',true) }}
+    {{ elements.continue(content,'to_do_page','side') }}
+
+  {{ elements.closeGridForm() }}
+  </div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

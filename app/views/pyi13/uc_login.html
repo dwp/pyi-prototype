@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  UC Login page - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi13/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.UC_login %}
+
+<!-- {{ elements.account() }} -->
+<div class="main" id="content" role="main">
+{{ elements.banner() }}
+
+{{ elements.openGridForm('uc_login') }}
+
+  {{ elements.header(content) }}
+
+    {{ elements.inputField('ucUser',content.question,'','3-4') }}
+    {{ elements.inputField('ucPass',content.question2,'', '3-4') }}
+
+  {{ elements.continue(content,'', '') }}
+
+  <details role="group" class="uc-login-details">
+  <summary role="button"><span class="summary">Problems signing in?</span></summary>
+  <div class="panel panel-indent">
+    <p class="form-hint">You can't sign in with your Universal Jobmatch user ID and password.</p>
+    <a href="#">Forgotten your username?</a><br />
+    <a href="#">Forgotten your password?</a>
+  </div>
+  </details>
+
+  <h4 class="heading-small">Don't have an online account?</h4>
+  <p>You may be able to use the <a href="#">Universal Credit online service</a> to:</p>
+  <ul class="list list-bullet">
+    <li>make a new claim</li>
+    <li>switch your existing Universal Credit account online</li>
+  </ul>
+
+  <h4 class="heading-small">Used GOV.UK Verify to confirm your identity?</h4>
+  <p>If you have an online Universal Credit account, you can also <a href="#">sign in with GOV.UK Verify</a></p>
+
+  <input type="hidden" name="login" value="returned">
+
+{{ elements.closeGridForm() }}
+</div>
+
+
+        {% endfor %}
+        {% endfor %}
+        {% endblock %}
