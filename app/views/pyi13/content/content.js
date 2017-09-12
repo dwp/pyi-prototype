@@ -42,23 +42,23 @@ var data = [ {
 ],
   "bank_details"  : [
     {
-      "heading"   : "Use your bank account to help prove your identity",
-      "lede"      : "How it works",
-      "additional" : "Enter the details of the bank account you want to use for Universal Credit on the next page.",
-      "additional2": "Check your bank account for a reference from Universal Credit online, on your mobile app or using telephone banking. Or get a statement printed at a cash machine or in your branch.",
-      "exitLink"  : "Go back to to-do list",
-      "button"    : "Enter bank details"
+      "heading"   : "Use your bank account to confirm your identity",
+      "lede"      : "This is a secure government service to confirm your identity.",
+      "additional" : "You’ll need to check your bank account for a reference that Universal Credit will send online, on your mobile app or using telephone banking. Or get a statement printed at a cash machine or in your branch.",
+      "additional2": "",
+      "exitLink"  : "Go to Universal Credit sign in",
+      "button"    : "Next"
   },
 ],
 "has_roll_number"  : [
   {
-    "heading"   : "Bank account details: Roll number",
+    "heading"   : "Bank account details: roll number",
     "lede"      : "Some accounts need a roll or reference number for payments",
     "summary"   : "What is this?",
     "details"   : "Most standard bank accounts have an account number and a sort code. But some building society accounts also have a roll number - a reference code with letters and numbers. If you have one, you’ll have used it to make payments.",
     "radios"    : [{"value": "Yes"}, {"value": "No"}],
-    "exitLink"  : "Go back to to-do list",
-    "button"    : "Continue"
+    "exitLink"  : "Go to Universal Credit sign in",
+    "button"    : "Next"
 },
 ],
 "enter_bank_details"  : [
@@ -66,7 +66,7 @@ var data = [ {
     "heading"   : "Your bank details",
     "text"      : "Enter the details of the bank account you will use for your Universal Credit payment.",
     "text4"      : "Make sure the details look exactly the same as they do on your bank card.",
-    "exitLink"  : "Go back to to-do list",
+    "exitLink"  : "Go to Universal Credit sign in",
     "button"    : "Send the reference"
 },
 ],
@@ -75,7 +75,7 @@ var data = [ {
     "heading"     : "Find your reference",
     "lede"        : "A reference has been sent to your bank account. It might take up to 2 hours to appear.",
     "heading2"    : "A reference has already been sent to your bank account",
-    "lede2"       : "The reference might take a couple of hours to appear.",
+    "lede2"       : "The reference  might take a couple of hours to appear.",
     "altText"     : "#",
     "description" : "It will be a 6-digit code, for example 12 34 56.",
     "exitLink"    : "Enter the reference later",
@@ -84,10 +84,10 @@ var data = [ {
 ],
 "reminder"      : [
   {
-    "heading"   : "You have until <strong class='addSeven'>a week from today</strong> to use your bank account to help prove your identity.",
-    "lede"      : "In the meantime you can book your interview at the jobcentre to make sure there are no delays.",
-    "button"    : "Book interview",
-    "exitLink"    : "Continue to your to-do list",
+    "heading"   : "You have until Wednesday 20 September to confirm your identity",
+    "lede"      : "You also need to sign back in to Universal Credit to book an interview at a job centre. Book as soon as you can or you might have to claim again.",
+    "button"    : "",
+    "exitLink"    : "Go to Universal Credit sign in",
 
   },
 ],
@@ -102,9 +102,9 @@ var data = [ {
   "success"       : [
     {
     "heading"     : "You have correctly entered the reference number",
-    "lede"        : "If you have not already, you need to book an interview at a jobcentre.",
-    "button"      : "Book my interview",
-    "exitLink"    : "Go back to to-do list"
+    "lede"        : "Sign in to Universal Credit to book an appointment at a job centre, if you haven’t already. You’ll need to bring your identity documents with you.",
+    "button"      : "",
+    "exitLink"    : "Go to Universal Credit sign in"
   },
 ],
   "failure"       : [
@@ -112,12 +112,12 @@ var data = [ {
     "heading"       : "Reference not recognised",
     "heading2"      : "You have not been able to give the correct reference",
     "lede"          : "Check the reference and try again.",
-    "lede2"         : "You need to book an ID interview at a jobcentre.",
+    "lede2"         : "Sign in to Universal Credit to book an appointment at a job centre, if you haven’t already.",
     "attemptsText"  : ["once","twice"],
       "button"      : "Try again",
       "exitLink"    : "Return to your To-do list and enter the reference later",
-      "button2"     : "Book ID interview",
-      "exitLink2"   : "",
+      "button2"     : "",
+      "exitLink2"   : "Go to Universal Credit sign in",
   },
 ],
 "three_fails"       : [
