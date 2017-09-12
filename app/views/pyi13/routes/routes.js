@@ -14,7 +14,7 @@ app.get('/pyi13/uc_login', function(req, res) {
 });
 app.post('/pyi13/uc_login', function(req, res) {
   req.session['pyi13-uc_login'] = req.body;
-  res.redirect('/pyi13/to_do_page');
+  res.redirect('/pyi13/bank_details');
 });
 
 /********
@@ -119,7 +119,7 @@ app.post('/pyi13/reminder', function(req,res) {
     if(req.body.submit === 'Book interview') {
         res.redirect('/pyi13/404');
     } else {
-        res.redirect('/pyi13/to_do_page');
+        res.redirect('/pyi13/uc_login');
     }
 });
 
@@ -164,7 +164,7 @@ app.get('/pyi13/no_page_exists', function(req,res) {
     });
 });
 app.post('/pyi13/no_page_exists', function(req,res) {
-  res.redirect('/pyi13/to_do_page');
+  res.redirect('/pyi13/bank_details');
 });
 
 /********
@@ -181,7 +181,7 @@ app.post('/pyi13/success', function(req,res) {
   if(req.body.submit === "Book my interview") {
       res.redirect('/pyi13/404');
   } else {
-     res.redirect('/pyi13/to_do_page');
+     res.redirect('/pyi13/uc_login');
   }
 });
 
@@ -205,7 +205,7 @@ app.post('/pyi13/failure', function(req,res) {
     if (req.body.verifyAgain == 'Try GOV.UK Verify again') {
       res.redirect('/pyi13/404');
     } else if (req.body.verifyAgain == 'Try using your bank account again') {
-      res.redirect('/pyi13/to_do_page');
+      res.redirect('/pyi13/bank_details');
     } else if (req.body.verifyAgain == 'Attend a face to face interview') {
       res.redirect('/pyi13/404');
     } else {
@@ -240,7 +240,7 @@ app.get('/pyi13/reset', function(req,res) {
 app.post('/pyi13/reset', function(req,res) {
   routeSettings = "default";
   req.session.destroy();
-  res.redirect('/pyi13/to_do_page');
+  res.redirect('/pyi13/bank_details');
 });
 
 /**************
@@ -267,7 +267,7 @@ app.post('/pyi13/settings', function(req, res) {
       routeSettings = "default";
       break;
   }
-  res.redirect('/pyi13/to_do_page');
+  res.redirect('/pyi13/bank_details');
 });
 
 /**************
@@ -279,7 +279,7 @@ app.get('/pyi13/404', function(req,res) {
     });
 });
 app.post('/pyi13/404', function(req,res) {
-  res.redirect('/pyi13/to_do_page');
+  res.redirect('/pyi13/bank_details');
 });
 
 /*****
@@ -293,7 +293,7 @@ app.get('/pyi13/expired', function(req,res) {
 });
 app.post('/pyi13/expired', function(req,res) {
   req.session['pyi13-expired'] = req.body;
-  res.redirect('/pyi13/to_do_page');
+  res.redirect('/pyi13/uc_login');
 });
 
 /*****
@@ -308,7 +308,7 @@ app.get('/pyi13/payment_failed', function(req,res) {
 });
 app.post('/pyi13/payment_failed', function(req,res) {
   req.session['pyi13-payment_failed'] = req.body;
-  res.redirect('/pyi13/to_do_page');
+  res.redirect('/pyi13/uc_login');
 });
 
 /*****
@@ -321,7 +321,7 @@ app.get('/pyi13/system_failure', function(req,res) {
     });
 });
 app.post('/pyi13/system_failure', function(req,res) {
-  res.redirect('/pyi13/to_do_page');
+  res.redirect('/pyi13/uc_login');
 });
 
 };

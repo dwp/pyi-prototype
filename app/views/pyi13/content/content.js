@@ -171,7 +171,7 @@ var data = [ {
   {
     "heading"     : "Something’s gone wrong",
     "lede"        : "This page can’t be found. Check the link you’re using and try again.",
-    "additional"  : "Or go back to the <a href='/pyi13/to_do_page'>Universal Credit sign in page.</a>"
+    "additional"  : "Or go back to the <a href='/pyi13/uc_login'>Universal Credit sign in page.</a>"
     }
 ],
 "expired"    : [
