@@ -64,8 +64,8 @@ var data = [ {
 "enter_bank_details"  : [
   {
     "heading"   : "Your bank details",
-    "text"      : "Enter the details of the bank account you will use for your Universal Credit payment.",
-    "text4"      : "Make sure the details look exactly the same as they do on your bank card.",
+    "text"      : "Enter the details of the bank account are using for your Universal Credit payment.",
+    "text4"      : "Make sure the details look exactly the same as they do on your bank statement.",
     "exitLink"  : "Go to Universal Credit sign in",
     "button"    : "Send the reference"
 },
