@@ -99,7 +99,7 @@
 <!--  Input types  -->
 {% macro inputField(id,content,hint,size,value,type='text') %}
 <div class="form-group" id="form-group-{{ id }}">
-  <label class="form-label-bold" for="{{ id }}">Reference
+  <label class="form-label-bold" for="{{ id }}">{{ content }}
   {% if hint %} <br><span>{{ hint }}</span> {% endif %}
   </label>
   <input id="{{ id }}" type="{{ type }}" class="form-control {% if size %}form-control-{{ size }}{% endif %}" name="{{ id }}" value="{{ value }}">

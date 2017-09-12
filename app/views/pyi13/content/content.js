@@ -1,6 +1,6 @@
 var data = [ {
 
-  "UC_login"      : [
+  "uc_login"      : [
     {
     "heading"     : "Sign in to your Universal Credit account",
     "question"    : "Username",
