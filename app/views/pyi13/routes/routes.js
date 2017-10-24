@@ -8,6 +8,7 @@ UC Login Page
 **********/
 
 app.get('/pyi13/uc_login', function(req, res) {
+    debugger;
   res.render('pyi13/uc_login', {
     data : content.getTableData()
   });
