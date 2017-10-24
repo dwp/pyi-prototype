@@ -1,10 +1,6 @@
-# PYI Prototype
+# GOV.UK Prototype kit · [![Greenkeeper badge](https://badges.greenkeeper.io/alphagov/govuk_prototype_kit.svg)](https://greenkeeper.io/)
 
-## Version
-
-Current version - Version 8
-
-## Made using GOV.UK prototyping kit
+Go to the [GOV.UK Prototype Kit site](https://govuk-prototype-kit.herokuapp.com/docs) to download the latest version and read the documentation.
 
 ## About the prototype kit
 
@@ -23,25 +19,9 @@ You must protect user privacy at all times, even when using prototypes. Prototyp
 - [Installation guide for new users (non technical)](https://govuk-prototype-kit.herokuapp.com/docs/install/introduction)
 - [Installation guide for developers (technical)](https://govuk-prototype-kit.herokuapp.com/docs/install/developer-install-instructions)
 
-## Guides
-
-1. [Setting up git](https://govuk-prototype-kit.herokuapp.com/docs/setting-up-git)
-2. [Publishing on the web (Heroku)](https://govuk-prototype-kit.herokuapp.com/docs/publishing-on-heroku)
-3. [Using GOV.UK Verify](https://govuk-prototype-kit.herokuapp.com/docs/using-verify)
-
-## Other documentation
-
-- [Prototype kit principles](https://govuk-prototype-kit.herokuapp.com/docs/principles)
-- [Making pages](https://govuk-prototype-kit.herokuapp.com/docs/making-pages)
-- [Writing CSS](https://govuk-prototype-kit.herokuapp.com/docs/writing-css)
-- [Updating the kit to the latest version](https://govuk-prototype-kit.herokuapp.com/docs/updating-the-kit)
-- [Tips and tricks](https://govuk-prototype-kit.herokuapp.com/docs/tips-and-tricks)
-- [Creating routes (server-side programming)](https://govuk-prototype-kit.herokuapp.com/docs/creating-routes)
-
 ## Community
 
 We have two Slack channels for the Prototype kit. You'll need a government email address to join them.
 
 * [Slack channel for users of the prototype kit](https://ukgovernmentdigital.slack.com/messages/prototype-kit/)
 * [Slack channel for developers of the prototype kit](https://ukgovernmentdigital.slack.com/messages/prototype-kit-dev/)
-# UCCA
