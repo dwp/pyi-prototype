@@ -97,6 +97,9 @@ app.get('/pyi14/make_payment', function(req,res) {
     data    : content.getTableData()
   });
 });
+app.post('/pyi14/make_payment', function (req, res) {
+  res.redirect('/pyi14/bank_submitted');
+});
 
 
 /*****
