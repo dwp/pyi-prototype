@@ -42,10 +42,8 @@ var data = [ {
 ],
   "bank_details"  : [
     {
-      "heading"   : "Use your bank account to confirm your identity",
-      "lede"      : "This is a secure government service to confirm your identity.",
-      "additional" : "You’ll need to check your bank account for a reference that Universal Credit will send online, on your mobile app or using telephone banking. Or get a statement printed at a cash machine or in your branch.",
-      "additional2": "",
+      "heading"   : "Use your bank account to prove your identity",
+      "text"      : "This is a secure government service to prove your identity.",
       "exitLink"  : "Go to Universal Credit sign in",
       "button"    : "Next"
   },
