@@ -84,9 +84,20 @@ app.post('/pyi14/enter_bank_details', function(req,res) {
   if(routeSettings === "failedPayment") {
     res.redirect('/pyi14/payment_failed');
   } else {
-  res.redirect('/pyi14/bank_submitted');
+  res.redirect('/pyi14/make_payment');
 }
 });
+
+/*****
+make_payment
+******/
+
+app.get('/pyi14/make_payment', function(req,res) {
+  res.render('pyi14/make_payment', {
+    data    : content.getTableData()
+  });
+});
+
 
 /*****
 bank_submitted

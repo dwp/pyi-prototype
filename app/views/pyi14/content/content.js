@@ -69,6 +69,15 @@ var data = [ {
     "button"    : "Next"
 },
 ],
+"make_payment"  : [
+  {
+    "heading"   : "Get a reference sent to your bank account",
+    "text"      : "To find the reference you’ll need to check your bank statement.",
+    "text2"     : "You can use online, mobile or telephone banking. Or go to a cash machine or your branch to get a statement printout.",
+    "exitLink"  : "Go to Universal Credit sign in",
+    "button"    : "OK - send the reference"
+},
+],
 "bank_submitted"  : [
   {
     "heading"     : "Find your reference",
