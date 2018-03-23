@@ -4,7 +4,7 @@
 <div class="account-wrapper">
 <div class="account-section">
   <ul>
-    <li>testaccount123: <a href="/pyi13/404">Sign Out</a></li>
+    <li>testaccount123: <a href="/pyi14/404">Sign Out</a></li>
   </ul>
 </div>
 </div>
@@ -12,7 +12,7 @@
 
 {% macro banner() %}
 <div class="phase-banner-beta">
-<p><strong class="phase-tag" style="background-color:#1562A1;"><a class="settings-link" href="/pyi13/settings">Prototype</a></strong>
+<p><strong class="phase-tag" style="background-color:#1562A1;"><a class="settings-link" href="/pyi14/settings">Prototype</a></strong>
 <span>This is being used to test out a new element of the service</span>
 </p>
 </div>
@@ -22,9 +22,9 @@
 {% macro toDoSection() %}
 <div id="app-menu" role="navigation"><div class="content">
 <ul>
-    <li><a href="/pyi13/reset">Home</a></li>
-    <li class="active"><a href="/pyi13/to_do_page" class="todo">To-do list</a></li>
-    <li><a href="/pyi13/404">Journal</a></li>
+    <li><a href="/pyi14/reset">Home</a></li>
+    <li class="active"><a href="/pyi14/to_do_page" class="todo">To-do list</a></li>
+    <li><a href="/pyi14/404">Journal</a></li>
 </ul>
 </div></div>
 {% endmacro %}
@@ -128,7 +128,7 @@
 {% macro continue(content,pageName,side,buttonReplace, exitReplace) %}
 <div{% if side %} class="inline-button"{% endif %}><input type="submit" class="button" value="{% if content %}{{ content.button }}{% elif buttonReplace %}{{ buttonReplace }}{% endif %}" name="submit"></div>
 {% if pageName %}
-<div class="exit-link{% if side %}-side inline-button{% endif %}"><a href="/pyi13/{{ pageName }}">{% if content %}{{ content.exitLink }}{% elif exitReplace %}{{ exitReplace }}{% endif %}</a></div>
+<div class="exit-link{% if side %}-side inline-button{% endif %}"><a href="/pyi14/{{ pageName }}">{% if content %}{{ content.exitLink }}{% elif exitReplace %}{{ exitReplace }}{% endif %}</a></div>
 {% endif %}
 {% endmacro %}
 
@@ -144,7 +144,7 @@
 <p>{{ item | safe }}</p>
 {% endfor %}
 {% else %}
-{% if pageName %}<a href="/pyi13/{{ pageName}}">{{ content | safe }}</a>
+{% if pageName %}<a href="/pyi14/{{ pageName}}">{{ content | safe }}</a>
 {% else %}
 {{ content | safe }}{% endif %}
 {% endif %}
@@ -159,7 +159,7 @@
 {% elif attempts == maxAttempts %}
 <p>You have used all your attempts</p>
 {% else %}
-<p>Please <a href="/pyi13/reset">reset</a> your data</p>
+<p>Please <a href="/pyi14/reset">reset</a> your data</p>
 {% endif %}
 {% endmacro %}
 
@@ -241,7 +241,7 @@
 {% macro addendum(content,pageName) %}
 <div class="addendum">
   <h4 class="heading-small">{{ content.addendum }}</h4>
-  <a href="/pyi13/{{ pageName }}" class="button">{{ content.addButton }}</a>
+  <a href="/pyi14/{{ pageName }}" class="button">{{ content.addButton }}</a>
 </div>
 {% endmacro %}
 
