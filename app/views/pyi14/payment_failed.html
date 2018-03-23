@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Payment Failed - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi13/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.payment_failed %}
+
+{{ elements.account() }}
+<div class="main" id="content" role="main">
+{{ elements.banner() }}
+
+    {{ elements.openGridForm('payment_failed') }}
+
+        {% if rollNumber.rollNumber === 'Yes' %}
+        <h1 class="heading-xlarge form-title">Sorry, you cannot use this service</h1>
+        <p>It looks like you have a building society account. People with building society accounts cannot yet use this service.</p>
+        <p>You need to sign back in to Universal Credit to book an interview at a job centre.</p> <p>Book as soon as you can or you might have to claim again.</p>
+        <p>
+    <a href="#">Go to Universal Credit sign in</a>
+  </p>
+        {% else %}
+        {{ elements.header(content) }}
+        {{ elements.continue(content) }}
+        {% endif %}
+
+    {{ elements.closeGridForm() }}
+</div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}
