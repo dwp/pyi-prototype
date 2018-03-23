@@ -81,11 +81,11 @@ var data = [ {
 "bank_submitted"  : [
   {
     "heading"     : "Find your reference",
-    "lede"        : "A reference has been sent to your bank account. It might take up to 2 hours to appear.",
+    "lede"        : "A reference from Universal Credit has been sent to your bank account. It might take up to 2 hours to appear.",
     "heading2"    : "A reference has already been sent to your bank account",
-    "lede2"       : "The reference  might take a couple of hours to appear.",
+    "lede2"       : "It might take up to 2 hours to appear.",
     "altText"     : "#",
-    "description" : "It will be a 6-digit code, for example 12 34 56.",
+    "description" : "It will be a 6-digit code on your bank statement, for example 12 34 56.",
     "exitLink"    : "Enter the reference later",
     "button"      : "Enter your reference"
   },
