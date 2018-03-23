@@ -15,10 +15,14 @@
 
   {{ elements.openGridForm('reminder') }}
 
-    {{ elements.heading('2', 'large lower-space', content.heading) }}
+    {{ elements.heading('1', 'xlarge', content.heading) }}
     {{ elements.content(content.lede,'','',true) }}
 
-    <a href="/pyi13/uc_login">Go to Universal Credit sign in</a>
+    {{ elements.content(content.text) }}
+    {{ elements.content(content.text2) }}
+
+
+    <a href="/pyi14/uc_login">Go to Universal Credit sign in</a>
 
   {{ elements.closeGridForm() }}
   </div>

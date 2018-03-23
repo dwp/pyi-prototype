@@ -92,11 +92,12 @@ var data = [ {
 ],
 "reminder"      : [
   {
-    "heading"   : "You have until Wednesday 20 September to confirm your identity",
-    "lede"      : "You also need to sign back in to Universal Credit to book an interview at a job centre. Book as soon as you can or you might have to claim again.",
+    "heading"   : "You still need to confirm your identity",
+    "lede"      : "Check your bank statement for a reference from Universal Credit. Then sign back into your Universal Credit account as soon as you can to enter the reference.",
+    "text"      : "You also need to sign back in to Universal Credit to book an interview at a job centre.",
+    "text2"     : "Book as soon as you can or you might have to claim again.",
     "button"    : "",
-    "exitLink"    : "Go to Universal Credit sign in",
-
+    "exitLink"    : "Go to Universal Credit sign in"
   },
 ],
  "enter_reference": [
