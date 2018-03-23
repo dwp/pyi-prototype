@@ -15,11 +15,13 @@
 
     {{ elements.openGridForm('enter_reference') }}
     {{ elements.header(content) }}
-    {{ elements.inputField('codeTestInput','','','1-4') }}
+    {{ elements.inputField('codeTestInput','Reference','','1-4') }}
 
     {% if second_entry %}
     <img src="/public/images/Example_transaction_v2.png" alt="">
     {% endif %}
+
+    {{ elements.content(content.text) }}
 
     {{ elements.continue(content,'reminder', 'side') }}
 
