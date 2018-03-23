@@ -86,7 +86,7 @@ var data = [ {
     "lede2"       : "It might take up to 2 hours to appear.",
     "altText"     : "#",
     "description" : "It will be a 6-digit code on your bank statement, for example 12 34 56.",
-    "exitLink"    : "Enter the reference later",
+    "exitLink"    : "Enter your reference later",
     "button"      : "Enter your reference"
   },
 ],
