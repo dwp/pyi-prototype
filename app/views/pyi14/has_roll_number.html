@@ -16,10 +16,13 @@
     {{ elements.openGridForm('has_roll_number') }}
 
       {{ elements.header(content) }}
+      {{ elements.content(content.text) }}
 
       <details>
-          <summary>{{ content.summary }}</summary>
-         {{ content.details }}
+          <summary class="summary">{{ content.summary }}</summary>
+            <div class="panel panel-border-narrow" id="details-content-0">
+              {{ content.details }}
+            </div>
       </details>
 
       {{ elements.radioButtons('rollNumber','Does your bank account have a building society roll number?','', content.radios, '',type='radio') }}

@@ -52,6 +52,7 @@ var data = [ {
   {
     "heading"   : "Bank account details: roll number",
     "lede"      : "Some accounts need a roll or reference number for payments",
+    "text"      : "You’ll find this on your card, statement or passbook.",
     "summary"   : "What is this?",
     "details"   : "Most standard bank accounts have an account number and a sort code. But some building society accounts also have a roll number - a reference code with letters and numbers. If you have one, you’ll have used it to make payments.",
     "radios"    : [{"value": "Yes"}, {"value": "No"}],
