@@ -123,6 +123,7 @@ var data = [ {
     "heading2"      : "You have not been able to give the correct reference",
     "lede"          : "Check the reference and try again.",
     "lede2"         : "Sign in to Universal Credit to book an appointment at a job centre, if you haven’t already.",
+    "text2"         : "You’ll need to bring your identity documents with you.",
     "attemptsText"  : ["once","twice"],
       "button"      : "Try again",
       "exitLink"    : "Return to your To-do list and enter the reference later",

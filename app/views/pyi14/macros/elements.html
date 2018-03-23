@@ -126,7 +126,9 @@
 
 <!-- Buttons and links -->
 {% macro continue(content,pageName,side,buttonReplace, exitReplace) %}
-<div{% if side %} class="inline-button"{% endif %}><input type="submit" class="button" value="{% if content %}{{ content.button }}{% elif buttonReplace %}{{ buttonReplace }}{% endif %}" name="submit"></div>
+{% if content %}
+  <div{% if side %} class="inline-button"{% endif %}><input type="submit" class="button" value="{% if content %}{{ content.button }}{% elif buttonReplace %}{{ buttonReplace }}{% endif %}" name="submit"></div>
+{% endif %}
 {% if pageName %}
 <div class="exit-link{% if side %}-side inline-button{% endif %}"><a href="/pyi14/{{ pageName }}">{% if content %}{{ content.exitLink }}{% elif exitReplace %}{{ exitReplace }}{% endif %}</a></div>
 {% endif %}
