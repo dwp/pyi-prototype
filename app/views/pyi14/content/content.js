@@ -112,7 +112,9 @@ var data = [ {
   "success"       : [
     {
     "heading"     : "You have correctly entered the reference number",
-    "lede"        : "Sign in to Universal Credit to book an appointment at a job centre, if you haven’t already. You’ll need to bring your identity documents with you.",
+    "lede"        : "",
+    "text"        : "Sign in to Universal Credit to book an appointment at a job centre, if you haven’t already.",
+    "text2"       : "You’ll need to bring your identity documents with you.",
     "button"      : "",
     "exitLink"    : "Go to Universal Credit sign in"
   },
