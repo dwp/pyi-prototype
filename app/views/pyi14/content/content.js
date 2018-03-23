@@ -105,7 +105,7 @@ var data = [ {
     "heading"     : "Enter your reference",
     "lede"        : "",
     "text"        : "It will be a 6-digit code from Universal Credit on your bank statement, for example 12 34 56.",
-    "exitLink"    : "Enter the reference later",
+    "exitLink"    : "Enter your reference later",
     "button"      : "Submit"
   },
 ],
