@@ -19,7 +19,7 @@ module.exports = {
   useHttps: 'true',
 
   // Cookie warning - update link to service's cookie page.
-  cookieText: 'GOV.UK uses cookies to make the site simpler. <a href="#" title="Find out more about cookies">Find out more about cookies</a>',
+  cookieText: 'We have placed cookies on your computer or other device to help make this website better. You can change your cookies settings at any time and can <a href="#" title="find out about cookies here">find out about cookies here</a>. If you continue using this site we will assume you accept these cookies.',
 
   useBrowserSync: 'true'
 }
