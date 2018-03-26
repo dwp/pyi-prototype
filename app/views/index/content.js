@@ -91,7 +91,7 @@ module.exports = {
     },
     pyi14: {
         version: 14,
-        release: "TBC",
+        release: "26 March 2018",
         changes: ["Bring Prototype up to date with current development version"],
         researchFindings: [""]
     }
