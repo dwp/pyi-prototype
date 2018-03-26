@@ -1,9 +1,7 @@
 {% extends "govuk_template.html" %}
 
-{% set version = "pyi14" %}
-
 {% block head %}
-  {% include "includes/head.html" %}
+  {% include version + "/includes/head.html" %}
 {% endblock %}
 
 {% block cookie_message %}
@@ -11,7 +9,7 @@
 {% endblock %}
 
 {% block proposition_header %}
-  {% include "includes/propositional_navigation.html" %}
+  {% include version + "/includes/propositional_navigation.html" %}
 {% endblock %}
 
 {% block header_class %}
@@ -19,6 +17,6 @@
 {% endblock %}
 
 {% block body_end %}
-  {% include "includes/scripts.html" %}
+  {% include version + "/includes/scripts.html" %}
   <!-- GOV.UK Prototype kit {{releaseVersion}} -->
 {% endblock %}
