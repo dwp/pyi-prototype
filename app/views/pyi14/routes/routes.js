@@ -160,7 +160,7 @@ app.get('/' + version + '/enter_reference', function(req,res) {
     });
 });
 app.post('/' + version + '/enter_reference', function(req,res) {
-    if (req.body.codeTestInput.replace(/\s+/g, '') === '997963') {
+    if (req.body.codeTestInput.replace(/\s+/g, '') === '123456') {
     switch(routeSettings) {
       case "failedSystem":
         res.redirect('/' + version + '/system_failure');
