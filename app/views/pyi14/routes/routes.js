@@ -3,70 +3,76 @@ module.exports = function (app) {
   var content = require('../content/content');
   var routeSettings = routeSettings === undefined ? "default" : routeSettings;
 
+const version = 'pyi14';
+
 /*********
 UC Login Page
 **********/
 
-app.get('/pyi14/uc_login', function(req, res) {
+app.get('/' + version + '/uc_login', function(req, res) {
     debugger;
-  res.render('pyi14/uc_login', {
-    data : content.getTableData()
+  res.render(version + '/uc_login', {
+    data : content.getTableData(),
+    version: version
   });
 });
-app.post('/pyi14/uc_login', function(req, res) {
-  req.session['pyi14-uc_login'] = req.body;
-  res.redirect('/pyi14/bank_details');
+app.post('/' + version + '/uc_login', function(req, res) {
+  req.session[version + '-uc_login'] = req.body;
+  res.redirect('/' + version + '/bank_details');
 });
 
 /********
 To-do Page
 *********/
 
-app.get('/pyi14/to_do_page', function(req,res) {
-    res.render('pyi14/to_do_page', {
+app.get('/' + version + '/to_do_page', function(req,res) {
+    res.render(version + '/to_do_page', {
       data          : content.getTableData(),
-      bank_details  : req.session['pyi14-bank_details'],
-      enter_bank_details: req.session['pyi14-enter_bank_details'],
-      success       : req.session['pyi14-success'],
-      failure       : req.session['pyi14-failure'],
-      returning     : req.session['pyi14-uc_login'],
-      payment_failed: req.session['pyi14-payment_failed'],
-      expired       : req.session['pyi14-expired']
+      bank_details  : req.session[version + '-bank_details'],
+      enter_bank_details: req.session[version + '-enter_bank_details'],
+      success       : req.session[version + '-success'],
+      failure       : req.session[version + '-failure'],
+      returning     : req.session[version + '-uc_login'],
+      payment_failed: req.session[version + '-payment_failed'],
+      expired       : req.session[version + '-expired'],
+      version: version
     });
 });
-app.post('/pyi14/to_do_page', function (req, res) {
-  res.redirect('/pyi14/bank_details');
+app.post('/' + version + '/to_do_page', function (req, res) {
+  res.redirect('/' + version + '/bank_details');
 });
 
 /*****
 bank_details
 ******/
 
-app.get('/pyi14/bank_details', function(req,res) {
-    res.render('pyi14/bank_details', {
-      data    : content.getTableData()
+app.get('/' + version + '/bank_details', function(req,res) {
+    res.render(version + '/bank_details', {
+      data    : content.getTableData(),
+      version: version
     });
 });
-app.post('/pyi14/bank_details', function(req,res) {
-  req.session['pyi14-bank_details'] = req.body;
-  res.redirect('/pyi14/has_roll_number');
+app.post('/' + version + '/bank_details', function(req,res) {
+  req.session[version + '-bank_details'] = req.body;
+  res.redirect('/' + version + '/has_roll_number');
 });
 
 /*****
 has_roll_number
 ******/
 
-app.get('/pyi14/has_roll_number', function(req,res) {
-    res.render('pyi14/has_roll_number', {
-      data    : content.getTableData()
+app.get('/' + version + '/has_roll_number', function(req,res) {
+    res.render(version + '/has_roll_number', {
+      data    : content.getTableData(),
+      version: version
     });
 });
-app.post('/pyi14/has_roll_number', function(req,res) {
-  req.session['pyi14-has_roll_number'] = req.body;
+app.post('/' + version + '/has_roll_number', function(req,res) {
+  req.session[version + '-has_roll_number'] = req.body;
   if(req.body.rollNumber === "Yes") {
-    res.redirect('/pyi14/payment_failed');
+    res.redirect('/' + version + '/payment_failed');
   } else {
-  res.redirect('/pyi14/enter_bank_details');
+  res.redirect('/' + version + '/enter_bank_details');
 }
 });
 
@@ -74,17 +80,18 @@ app.post('/pyi14/has_roll_number', function(req,res) {
 enter_bank_details
 ******/
 
-app.get('/pyi14/enter_bank_details', function(req,res) {
-    res.render('pyi14/enter_bank_details', {
-      data    : content.getTableData()
+app.get('/' + version + '/enter_bank_details', function(req,res) {
+    res.render(version + '/enter_bank_details', {
+      data    : content.getTableData(),
+      version: version
     });
 });
-app.post('/pyi14/enter_bank_details', function(req,res) {
-  req.session['pyi14-enter_bank_details'] = req.body;
+app.post('/' + version + '/enter_bank_details', function(req,res) {
+  req.session[version + '-enter_bank_details'] = req.body;
   if(routeSettings === "failedPayment") {
-    res.redirect('/pyi14/payment_failed');
+    res.redirect('/' + version + '/payment_failed');
   } else {
-  res.redirect('/pyi14/make_payment');
+  res.redirect('/' + version + '/make_payment');
 }
 });
 
@@ -92,13 +99,14 @@ app.post('/pyi14/enter_bank_details', function(req,res) {
 make_payment
 ******/
 
-app.get('/pyi14/make_payment', function(req,res) {
-  res.render('pyi14/make_payment', {
-    data    : content.getTableData()
+app.get('/' + version + '/make_payment', function(req,res) {
+  res.render(version + '/make_payment', {
+    data    : content.getTableData(),
+    version: version
   });
 });
-app.post('/pyi14/make_payment', function (req, res) {
-  res.redirect('/pyi14/bank_submitted');
+app.post('/' + version + '/make_payment', function (req, res) {
+  res.redirect('/' + version + '/bank_submitted');
 });
 
 
@@ -106,17 +114,18 @@ app.post('/pyi14/make_payment', function (req, res) {
 bank_submitted
 ******/
 
-app.get('/pyi14/bank_submitted', function(req,res) {
-    res.render('pyi14/bank_submitted', {
+app.get('/' + version + '/bank_submitted', function(req,res) {
+    res.render(version + '/bank_submitted', {
       data    : content.getTableData(),
-      twoPayments : false
+      twoPayments : false,
+      version: version
     });
 });
-app.post('/pyi14/bank_submitted', function(req,res) {
+app.post('/' + version + '/bank_submitted', function(req,res) {
   if(routeSettings === "failedPayment") {
-    res.redirect('/pyi14/payment_failed');
+    res.redirect('/' + version + '/payment_failed');
   } else {
-    res.redirect('/pyi14/enter_reference');
+    res.redirect('/' + version + '/enter_reference');
 }
 });
 
@@ -125,16 +134,17 @@ app.post('/pyi14/bank_submitted', function(req,res) {
 reminder
 ******/
 
-app.get('/pyi14/reminder', function(req,res) {
-    res.render('pyi14/reminder', {
-     data     :   content.getTableData()
+app.get('/' + version + '/reminder', function(req,res) {
+    res.render(version + '/reminder', {
+     data     :   content.getTableData(),
+     version: version
     });
 });
-app.post('/pyi14/reminder', function(req,res) {
+app.post('/' + version + '/reminder', function(req,res) {
     if(req.body.submit === 'Book interview') {
-        res.redirect('/pyi14/404');
+        res.redirect('/' + version + '/404');
     } else {
-        res.redirect('/pyi14/uc_login');
+        res.redirect('/' + version + '/uc_login');
     }
 });
 
@@ -142,29 +152,30 @@ app.post('/pyi14/reminder', function(req,res) {
 Enter Reference
 *********/
 
-app.get('/pyi14/enter_reference', function(req,res) {
-    res.render('pyi14/enter_reference', {
+app.get('/' + version + '/enter_reference', function(req,res) {
+    res.render(version + '/enter_reference', {
     data     :   content.getTableData(),
-    second_entry  : req.session['pyi14-second_entry']
+    second_entry  : req.session[version + '-second_entry'],
+    version: version
     });
 });
-app.post('/pyi14/enter_reference', function(req,res) {
+app.post('/' + version + '/enter_reference', function(req,res) {
     if (req.body.codeTestInput.replace(/\s+/g, '') === '997963') {
     switch(routeSettings) {
       case "failedSystem":
-        res.redirect('/pyi14/system_failure');
+        res.redirect('/' + version + '/system_failure');
         break;
       case "expiredReference":
-        res.redirect('/pyi14/expired');
+        res.redirect('/' + version + '/expired');
         break;
       default:
-      res.redirect('/pyi14/success');
+      res.redirect('/' + version + '/success');
     }
   } else {
     if(routeSettings === "failedSystem") {
-      res.redirect('/pyi14/system_failure');
+      res.redirect('/' + version + '/system_failure');
     } else {
-      res.redirect('/pyi14/failure');
+      res.redirect('/' + version + '/failure');
     }
   }
 });
@@ -173,30 +184,32 @@ app.post('/pyi14/enter_reference', function(req,res) {
 No page exists
 *********/
 
-app.get('/pyi14/no_page_exists', function(req,res) {
-    res.render('pyi14/no_page_exists', {
-    data     :   content.getTableData()
+app.get('/' + version + '/no_page_exists', function(req,res) {
+    res.render(version + '/no_page_exists', {
+    data     :   content.getTableData(),
+    version: version
     });
 });
-app.post('/pyi14/no_page_exists', function(req,res) {
-  res.redirect('/pyi14/bank_details');
+app.post('/' + version + '/no_page_exists', function(req,res) {
+  res.redirect('/' + version + '/bank_details');
 });
 
 /********
 Success
 *********/
 
-app.get('/pyi14/success', function(req,res) {
-    res.render('pyi14/success', {
-    data     :   content.getTableData()
+app.get('/' + version + '/success', function(req,res) {
+    res.render(version + '/success', {
+    data     :   content.getTableData(),
+    version: version
     });
 });
-app.post('/pyi14/success', function(req,res) {
-  req.session['pyi14-success'] = req.body;
+app.post('/' + version + '/success', function(req,res) {
+  req.session[version + '-success'] = req.body;
   if(req.body.submit === "Book my interview") {
-      res.redirect('/pyi14/404');
+      res.redirect('/' + version + '/404');
   } else {
-     res.redirect('/pyi14/uc_login');
+     res.redirect('/' + version + '/uc_login');
   }
 });
 
@@ -204,27 +217,28 @@ app.post('/pyi14/success', function(req,res) {
 Failure
 *********/
 
-app.get('/pyi14/failure', function(req,res) {
+app.get('/' + version + '/failure', function(req,res) {
     req.session.attempts ++;
-    res.render('pyi14/failure', {
+    res.render(version + '/failure', {
       attempts    :   (req.session.attempts || 0) + 1,
-      data        :   content.getTableData()
+      data        :   content.getTableData(),
+      version: version
     });
     if (req.session.attempts === 2) {
       req.session.destroy();
     }
 });
-app.post('/pyi14/failure', function(req,res) {
+app.post('/' + version + '/failure', function(req,res) {
     console.log(req.body);
-    req.session['pyi14-failure'] = req.body;
+    req.session[version + '-failure'] = req.body;
     if (req.body.verifyAgain == 'Try GOV.UK Verify again') {
-      res.redirect('/pyi14/404');
+      res.redirect('/' + version + '/404');
     } else if (req.body.verifyAgain == 'Try using your bank account again') {
-      res.redirect('/pyi14/bank_details');
+      res.redirect('/' + version + '/bank_details');
     } else if (req.body.verifyAgain == 'Attend a face to face interview') {
-      res.redirect('/pyi14/404');
+      res.redirect('/' + version + '/404');
     } else {
-  res.redirect('/pyi14/enter_reference');
+  res.redirect('/' + version + '/enter_reference');
 }
 });
 
@@ -232,42 +246,45 @@ app.post('/pyi14/failure', function(req,res) {
 Second Entry
 *********/
 
-app.get('/pyi14/second_entry', function(req,res) {
-    res.render('pyi14/second_entry', {
-    data     : content.getTableData()
+app.get('/' + version + '/second_entry', function(req,res) {
+    res.render(version + '/second_entry', {
+    data     : content.getTableData(),
+    version: version
     });
 });
-app.post('/pyi14/second_entry', function(req,res) {
-  req.session['pyi14-second_entry'] = req.body;
-    res.redirect('/pyi14/enter_reference');
+app.post('/' + version + '/second_entry', function(req,res) {
+  req.session[version + '-second_entry'] = req.body;
+    res.redirect('/' + version + '/enter_reference');
 });
 
 /******
 Reset
 *******/
 
-app.get('/pyi14/reset', function(req,res) {
-    res.render('pyi14/reset', {
-    data       :   content.getTableData()
+app.get('/' + version + '/reset', function(req,res) {
+    res.render(version + '/reset', {
+    data       :   content.getTableData(),
+    version: version
   });
 });
 
-app.post('/pyi14/reset', function(req,res) {
+app.post('/' + version + '/reset', function(req,res) {
   routeSettings = "default";
   req.session.destroy();
-  res.redirect('/pyi14/bank_details');
+  res.redirect('/' + version + '/bank_details');
 });
 
 /**************
 Settings
 ***************/
-app.get('/pyi14/settings', function(req, res) {
-  res.render('pyi14/settings', {
-    data    : content.getTableData()
+app.get('/' + version + '/settings', function(req, res) {
+  res.render(version + '/settings', {
+    data    : content.getTableData(),
+    version: version
   });
 });
 
-app.post('/pyi14/settings', function(req, res) {
+app.post('/' + version + '/settings', function(req, res) {
   switch(req.body.settings.toLowerCase()) {
     case "payment failed":
       routeSettings = "failedPayment";
@@ -282,18 +299,19 @@ app.post('/pyi14/settings', function(req, res) {
       routeSettings = "default";
       break;
   }
-  res.redirect('/pyi14/bank_details');
+  res.redirect('/' + version + '/bank_details');
 });
 
 /**************
 404
 ***************/
-app.get('/pyi14/404', function(req,res) {
-    res.render('pyi14/404', {
-    data     : content.getTableData()
+app.get('/' + version + '/404', function(req,res) {
+    res.render(version + '/404', {
+    data     : content.getTableData(),
+    version: version
     });
 });
-app.post('/pyi14/404', function(req,res) {
+app.post('/' + version + '/404', function(req,res) {
   res.redirect('/pyi14/bank_details');
 });
 
@@ -301,42 +319,45 @@ app.post('/pyi14/404', function(req,res) {
 Expired
 ******/
 
-app.get('/pyi14/expired', function(req,res) {
-    res.render('pyi14/expired', {
-     data     :   content.getTableData()
+app.get('/' + version + '/expired', function(req,res) {
+    res.render(version + '/expired', {
+     data     :   content.getTableData(),
+     version: version
     });
 });
-app.post('/pyi14/expired', function(req,res) {
-  req.session['pyi14-expired'] = req.body;
-  res.redirect('/pyi14/uc_login');
+app.post('/' + version + '/expired', function(req,res) {
+  req.session[version + '-expired'] = req.body;
+  res.redirect('/' + version + '/uc_login');
 });
 
 /*****
 Payment Failed
 ******/
 
-app.get('/pyi14/payment_failed', function(req,res) {
-    res.render('pyi14/payment_failed', {
-     rollNumber  : req.session['pyi14-has_roll_number'],
-     data     :   content.getTableData()
+app.get('/' + version + '/payment_failed', function(req,res) {
+    res.render(version + '/payment_failed', {
+     rollNumber  : req.session[version + '-has_roll_number'],
+     data     :   content.getTableData(),
+     version: version
     });
 });
-app.post('/pyi14/payment_failed', function(req,res) {
-  req.session['pyi14-payment_failed'] = req.body;
-  res.redirect('/pyi14/uc_login');
+app.post('/' + version + '/payment_failed', function(req,res) {
+  req.session[version + '-payment_failed'] = req.body;
+  res.redirect('/' + version + '/uc_login');
 });
 
 /*****
 System failure
 ******/
 
-app.get('/pyi14/system_failure', function(req,res) {
-    res.render('pyi14/system_failure', {
-     data     :   content.getTableData()
+app.get('/' + version + '/system_failure', function(req,res) {
+    res.render(version + '/system_failure', {
+     data     :   content.getTableData(),
+     version: version
     });
 });
-app.post('/pyi14/system_failure', function(req,res) {
-  res.redirect('/pyi14/uc_login');
+app.post('/' + version + '/system_failure', function(req,res) {
+  res.redirect('/' + version + '/uc_login');
 });
 
 };
