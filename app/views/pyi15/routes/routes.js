@@ -312,7 +312,7 @@ app.get('/' + version + '/404', function(req,res) {
     });
 });
 app.post('/' + version + '/404', function(req,res) {
-  res.redirect('/pyi14/bank_details');
+  res.redirect('/' + version + '/bank_details');
 });
 
 /*****
