@@ -97,5 +97,13 @@ module.exports = {
             "Note: use 123456 as 'correct' reference number"
         ],
         researchFindings: [""]
+    },
+    pyi15: {
+        version: 15,
+        release: "3 April 2018",
+        changes: [
+            "On 'Enter Bank Details' view: Account Name removed, and Sort Code changed to one field"
+        ],
+        researchFindings: [""]
     }
 };
