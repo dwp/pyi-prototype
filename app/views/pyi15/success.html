@@ -1,0 +1,29 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Reference number accepted - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi14/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.success %}
+
+<div class="main" id="content" role="main">
+  {{ elements.banner() }}
+
+{{ elements.openGridForm('success') }}
+
+        {{ elements.header(content) }}
+
+        {{ elements.content(content.text) }}
+        {{ elements.content(content.text2) }}
+
+        <a href="/pyi13/uc_login">Go to Universal Credit sign in</a>
+
+{{ elements.closeGridForm() }}
+</div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

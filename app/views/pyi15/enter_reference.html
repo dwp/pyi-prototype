@@ -1,0 +1,32 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Enter reference number - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import "pyi14/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.enter_reference %}
+
+    <div class="main" id="content" role="main">
+    {{ elements.banner() }}
+
+    {{ elements.openGridForm('enter_reference') }}
+    {{ elements.header(content) }}
+    {{ elements.inputField('codeTestInput','Reference','','1-4') }}
+
+    {% if second_entry %}
+    <img src="/public/images/Example_transaction_v2.png" alt="">
+    {% endif %}
+
+    {{ elements.content(content.text) }}
+
+    {{ elements.continue(content,'reminder', 'side') }}
+
+    {{ elements.closeGridForm() }}
+    </div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}
