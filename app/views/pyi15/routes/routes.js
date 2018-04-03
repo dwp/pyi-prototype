@@ -3,7 +3,7 @@ module.exports = function (app) {
   var content = require('../content/content');
   var routeSettings = routeSettings === undefined ? "default" : routeSettings;
 
-const version = 'pyi14';
+const version = 'pyi15';
 
 /*********
 UC Login Page
