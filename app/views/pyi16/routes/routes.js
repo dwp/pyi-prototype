@@ -360,4 +360,14 @@ app.post('/' + version + '/system_failure', function(req,res) {
   res.redirect('/' + version + '/uc_login');
 });
 
+/*****
+ Agent screens
+ *****/
+app.get('/' + version + '/agent_search', function(req,res) {
+  res.render(version + '/agent_search', {
+    data     :   content.getTableData(),
+    version: version
+  });
+});
+
 };

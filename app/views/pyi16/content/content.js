@@ -162,6 +162,13 @@ var data = [{
     "lede"      : "You can’t use this service just now. The problem will be fixed as soon as possible.",
     "additional": "Please try again later."
   }],
+  "agent_search"  : [{
+    "heading"   : "Find claimant",
+    "text"      : "Enter the details of the bank account are using for your Universal Credit payment.",
+    "text4"      : "Make sure the details look exactly the same as they do on your bank statement.",
+    "exitLink"  : "Clear information and start again",
+    "button"    : "Search"
+  }]
 }];
 
 exports.getTableData = function() {
