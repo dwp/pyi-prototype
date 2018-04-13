@@ -1,0 +1,34 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Confirm the payment - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import version + "/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.enter_bank_details %}
+
+    <div class="main" role="main" id="content">
+    {{ elements.banner() }}
+
+    {{ elements.openGridForm('enter_bank_details') }}
+
+      {{ elements.header(content) }}
+      {{ elements.content(content.text, content.text4) }}
+
+      {{ elements.inputField('sortCode','Sort code', false,'1-4','',type='text') }}
+
+      {{ elements.inputField('accountNumber','Account number', false,'1-2','',type='text') }}
+
+
+
+
+      {{ elements.continue(content, 'uc_login', 'side') }}
+
+    {{ elements.closeGridForm() }}
+    </div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

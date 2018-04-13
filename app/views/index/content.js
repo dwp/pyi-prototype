@@ -105,5 +105,14 @@ module.exports = {
             "On 'Enter Bank Details' view: Account Name removed, and Sort Code changed to one field"
         ],
         researchFindings: [""]
+    },
+    pyi16: {
+        version: 16,
+        release: "TBC",
+        changes: [
+            "Add agent screens",
+            "Add user error messages"
+        ],
+        researchFindings: [""]
     }
 };
