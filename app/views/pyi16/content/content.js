@@ -168,6 +168,17 @@ var data = [{
     "text4"      : "Make sure the details look exactly the same as they do on your bank statement.",
     "exitLink"  : "Clear information and start again",
     "button"    : "Search"
+  }],
+  "agent_result_success"  : [{
+    "heading"   : "The claimant’s identity has been verified online",
+    "heading2_1" : "What you need to do next",
+    "orderedList": [
+      "Complete the identity ALP (agent-led process).",
+      "Clear the Verify claimant identity to do."
+    ],
+    "heading2_2": "What you can tell the claimant",
+    "text"      : "Their identity has been verified online and there is no need to see any further documents.",
+    "exitLink"  : "Go back to search"
   }]
 }];
 

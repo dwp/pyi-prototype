@@ -68,10 +68,10 @@
 </div>
 {% endmacro %}
 
-{% macro orderList(content,listItems) %}
+{% macro orderedList(content,listItems) %}
 <div class="form-group">
 {% if content %}<h4 class="heading-small">{{ content }}</h4>{% endif %}
-<ol class="list">
+<ol class="list list-number">
   {% for item in listItems %}
   <li>{{ item }}</li>
   {% endfor %}

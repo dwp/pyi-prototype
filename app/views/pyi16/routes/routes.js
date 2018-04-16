@@ -383,4 +383,11 @@ app.post('/' + version + '/agent_search', function(req,res) {
   });*/
 });
 
+app.get('/' + version + '/agent_result_success', function(req,res) {
+  res.render(version + '/agent_result_success', {
+    data     :   content.getTableData(),
+    version: version
+  });
+});
+
 };

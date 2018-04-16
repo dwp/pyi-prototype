@@ -1,0 +1,32 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Reference number accepted - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import version + "/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.agent_result_success %}
+
+<div class="main" id="content" role="main">
+  {{ elements.banner() }}
+
+{{ elements.openGridForm('agent_result_success') }}
+
+        {{ elements.header(content) }}
+        
+        {{ elements.heading("2", "medium", content.heading2_1) }}
+
+        {{ elements.orderedList(listItems = content.orderedList)}}
+
+        {{ elements.heading("2", "medium", content.heading2_2) }}
+
+        {{ elements.content(content.text) }}
+
+{{ elements.closeGridForm() }}
+</div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}
