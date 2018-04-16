@@ -138,7 +138,32 @@ var data = [{
     "heading"     : "Select User Journey",
     "lede"        : "",
     "label"       : "Select the user journey you wish to use",
-    "radios"      : [{"value":"Claimant"}, {"value":"Agent search"}],
+    "radios"      : [{
+      "radioWithConditionalContent": {
+        "value": "Claimant",
+        "radios": [{
+          "value":"Default"
+        }, {
+          "value":"Expired reference"
+        }, {
+          "value":"Payment failed"
+        }, {
+          "value":"System failure"
+        }]
+      }
+    }, {
+      "radioWithConditionalContent": {
+        "value": "Agent search",
+        "radios": [
+          {
+            "value": "Claimant verified",
+          }, {
+            "value": "Claimant not verified"
+          }, {
+            "value": "System failure"
+          }]
+        }
+    }],
     "button"      : "Start journey"
   }],
   "404"        : [{

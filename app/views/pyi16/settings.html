@@ -15,9 +15,11 @@
 
 {{ elements.openGridForm('settings') }}
 
-        {{ elements.header(content) }}
-        {{ elements.radioButtons('settings', content.label, '', content.radios)}}
-        {{ elements.continue(content) }}
+    {{ elements.header(content) }}
+    
+    {{ elements.radioButtons('settings', content.label, '', content.radios)}}
+
+    {{ elements.continue(content) }}
 
 {{ elements.closeGridForm() }}
 </div>
