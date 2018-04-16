@@ -285,7 +285,7 @@ app.get('/' + version + '/settings', function(req, res) {
 });
 
 app.post('/' + version + '/settings', function(req, res) {
-  switch(req.body.settings.toLowerCase()) {
+  /*switch(req.body.settings.toLowerCase()) {
     case "payment failed":
       routeSettings = "failedPayment";
       break;
@@ -298,8 +298,12 @@ app.post('/' + version + '/settings', function(req, res) {
     default:
       routeSettings = "default";
       break;
+  }*/
+  if (req.body.settings.toLowerCase() === 'claimant') {
+    res.redirect('/' + version + '/bank_details');
+  } else {
+    res.redirect('/' + version + '/agent_search');
   }
-  res.redirect('/' + version + '/bank_details');
 });
 
 /**************
@@ -368,6 +372,15 @@ app.get('/' + version + '/agent_search', function(req,res) {
     data     :   content.getTableData(),
     version: version
   });
+});
+
+app.post('/' + version + '/agent_search', function(req,res) {
+  res.send('POST FROM AGENT SEARCH')
+  
+  /*res.render(version + '/agent_search', {
+    data     :   content.getTableData(),
+    version: version
+  });*/
 });
 
 };

@@ -135,11 +135,11 @@ var data = [{
     "lede"        : "No research conducted with this prototype yet"
   }],
   "settings"        : [{
-    "heading"     : "Settings page",
-    "lede"        : "You can change the settings here",
-    "label"       : "Select the user journey path you wish to use",
-    "radios"      : [{"value":"Default"}, {"value":"Expired reference"}, {"value":"Payment failed"}, {"value":"System failure"}],
-    "button"      : "Change settings"
+    "heading"     : "Select User Journey",
+    "lede"        : "",
+    "label"       : "Select the user journey you wish to use",
+    "radios"      : [{"value":"Claimant"}, {"value":"Agent search"}],
+    "button"      : "Start journey"
   }],
   "404"        : [{
     "heading"     : "Something’s gone wrong",
