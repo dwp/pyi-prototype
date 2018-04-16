@@ -128,7 +128,7 @@
 
 <!-- Buttons and links -->
 {% macro continue(content,pageName,side,buttonReplace, exitReplace) %}
-{% if content %}
+{% if content and content.button %}
   <div{% if side %} class="inline-button"{% endif %}><input type="submit" class="button" value="{% if content %}{{ content.button }}{% elif buttonReplace %}{{ buttonReplace }}{% endif %}" name="submit"></div>
 {% endif %}
 {% if pageName %}
