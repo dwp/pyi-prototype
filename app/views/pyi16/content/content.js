@@ -179,6 +179,18 @@ var data = [{
     "heading2_2": "What you can tell the claimant",
     "text"      : "Their identity has been verified online and there is no need to see any further documents.",
     "exitLink"  : "Go back to search"
+  }],
+  "agent_result_failure"  : [{
+    "heading"   : "The claimant’s identity has not been verified online",
+    "heading2_1" : "What you need to do next",
+    "orderedList": [
+      "Continue with the standard identity interview using documents or biographical questions.",
+      "Complete the identity ALP (agent-led process)."
+    ],
+    "heading2_2": "What you can tell the claimant",
+    "text1"      : "It has not been possible to verify the claimant’s identity online.",
+    "text2"      : "This is because the claimant did not use the Prove your Identity service.",
+    "exitLink"  : "Go back to search"
   }]
 }];
 

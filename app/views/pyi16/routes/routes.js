@@ -390,4 +390,11 @@ app.get('/' + version + '/agent_result_success', function(req,res) {
   });
 });
 
+app.get('/' + version + '/agent_result_failure', function(req,res) {
+  res.render(version + '/agent_result_failure', {
+    data     :   content.getTableData(),
+    version: version
+  });
+});
+
 };
