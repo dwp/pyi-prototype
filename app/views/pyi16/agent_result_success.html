@@ -12,19 +12,16 @@
 <div class="main" id="content" role="main">
   {{ elements.banner() }}
 
-{{ elements.openGridForm('agent_result_success') }}
+  {{ elements.header(content) }}
+  
+  {{ elements.heading("2", "medium", content.heading2_1) }}
 
-        {{ elements.header(content) }}
-        
-        {{ elements.heading("2", "medium", content.heading2_1) }}
+  {{ elements.orderedList(listItems = content.orderedList)}}
 
-        {{ elements.orderedList(listItems = content.orderedList)}}
+  {{ elements.heading("2", "medium", content.heading2_2) }}
 
-        {{ elements.heading("2", "medium", content.heading2_2) }}
+  {{ elements.content(content.text) }}
 
-        {{ elements.content(content.text) }}
-
-{{ elements.closeGridForm() }}
 </div>
 
 {% endfor %}
