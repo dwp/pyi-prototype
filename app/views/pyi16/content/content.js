@@ -184,8 +184,9 @@ var data = [{
   }],
   "system_failure": [{
     "heading"   : "Something’s gone wrong",
-    "lede"      : "You can’t use this service just now. The problem will be fixed as soon as possible.",
-    "additional": "Please try again later."
+    "text1"      : "You cannot use this service just now. The problem will be fixed as soon as possible.",
+    "text2": "Sign in to Universal Credit to book an appointment at a job centre.",
+    "exitLink"  : "Go to Universal Credit sign in"
   }],
   "agent_search"  : [{
     "heading"   : "Find claimant",
