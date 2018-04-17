@@ -88,7 +88,7 @@ app.get('/' + version + '/enter_bank_details', function(req,res) {
 });
 app.post('/' + version + '/enter_bank_details', function(req,res) {
   req.session[version + '-enter_bank_details'] = req.body;
-  if(routeSettings === "failedPayment") {
+  if(req.cookies.claimantJourneyOption === 'Payment failed') {
     res.redirect('/' + version + '/payment_failed');
   } else {
   res.redirect('/' + version + '/make_payment');
@@ -122,7 +122,7 @@ app.get('/' + version + '/bank_submitted', function(req,res) {
     });
 });
 app.post('/' + version + '/bank_submitted', function(req,res) {
-  if(routeSettings === "failedPayment") {
+  if(req.cookies.claimantJourneyOption === 'Payment failed') {
     res.redirect('/' + version + '/payment_failed');
   } else {
     res.redirect('/' + version + '/enter_reference');
@@ -161,18 +161,18 @@ app.get('/' + version + '/enter_reference', function(req,res) {
 });
 app.post('/' + version + '/enter_reference', function(req,res) {
     if (req.body.codeTestInput.replace(/\s+/g, '') === '123456') {
-    switch(routeSettings) {
-      case "failedSystem":
+    switch(req.cookies.claimantJourneyOption) {
+      case 'System failure':
         res.redirect('/' + version + '/system_failure');
         break;
-      case "expiredReference":
+      case 'Expired reference':
         res.redirect('/' + version + '/expired');
         break;
       default:
       res.redirect('/' + version + '/success');
     }
   } else {
-    if(routeSettings === "failedSystem") {
+    if(req.cookies.claimantJourneyOption === "System failure") {
       res.redirect('/' + version + '/system_failure');
     } else {
       res.redirect('/' + version + '/failure');
@@ -269,7 +269,7 @@ app.get('/' + version + '/reset', function(req,res) {
 });
 
 app.post('/' + version + '/reset', function(req,res) {
-  routeSettings = "default";
+  res.cookie('claimantJourneyOption', 'default');
   req.session.destroy();
   res.redirect('/' + version + '/bank_details');
 });
@@ -363,7 +363,6 @@ app.get('/' + version + '/agent_search', function(req,res) {
 });
 
 app.post('/' + version + '/agent_search', function(req,res) {
-  console.log(req.cookies)
   let nextView
 
   if (req.cookies.agentJourneyOption === 'Claimant verified') {
@@ -373,8 +372,9 @@ app.post('/' + version + '/agent_search', function(req,res) {
   } else {
     nextView = '/system_failure'
   }
+
   res.render(version + nextView, {
-    data     :   content.getTableData(),
+    data: content.getTableData(),
     version: version
   });
 });
