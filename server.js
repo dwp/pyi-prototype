@@ -3,6 +3,7 @@ var crypto = require('crypto')
 var path = require('path')
 var express = require('express')
 var session = require('express-session')
+var cookieParser = require('cookie-parser')
 var nunjucks = require('nunjucks')
 var routes = require('./app/routes.js')
 var documentationRoutes = require('./docs/documentation_routes.js')
@@ -56,6 +57,8 @@ if (isSecure) {
 if (env === 'production' && useAuth === 'true') {
   app.use(utils.basicAuth(username, password))
 }
+
+app.use(cookieParser())
 
 // Set up App
 var appViews = [path.join(__dirname, '/app/views/'), path.join(__dirname, '/lib/')]
