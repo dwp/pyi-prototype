@@ -139,7 +139,7 @@
     {% for radio in item.radios %}
       <label class="block-label form-label" for="{{ id }}_{{ index }}_{{ loop.index }}">
         {{ radio.value }}
-        <input type="radio" name="contact-email" type="text" id="{{ id }}_{{ index }}_{{ loop.index }}" value="{{ radio.value }}">
+        <input type="radio" name="{{ id }}_{{ index }}" type="text" id="{{ id }}_{{ index }}_{{ loop.index }}" value="{{ radio.value }}">
       </label>
     {% endfor %}
   </div>

@@ -299,9 +299,12 @@ app.post('/' + version + '/settings', function(req, res) {
       routeSettings = "default";
       break;
   }*/
+
   if (req.body.settings.toLowerCase() === 'claimant') {
+    res.cookie('claimantJourneyOption', req.body.settings_1)
     res.redirect('/' + version + '/bank_details');
   } else {
+    res.cookie('agentJourneyOption', req.body.settings_2)
     res.redirect('/' + version + '/agent_search');
   }
 });
