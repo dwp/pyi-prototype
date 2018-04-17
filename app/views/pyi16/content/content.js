@@ -174,8 +174,8 @@ var data = [{
   "expired"    : [{
     "heading"   : "Sorry, you can't use this service",
     "lede"      : "Your 7 days to link your bank account has run out.",
-    "additional"  : "You need to <a href='#'>book an ID interview</a> at a jobcentre.",
-    "button"    : "Go back to Universal Credit"
+    "additional"  : "Sign in to Universal Credit to book an appointment at a job centre.",
+    "exitLink"  : "Go to Universal Credit sign in"
   }],
   "payment_failed"    : [{
     "heading"   : "Something’s gone wrong",
