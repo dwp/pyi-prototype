@@ -285,21 +285,6 @@ app.get('/' + version + '/settings', function(req, res) {
 });
 
 app.post('/' + version + '/settings', function(req, res) {
-  /*switch(req.body.settings.toLowerCase()) {
-    case "payment failed":
-      routeSettings = "failedPayment";
-      break;
-    case "expired reference":
-      routeSettings = "expiredReference";
-      break;
-    case "system failure":
-      routeSettings = "failedSystem";
-      break;
-    default:
-      routeSettings = "default";
-      break;
-  }*/
-
   if (req.body.settings.toLowerCase() === 'claimant') {
     res.cookie('claimantJourneyOption', req.body.settings_1)
     res.redirect('/' + version + '/bank_details');
