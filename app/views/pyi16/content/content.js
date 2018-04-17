@@ -135,7 +135,7 @@ var data = [{
     "lede"        : "No research conducted with this prototype yet"
   }],
   "settings"        : [{
-    "heading"     : "Select User Journey",
+    "heading"     : "Prototype Options",
     "lede"        : "",
     "label"       : "Select the user journey you wish to use",
     "radios"      : [{

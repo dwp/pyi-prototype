@@ -363,12 +363,20 @@ app.get('/' + version + '/agent_search', function(req,res) {
 });
 
 app.post('/' + version + '/agent_search', function(req,res) {
-  res.send('POST FROM AGENT SEARCH')
-  
-  /*res.render(version + '/agent_search', {
+  console.log(req.cookies)
+  let nextView
+
+  if (req.cookies.agentJourneyOption === 'Claimant verified') {
+    nextView = '/agent_result_success'
+  } else if (req.cookies.agentJourneyOption === 'Claimant not verified') {
+    nextView = '/agent_result_failure'
+  } else {
+    nextView = '/system_failure'
+  }
+  res.render(version + nextView, {
     data     :   content.getTableData(),
     version: version
-  });*/
+  });
 });
 
 app.get('/' + version + '/agent_result_success', function(req,res) {
