@@ -88,11 +88,7 @@ app.get('/' + version + '/enter_bank_details', function(req,res) {
 });
 app.post('/' + version + '/enter_bank_details', function(req,res) {
   req.session[version + '-enter_bank_details'] = req.body;
-  if(req.cookies.claimantJourneyOption === 'Payment failed') {
-    res.redirect('/' + version + '/payment_failed');
-  } else {
   res.redirect('/' + version + '/make_payment');
-}
 });
 
 /*****
@@ -106,7 +102,11 @@ app.get('/' + version + '/make_payment', function(req,res) {
   });
 });
 app.post('/' + version + '/make_payment', function (req, res) {
-  res.redirect('/' + version + '/bank_submitted');
+  if(req.cookies.claimantJourneyOption === 'Payment failed') {
+    res.redirect('/' + version + '/payment_failed');
+  } else {
+    res.redirect('/' + version + '/bank_submitted');
+  }
 });
 
 
@@ -122,11 +122,7 @@ app.get('/' + version + '/bank_submitted', function(req,res) {
     });
 });
 app.post('/' + version + '/bank_submitted', function(req,res) {
-  if(req.cookies.claimantJourneyOption === 'Payment failed') {
-    res.redirect('/' + version + '/payment_failed');
-  } else {
-    res.redirect('/' + version + '/enter_reference');
-}
+  res.redirect('/' + version + '/enter_reference');
 });
 
 
