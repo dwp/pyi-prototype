@@ -53,8 +53,12 @@ app.get('/' + version + '/bank_details', function(req,res) {
     });
 });
 app.post('/' + version + '/bank_details', function(req,res) {
-  req.session[version + '-bank_details'] = req.body;
-  res.redirect('/' + version + '/has_roll_number');
+  if (req.cookies.claimantJourneyOption === 'User time-out') {
+    res.redirect('/' + version + '/session_expired');
+  } else {
+    req.session[version + '-bank_details'] = req.body;
+    res.redirect('/' + version + '/has_roll_number');
+  }
 });
 
 /*****
@@ -347,6 +351,21 @@ app.get('/' + version + '/system_failure', function(req,res) {
 app.post('/' + version + '/system_failure', function(req,res) {
   res.redirect('/' + version + '/uc_login');
 });
+
+/*****
+Session expired
+******/
+
+app.get('/' + version + '/session_expired', function(req,res) {
+  res.render(version + '/session_expired', {
+   data     :   content.getTableData(),
+   version: version
+  });
+});
+app.post('/' + version + '/session_expired', function(req,res) {
+res.redirect('/' + version + '/uc_login');
+});
+
 
 /*****
  Agent screens

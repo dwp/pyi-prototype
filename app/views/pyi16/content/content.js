@@ -136,8 +136,7 @@ var data = [{
   }],
   "settings"        : [{
     "heading"     : "Prototype Options",
-    "lede"        : "",
-    "label"       : "Select the user journey you wish to use",
+    "lede"        : "Select the user journey you wish to use",
     "radios"      : [{
       "radioWithConditionalContent": {
         "value": "Claimant",
@@ -149,6 +148,8 @@ var data = [{
           "value":"Payment failed"
         }, {
           "value":"System failure"
+        }, {
+          "value": "User time-out"
         }]
       }
     }, {
@@ -217,6 +218,11 @@ var data = [{
     "text1"      : "It has not been possible to verify the claimant’s identity online.",
     "text2"      : "This is because the claimant did not use the Prove your Identity service.",
     "exitLink"  : "Go back to search"
+  }],
+  "session_expired"  : [{
+    "heading"   : "Sorry, you’ll have to start again",
+    "lede": "You have not entered any details for 20 minutes, so we have cleared your information to keep it secure.", 
+    "exitLink"  : "Go to Universal Credit sign in"
   }]
 }];
 

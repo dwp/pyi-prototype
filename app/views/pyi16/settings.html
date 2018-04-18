@@ -1,12 +1,12 @@
 {% extends version + "/layout.html" %}
 
+{% import version + "/macros/elements.html" as elements %}
+
 {% block page_title %}
   Prove your identity - Settings page
 {% endblock %}
 
 {% block content %}
-
-{% import version + "/macros/elements.html" as elements %}
 {% for page in data %}
 {% for content in page.settings %}
 
@@ -16,8 +16,10 @@
 {{ elements.openGridForm('settings') }}
 
     {{ elements.header(content) }}
-    
-    {{ elements.radioButtons('settings', content.label, '', content.radios)}}
+
+    {{ elements.notice('information', 'For claimant user journey, use 123456 as the correct reference') }}
+
+    {{ elements.radioButtons('settings', '', '', content.radios)}}
 
     {{ elements.continue(content) }}
 

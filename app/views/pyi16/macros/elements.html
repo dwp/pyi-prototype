@@ -251,6 +251,17 @@
 </div>
 {% endmacro %}
 
+{% macro notice(iconType, text) %}
+  <div style="margin-bottom:20px;"class="notice">
+    <i class="icon icon-{{ iconType }}">
+      <span class="visually-hidden">{{ iconType }}</span>
+    </i>
+    <strong class="bold-small">
+      {{ text }}
+    </strong>
+  </div>
+{% endmacro %}
+
 <!--
 ************************************************************************
 ************************************************************************
