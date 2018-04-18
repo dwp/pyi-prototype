@@ -135,7 +135,7 @@
     {{ item.value }}
     <input type="{{ type }}" id="{{ id }}_{{ index }}" name="{{ id }}" value="{{ item.value }}">
   </label>
-  <div class="panel panel-border-narrow js-hidden" id="conditional_{{ index }}">
+  <div style="margin-bottom:30px;" class="panel panel-border-narrow js-hidden" id="conditional_{{ index }}">
     {% for radio in item.radios %}
       <label class="block-label form-label" for="{{ id }}_{{ index }}_{{ loop.index }}">
         {{ radio.value }}
