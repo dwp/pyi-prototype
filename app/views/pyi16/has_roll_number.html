@@ -10,10 +10,13 @@
 {% for content in page.has_roll_number %}
 
     <div class="main" role="main" id="content">
+
     {{ elements.banner() }}
 
     {{ elements.openGridForm('has_roll_number') }}
-
+      {% if error %}
+        {{ elements.errorSummaryBox(error) }}
+      {% endif %}
       {{ elements.header(content) }}
       {{ elements.content(content.text) }}
 

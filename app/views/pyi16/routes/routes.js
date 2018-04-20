@@ -1,3 +1,4 @@
+const { check, validationResult } = require('express-validator/check');
 
 module.exports = function (app) {
   var content = require('../content/content');
@@ -71,13 +72,28 @@ app.get('/' + version + '/has_roll_number', function(req,res) {
       version: version
     });
 });
-app.post('/' + version + '/has_roll_number', function(req,res) {
-  req.session[version + '-has_roll_number'] = req.body;
-  if(req.body.rollNumber === "Yes") {
-    res.redirect('/' + version + '/payment_failed');
-  } else {
-  res.redirect('/' + version + '/enter_bank_details');
-}
+
+app.post('/' + version + '/has_roll_number', [
+  check('rollNumber')
+    .isLength({min: 1})
+    .withMessage('Tell us if your bank account has a building society roll number')
+],
+  function(req,res) {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      res.render(version + '/has_roll_number', {
+        data    : content.getTableData(),
+        version: version,
+        error:  errors.array({ onlyFirstError: true })[0]
+      });
+    } else {
+      req.session[version + '-has_roll_number'] = req.body;
+      if(req.body.rollNumber === "Yes") {
+        res.redirect('/' + version + '/payment_failed');
+      } else {
+      res.redirect('/' + version + '/enter_bank_details');
+    }
+  }
 });
 
 /*****

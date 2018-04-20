@@ -262,6 +262,22 @@
   </div>
 {% endmacro %}
 
+{% macro errorSummaryBox(error) %}
+  <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+    <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+      There's a problem
+    </h2>
+
+    <p>You must:</p>
+
+    <ul class="error-summary-list">
+      <li><a href="#example-personal-details">{{ error.msg }}</a></li>
+    </ul>
+
+  </div>
+{% endmacro %}
+
 <!--
 ************************************************************************
 ************************************************************************
