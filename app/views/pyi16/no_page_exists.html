@@ -1,7 +1,7 @@
 {% extends version + "/layout.html" %}
 
 {% block page_title %}
-  Page not made - GOV.UK prototype kit
+  Page not found - GOV.UK prototype kit
 {% endblock %}
 
 {% block content %}
@@ -11,13 +11,15 @@
 
 <div class="main" id="content" role="main">
 {{ elements.banner() }}
-{{ elements.openGridForm('no_page_exists') }}
 
 {{ elements.header(content) }}
 
-<input type="submit" class="button browser-back" value="Go back">
+{{ elements.content(content.text) }}
 
-{{ elements.closeGridForm() }}
+<p>
+  Or go back to the <a href="uc_login">Universal Credit sign in page.</a>
+</p>
+
 </div>
 
 {% endfor %}

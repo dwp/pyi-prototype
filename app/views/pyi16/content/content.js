@@ -122,8 +122,8 @@ var data = [{
     "button"    : "Continue"
   }],
   "no_page_exists"  : [{
-    "heading"     : "Oops",
-    "lede"        : "Unfortunately, the option you selected is unavailable"
+    "heading"     : "Something's gone wrong",
+    "text"        : "This page can’t be found. Check the link you’re using and try again."
   }],
   "reset"         : [{
     "heading"       : "Reset session",
@@ -164,6 +164,8 @@ var data = [{
             "value": "System failure"
           }]
         }
+    }, {
+      "value": "Page not found"
     }],
     "button"      : "Start journey"
   }],

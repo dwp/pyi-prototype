@@ -288,9 +288,11 @@ app.post('/' + version + '/settings', function(req, res) {
   if (req.body.settings.toLowerCase() === 'claimant') {
     res.cookie('claimantJourneyOption', req.body.settings_1)
     res.redirect('/' + version + '/bank_details');
-  } else {
+  } else if (req.body.settings.toLowerCase() === 'agent search') {
     res.cookie('agentJourneyOption', req.body.settings_2)
     res.redirect('/' + version + '/agent_search');
+  } else {
+    res.redirect('/' + version + '/no_page_exists');
   }
 });
 
