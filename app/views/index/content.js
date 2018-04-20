@@ -108,9 +108,11 @@ module.exports = {
     },
     pyi16: {
         version: 16,
-        release: "TBC",
+        release: "20 April 2018",
         changes: [
             "Add agent screens",
+            "Add new Prototype Options screen to select different user journeys",
+            "Correct 'Something's gone wrong' screens",
             "Add user error messages"
         ],
         researchFindings: [""]
