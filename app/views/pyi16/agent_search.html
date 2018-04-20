@@ -14,13 +14,38 @@
 
         {{ elements.openGridForm('agent_search') }}
 
+          {% if errors %}
+            {{ elements.errorSummaryBox(errors) }}
+          {% endif %}
+
           {{ elements.header(content) }}
+          
+          {{ elements.inputField(
+            id = 'claimantId',
+            content = 'Claimant ID - the URL at the top of the customer claim details view',
+            size = '1-2',
+            value = values.claimantId,
+            type='text',
+            hasError=errors.claimantId
+          ) }}
 
-          {{ elements.inputField('claimantId','Claimant ID - the URL at the top of the customer claim details view', false,'1-2','',type='text') }}
+          {{ elements.inputField(
+            id = 'partialBankAccountNumber',
+            content = 'Last 4 digits of bank account number in the final declaration – bank details view',
+            size = '1-2',
+            value = values.partialBankAccountNumber,
+            type='text',
+            hasError=errors.partialBankAccountNumber
+          ) }}
 
-          {{ elements.inputField('partialBankAccountNumber','Last 4 digits of bank account number in the final declaration – bank details view', false,'1-2','',type='text') }}
-
-          {{ elements.inputField('sortCode','Sort code in the final declaration – bank details view', false,'1-2','',type='text') }}
+          {{ elements.inputField(
+            id = 'sortCode',
+            content = 'Sort code in the final declaration – bank details view',
+            size = '1-2',
+            value = values.sortCode,
+            type='text',
+            hasError=errors.sortCode
+          ) }}
 
           {{ elements.continue(content, 'agent_search') }}
 

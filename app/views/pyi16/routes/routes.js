@@ -472,22 +472,72 @@ app.get('/' + version + '/agent_search', function(req,res) {
   });
 });
 
-app.post('/' + version + '/agent_search', function(req,res) {
-  let nextView
+app.post('/' + version + '/agent_search', [
+  check('claimantId')
+    .isLength({min: 1})
+    .withMessage('Enter the claimant url')
+  ,
+  check('partialBankAccountNumber')
+    .isLength({min: 1})
+    .withMessage('Enter last 4 digits of the account number')
+    .custom(value => {
+      if (!customValidators.isDigitsOrSpaces(value)) {
+        throw new Error('Enter last 4 digits of the account number')
+      }
+      if (!customValidators.isNotTooFewDigits(value, 4)) {
+        throw new Error('Enter last 4 digits of the account number')
+      }
+      if (!customValidators.isNotTooManyDigits(value, 4)) {
+        throw new Error('Enter last 4 digits of the account number')
+      }
+      return true
+    })
+  ,
+  check('sortCode')
+    .isLength({min: 1})
+    .withMessage('Enter the sort code')
+    .custom(value => {
+      if (!customValidators.isDigitsSpacesOrDashes(value)) {
+        throw new Error('Enter the sort code')
+      }
+      if (!customValidators.isNotTooFewDigits(value, 6)) {
+        throw new Error('Enter the sort code')
+      }
+      if (!customValidators.isNotTooManyDigits(value, 6)) {
+        throw new Error('Enter the sort code')
+      }
+      return true
+    })
+  ], function(req,res,next) {
+    const errors = validationResult(req);
+    const parsedErrors = parseErrors(errors.array({ onlyFirstError: true }))
+    if (!errors.isEmpty()) {
+      res.render(version + '/agent_search', {
+        data     :   content.getTableData(),
+        version: version,
+        errors: parsedErrors,
+        values: req.body
+      });
+    } else {
+      next()
+    }
 
-  if (req.cookies.agentJourneyOption === 'Claimant verified') {
-    nextView = '/agent_result_success'
-  } else if (req.cookies.agentJourneyOption === 'Claimant not verified') {
-    nextView = '/agent_result_failure'
-  } else {
-    nextView = '/system_failure'
-  }
+  }, function(req, res) {
+    let nextView
 
-  res.render(version + nextView, {
-    data: content.getTableData(),
-    version: version
+    if (req.cookies.agentJourneyOption === 'Claimant verified') {
+      nextView = '/agent_result_success'
+    } else if (req.cookies.agentJourneyOption === 'Claimant not verified') {
+      nextView = '/agent_result_failure'
+    } else {
+      nextView = '/system_failure'
+    }
+
+    res.render(version + nextView, {
+      data: content.getTableData(),
+      version: version
+    });
   });
-});
 
 app.get('/' + version + '/agent_result_success', function(req,res) {
   res.render(version + '/agent_result_success', {
