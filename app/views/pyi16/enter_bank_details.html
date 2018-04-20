@@ -25,10 +25,17 @@
         id = 'sortCode',
         content = 'Sort code',
         size = '1-4',
-        type='text'
+        type='text',
+        errorMessage=errors.sortCode
       ) }}
 
-      {{ elements.inputField('accountNumber','Account number', false,'1-2','',type='text') }}
+      {{ elements.inputField(
+        id='accountNumber',
+        content='Account number',
+        size='1-2',
+        type='text',
+        errorMessage=errors.accountNumber
+      ) }}
 
 
 

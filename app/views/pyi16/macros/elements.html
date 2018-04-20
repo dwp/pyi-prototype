@@ -99,9 +99,10 @@
 {% endmacro %}
 
 <!--  Input types  -->
-{% macro inputField(id,content,hint,size,value,type='text') %}
-<div class="form-group" id="form-group-{{ id }}">
+{% macro inputField(id,content,hint,size,value,type='text', errorMessage) %}
+<div class="form-group {% if errorMessage %}form-group-error{% endif %}" id="form-group-{{ id }}">
   <label class="form-label-bold" for="{{ id }}">{{ content }}
+  {% if errorMessage %}<span class="error-message">{{ errorMessage}}</span>{% endif %}
   {% if hint %} <br><span>{{ hint }}</span> {% endif %}
   </label>
   <input id="{{ id }}" type="{{ type }}" class="form-control {% if size %}form-control-{{ size }}{% endif %}" name="{{ id }}" value="{{ value }}">
