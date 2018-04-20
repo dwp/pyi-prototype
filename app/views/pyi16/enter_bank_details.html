@@ -14,6 +14,10 @@
 
     {{ elements.openGridForm('enter_bank_details') }}
 
+      {% if errors %}
+        {{ elements.errorSummaryBox(errors) }}
+      {% endif %}
+
       {{ elements.header(content) }}
       {{ elements.content(content.text, content.text4) }}
 

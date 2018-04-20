@@ -1,9 +1,9 @@
 const { check, validationResult } = require('express-validator/check');
+const customValidators = require('../helpers/validators')
 
 module.exports = function (app) {
   var content = require('../content/content');
   var routeSettings = routeSettings === undefined ? "default" : routeSettings;
-
 const version = 'pyi16';
 
 /*********
@@ -106,9 +106,36 @@ app.get('/' + version + '/enter_bank_details', function(req,res) {
       version: version
     });
 });
-app.post('/' + version + '/enter_bank_details', function(req,res) {
-  req.session[version + '-enter_bank_details'] = req.body;
-  res.redirect('/' + version + '/make_payment');
+
+app.post('/' + version + '/enter_bank_details', [
+  check('sortCode')
+    .isLength({min: 1})
+    .withMessage('Enter a sort code')
+    .custom(value => {
+      if (!customValidators.isDigitsSpacesOrDashes(value)) {
+        throw new Error('Enter a sort code that only contains 6 numbers')
+      }
+      if (!customValidators.isNotTooFewDigits(value, 6)) {
+        throw new Error('Enter a sort code that contains 6 numbers')
+      }
+      if (!customValidators.isNotTooManyDigits(value, 6)) {
+        throw new Error('Enter a sort code that only contains 6 numbers')
+      }
+      return true
+    })
+],
+  function(req,res) {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      res.render(version + '/enter_bank_details', {
+        data: content.getTableData(),
+        version: version,
+        errors: errors.array({ onlyFirstError: true })
+      });
+    } else {
+      req.session[version + '-enter_bank_details'] = req.body;
+      res.redirect('/' + version + '/make_payment');
+    }
 });
 
 /*****
