@@ -108,12 +108,13 @@
 </div>
 {% endmacro %}
 
-{% macro radioButtons(id,content,hint,radios,inline,type='radio') %}
+{% macro radioButtons(id,content,hint,radios,inline,type='radio',errorMessage) %}
   <div>
     <fieldset class="form-group{% if inline %} inline{% endif %}">
-      <legend>
-        <span class="form-label-bold">{{ content }}</span>
+      <legend class="form-label-bold">
+        {{ content }}
         {% if hint %}<span class="form-hint">{{ hint }}</span>{% endif %}
+        {% if errorMessage %}<span class="error-message">{{ errorMessage }}</span>{% endif %}
       </legend>
       {% for item in radios %}
         {% if item.radioWithConditionalContent %}
@@ -239,10 +240,10 @@
 {% endmacro %}
 
 <!-- Proabably a better way of doing this -->
-{% macro openGridForm(pageName,columns='two-thirds') %}
+{% macro openGridForm(pageName,id,columns='two-thirds') %}
 <div class="grid-row">
 <div class="column-{{ columns }}">
-<form action="/{{ version }}/{{ pageName }}" method="post" class="form">
+<form action="/{{ version }}/{{ pageName }}" method="post" class="form" {% if id %}id="{{ id }}"{% endif %}>
 {% endmacro %}
 
 {% macro closeGridForm() %}
@@ -262,7 +263,7 @@
   </div>
 {% endmacro %}
 
-{% macro errorSummaryBox(error) %}
+{% macro errorSummaryBox(errors) %}
   <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
 
     <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
@@ -272,7 +273,9 @@
     <p>You must:</p>
 
     <ul class="error-summary-list">
-      <li><a href="#example-personal-details">{{ error.msg }}</a></li>
+      {% for error in errors %}
+        <li><a href="#{{ error.param }}-errorLink">{{ error.msg }}</a></li>
+      {% endfor %}
     </ul>
 
   </div>

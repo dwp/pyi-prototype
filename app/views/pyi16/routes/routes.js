@@ -84,7 +84,7 @@ app.post('/' + version + '/has_roll_number', [
       res.render(version + '/has_roll_number', {
         data    : content.getTableData(),
         version: version,
-        error:  errors.array({ onlyFirstError: true })[0]
+        errors:  errors.array({ onlyFirstError: true })
       });
     } else {
       req.session[version + '-has_roll_number'] = req.body;
