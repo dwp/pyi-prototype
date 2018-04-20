@@ -147,7 +147,8 @@ app.post('/' + version + '/enter_bank_details', [
       res.render(version + '/enter_bank_details', {
         data: content.getTableData(),
         version: version,
-        errors: parsedErrors
+        errors: parsedErrors,
+        values: req.body
       });
     } else {
       req.session[version + '-enter_bank_details'] = req.body;
@@ -289,7 +290,6 @@ app.get('/' + version + '/failure', function(req,res) {
     }
 });
 app.post('/' + version + '/failure', function(req,res) {
-    console.log(req.body);
     req.session[version + '-failure'] = req.body;
     if (req.body.verifyAgain == 'Try GOV.UK Verify again') {
       res.redirect('/' + version + '/404');
