@@ -220,7 +220,40 @@ app.get('/' + version + '/enter_reference', function(req,res) {
     version: version
     });
 });
-app.post('/' + version + '/enter_reference', function(req,res) {
+
+app.post('/' + version + '/enter_reference', [
+  check('codeTestInput')
+    .isLength({min: 1})
+    .withMessage('Enter the 6-digit code from Universal Credit on your bank statement')
+    .custom(value => {
+      if (!customValidators.isDigitsOrSpaces(value)) {
+        throw new Error('Enter a reference that only contains 6 numbers')
+      }
+      if (!customValidators.isNotTooFewDigits(value, 6)) {
+        throw new Error('Enter a reference that contains 6 numbers')
+      }
+      if (!customValidators.isNotTooManyDigits(value, 6)) {
+        throw new Error('Enter a reference that only contains 6 numbers')
+      }
+      return true
+    })
+  ],
+  function(req,res,next) {
+    const errors = validationResult(req);
+    const parsedErrors = parseErrors(errors.array({ onlyFirstError: true }))
+    if (!errors.isEmpty()) {
+      res.render(version + '/enter_reference', {
+        data     :   content.getTableData(),
+        second_entry  : req.session[version + '-second_entry'],
+        version: version,
+        errors: parsedErrors,
+        values: req.body
+        });
+    } else {
+      next()
+    }
+  },
+  function(req,res) {
     if (req.body.codeTestInput.replace(/\s+/g, '') === '123456') {
     switch(req.cookies.claimantJourneyOption) {
       case 'System failure':

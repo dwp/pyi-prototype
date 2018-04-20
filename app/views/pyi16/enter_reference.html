@@ -13,9 +13,22 @@
     {{ elements.banner() }}
 
     {{ elements.openGridForm('enter_reference') }}
-    {{ elements.header(content) }}
-    {{ elements.inputField('codeTestInput','Reference','','1-4') }}
 
+    {% if errors %}
+        {{ elements.errorSummaryBox(errors) }}
+    {% endif %}
+
+    
+
+    {{ elements.header(content) }}
+    {{ elements.inputField(
+      id = 'codeTestInput',
+      content = 'Reference',
+      size = '1-4',
+      value = values.codeTestInput,
+      type='text',
+      errorMessage=errors.codeTestInput
+    ) }}
     {% if second_entry %}
     <img src="/public/images/Example_transaction_v2.png" alt="">
     {% endif %}
