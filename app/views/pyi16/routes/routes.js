@@ -80,11 +80,12 @@ app.post('/' + version + '/has_roll_number', [
 ],
   function(req,res) {
     const errors = validationResult(req);
+    const parsedErrors = parseErrors(errors.array({ onlyFirstError: true }))
     if (!errors.isEmpty()) {
       res.render(version + '/has_roll_number', {
         data    : content.getTableData(),
         version: version,
-        errors:  errors.array({ onlyFirstError: true })
+        errors: parsedErrors
       });
     } else {
       req.session[version + '-has_roll_number'] = req.body;
