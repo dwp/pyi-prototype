@@ -21,7 +21,12 @@
       {{ elements.header(content) }}
       {{ elements.content(content.text, content.text4) }}
 
-      {{ elements.inputField('sortCode','Sort code', false,'1-4','',type='text') }}
+      {{ elements.inputField(
+        id = 'sortCode',
+        content = 'Sort code',
+        size = '1-4',
+        type='text'
+      ) }}
 
       {{ elements.inputField('accountNumber','Account number', false,'1-2','',type='text') }}
 

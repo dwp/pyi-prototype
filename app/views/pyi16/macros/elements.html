@@ -273,8 +273,8 @@
     <p>You must:</p>
 
     <ul class="error-summary-list">
-      {% for error in errors %}
-        <li><a href="#{{ error.param }}-errorLink">{{ error.msg }}</a></li>
+      {% for id, error in errors %}
+        <li><a href="#{{ id }}">{{ error }}</a></li>
       {% endfor %}
     </ul>
 

@@ -122,15 +122,31 @@ app.post('/' + version + '/enter_bank_details', [
         throw new Error('Enter a sort code that only contains 6 numbers')
       }
       return true
+    }),
+  check('accountNumber')
+    .isLength({min: 1})
+    .withMessage('Enter an account number')
+    .custom(value => {
+      if (!customValidators.isDigitsOrSpaces(value)) {
+        throw new Error('Enter an account number that only contains 8 numbers')
+      }
+      if (!customValidators.isNotTooFewDigits(value, 8)) {
+        throw new Error('Enter an account number that contains 8 numbers')
+      }
+      if (!customValidators.isNotTooManyDigits(value, 8)) {
+        throw new Error('Enter an account number that only contains 8 numbers')
+      }
+      return true
     })
 ],
   function(req,res) {
     const errors = validationResult(req);
+    const parsedErrors = parseErrors(errors.array({ onlyFirstError: true }))
     if (!errors.isEmpty()) {
       res.render(version + '/enter_bank_details', {
         data: content.getTableData(),
         version: version,
-        errors: errors.array({ onlyFirstError: true })
+        errors: parsedErrors
       });
     } else {
       req.session[version + '-enter_bank_details'] = req.body;
@@ -454,3 +470,14 @@ app.get('/' + version + '/agent_result_failure', function(req,res) {
 });
 
 };
+
+function parseErrors(errors) {
+  let parsedErrors = {}
+  let propertyName, propertyValue
+  for (error in errors) {
+    propertyName = errors[error].param
+    propertyValue = errors[error].msg
+    parsedErrors[propertyName] = propertyValue
+  }
+  return parsedErrors
+}
