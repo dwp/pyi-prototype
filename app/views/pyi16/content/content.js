@@ -180,8 +180,9 @@ var data = [{
   }],
   "payment_failed"    : [{
     "heading"   : "Something’s gone wrong",
-    "lede"      : "Sorry, you can’t use this service. You need to <a href='#'>book an ID interview</a> at a jobcentre.",
-    "button"    : "Go back to Universal Credit"
+    "lede"      : "Sorry, you can’t use this service.",
+    "text"  : "Sign in to Universal Credit to book an appointment at a job centre.",
+    "exitLink"  : "Go to Universal Credit sign in"
   }],
   "system_failure": [{
     "heading"   : "Something’s gone wrong",

@@ -23,7 +23,8 @@
   </p>
         {% else %}
         {{ elements.header(content) }}
-        {{ elements.continue(content) }}
+        {{ elements.content(content.text)}}
+        {{ elements.continue(content, 'uc_login') }}
         {% endif %}
 
     {{ elements.closeGridForm() }}

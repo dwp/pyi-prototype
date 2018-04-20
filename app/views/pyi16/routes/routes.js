@@ -107,7 +107,7 @@ app.get('/' + version + '/make_payment', function(req,res) {
 });
 app.post('/' + version + '/make_payment', function (req, res) {
   if(req.cookies.claimantJourneyOption === 'Payment failed') {
-    res.redirect('/' + version + '/system_failure');
+    res.redirect('/' + version + '/payment_failed');
   } else {
     res.redirect('/' + version + '/bank_submitted');
   }
