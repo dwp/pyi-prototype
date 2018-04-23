@@ -19,24 +19,29 @@
       {% endif %}
       {{ elements.header(content) }}
       {{ elements.content(content.text) }}
-
-      <details>
-          <summary class="summary">{{ content.summary }}</summary>
-            <div class="panel panel-border-narrow" id="details-content-0">
-              {{ content.details }}
-            </div>
-      </details>
-
-      <div id="rollNumber" class="form-group {% if errors %} form-group-error {% endif %}">
-        {{ elements.radioButtons(
-          'rollNumber',
-          'Does your bank account have a building society roll number?',
-          '',
-          content.radios,
-          '',
-          type='radio',
-          errorMessage=errors.rollNumber
-        ) }}
+      
+      <div>
+        <fieldset class="form-group">
+          <legend>
+            <h1 class="heading-medium" style="margin-top: 10px;">
+              Does your bank account have a building society roll number?
+            </h1>
+          </legend>
+          <details>
+            <summary class="summary">{{ content.summary }}</summary>
+              <div class="panel panel-border-narrow" id="details-content-0" style="margin-bottom: 10px;">
+                {{ content.details }}
+              </div>
+          </details>
+          <div class="multiple-choice">
+            <input id="rollNumber_1" type="radio" name="rollNumber" value="Yes">
+            <label for="rollNumber_1">Yes</label>
+          </div>
+          <div class="multiple-choice">
+            <input id="rollNumber_2" type="radio" name="rollNumber" value="No">
+            <label for="rrollNumber_2">No</label>
+          </div>
+        </fieldset>
       </div>
 
       {{ elements.continue(content, 'uc_login', 'side') }}
