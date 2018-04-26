@@ -25,6 +25,12 @@ const version = 'pyi17a';
     })
   })
 
+  app.get('/' + version + '/go_to_task', (req, res) => {
+    if (req.query.task === '4') {
+      res.redirect('/' + version + '/bank_details')
+    }
+  })
+
 /*********
 UC Login Page
 **********/
