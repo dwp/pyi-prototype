@@ -34,7 +34,7 @@ const version = 'pyi17a';
 /*********
 UC Login Page
 **********/
-
+/*
 app.get('/' + version + '/uc_login', function(req, res) {
     debugger;
   res.render(version + '/uc_login', {
@@ -45,12 +45,12 @@ app.get('/' + version + '/uc_login', function(req, res) {
 app.post('/' + version + '/uc_login', function(req, res) {
   req.session[version + '-uc_login'] = req.body;
   res.redirect('/' + version + '/bank_details');
-});
+});*/
 
 /********
 To-do Page
 *********/
-
+/*
 app.get('/' + version + '/to_do_page', function(req,res) {
     res.render(version + '/to_do_page', {
       data          : content.getTableData(),
@@ -67,7 +67,7 @@ app.get('/' + version + '/to_do_page', function(req,res) {
 app.post('/' + version + '/to_do_page', function (req, res) {
   res.redirect('/' + version + '/bank_details');
 });
-
+*/
 /*****
 bank_details
 ******/
@@ -83,14 +83,14 @@ app.post('/' + version + '/bank_details', function(req,res) {
     res.redirect('/' + version + '/session_expired');
   } else {
     req.session[version + '-bank_details'] = req.body;
-    res.redirect('/' + version + '/has_roll_number');
+    res.redirect('/' + version + '/make_payment');
   }
 });
 
 /*****
 has_roll_number
 ******/
-
+/*
 app.get('/' + version + '/has_roll_number', function(req,res) {
     res.render(version + '/has_roll_number', {
       data    : content.getTableData(),
@@ -121,11 +121,11 @@ app.post('/' + version + '/has_roll_number', [
     }
   }
 });
-
+*/
 /*****
 enter_bank_details
 ******/
-
+/*
 app.get('/' + version + '/enter_bank_details', function(req,res) {
     res.render(version + '/enter_bank_details', {
       data    : content.getTableData(),
@@ -180,7 +180,7 @@ app.post('/' + version + '/enter_bank_details', [
       res.redirect('/' + version + '/make_payment');
     }
 });
-
+*/
 /*****
 make_payment
 ******/

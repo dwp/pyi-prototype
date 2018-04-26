@@ -46,7 +46,7 @@ var data = [{
   "bank_details"  : [{
       "heading"   : "Use your bank account to prove your identity",
       "text"      : "This is a secure government service to prove your identity.",
-      "exitLink"  : "Go to Universal Credit sign in",
+      "exitLink"  : "Go to Task List",
       "button"    : "Next"
   }],
   "has_roll_number"  : [{
