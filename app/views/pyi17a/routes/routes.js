@@ -6,6 +6,25 @@ module.exports = function (app) {
   var routeSettings = routeSettings === undefined ? "default" : routeSettings;
 const version = 'pyi17a';
 
+/********
+ Entry point
+ ********/
+
+  app.get('/' + version, (req, res) => {
+    res.redirect('/' + version + '/settings')
+  })
+
+/********
+ UCFS Task list
+ ********/
+  app.get('/' + version + '/ucfs_task_list', (req, res) => {
+    res.render(version + '/ucfs_task_list', {
+      data : content.getTableData(),
+      version: version,
+      task: req.query.task
+    })
+  })
+
 /*********
 UC Login Page
 **********/
@@ -371,10 +390,6 @@ app.post('/' + version + '/reset', function(req,res) {
 Settings
 ***************/
 app.get('/' + version + '/settings', function(req, res) {
-
-  console.log('****version')
-  console.log(version)
-
   res.render(version + '/settings', {
     data    : content.getTableData(),
     version: version
@@ -384,7 +399,7 @@ app.get('/' + version + '/settings', function(req, res) {
 app.post('/' + version + '/settings', function(req, res) {
   if (req.body.settings.toLowerCase() === 'claimant') {
     res.cookie('claimantJourneyOption', req.body.settings_1)
-    res.redirect('/' + version + '/bank_details');
+    res.redirect('/' + version + '/ucfs_task_list?task=4');
   } else if (req.body.settings.toLowerCase() === 'agent search') {
     res.cookie('agentJourneyOption', req.body.settings_2)
     res.redirect('/' + version + '/agent_search');

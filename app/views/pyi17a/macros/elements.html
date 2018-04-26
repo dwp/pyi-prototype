@@ -282,6 +282,41 @@
   </div>
 {% endmacro %}
 
+
+{% macro ucfsTaskList(task) %}
+  {% set taskList = {
+    '1': 'Create a Universal Credit account',
+    '2': 'Start claim',
+    '3': 'Check your details',
+    '4': 'Confirm your identity',
+    '5': 'Book a Jobcentre Plus appointment'
+  } %}
+
+  <ol style="margin-top: 60px;">
+    {% for taskNumber, taskName in taskList %}
+       <li>
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">{{ taskNumber }}.</span> {{ taskName }}
+          </h2>
+          {% if taskNumber < task %}
+            <strong class="task-completed" id="eligibility-completed" style="margin-top:-32px;">Completed</strong>
+          {% endif %}
+          {% if taskNumber == task %}
+            <ul class="task-list-items" style="margin-bottom:30px">
+              <li class="task-list-item cf">
+                <a class="task-name" href="/{{ version }}/go_to_task?task={{ taskNumber }}">
+                {{ taskName }}
+                </a>
+              </li>
+            </ul>
+          {% endif %}
+        </li>
+
+    {% endfor %}
+  </ol>
+
+{% endmacro %}
+
 <!--
 ************************************************************************
 ************************************************************************
@@ -314,3 +349,4 @@
 </fieldset>
 </div>
 {% endmacro %}
+

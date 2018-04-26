@@ -8,6 +8,11 @@ var data = [{
     "revealCont" : "You may be able to use the <a href='#'>Universal Credit online service</a> to:",
     "button"      : "Sign In"
   }],
+  "ucfs_task_list"      : [{
+    "heading"     : "Apply for Universal Credit",
+    "text": "You must complete the remaining 2 sections or your application will not be processed.",
+    "text2": "The information you have given us so far will be saved if you need to come back later to finish your application."
+  }],
   "to_do_page"    : [{
     "alert"       : ["This is your to-do list.","You have to work through the items below. If you don't you might not get paid.","Completed items appear in your <a href='/pyi13/no_page_exists'>journal.</a>"],
     "alert2"      : "Verify your identity",
