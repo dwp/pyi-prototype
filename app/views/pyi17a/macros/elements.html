@@ -283,14 +283,7 @@
 {% endmacro %}
 
 
-{% macro ucfsTaskList(task) %}
-  {% set taskList = {
-    '1': 'Create a Universal Credit account',
-    '2': 'Start claim',
-    '3': 'Check your details',
-    '4': 'Confirm your identity',
-    '5': 'Book a Jobcentre Plus appointment'
-  } %}
+{% macro ucfsTaskList(taskList, task) %}
 
   <ol style="margin-top: 60px;">
     {% for taskNumber, taskName in taskList %}

@@ -11,7 +11,14 @@ var data = [{
   "ucfs_task_list"      : [{
     "heading"     : "Apply for Universal Credit",
     "text": "You must complete the remaining 2 sections or your application will not be processed.",
-    "text2": "The information you have given us so far will be saved if you need to come back later to finish your application."
+    "text2": "The information you have given us so far will be saved if you need to come back later to finish your application.",
+    "taskList" : {
+      '1': 'Create a Universal Credit account',
+      '2': 'Start claim',
+      '3': 'Check your details',
+      '4': 'Confirm your identity',
+      '5': 'Book a Jobcentre Plus appointment'
+    }
   }],
   "to_do_page"    : [{
     "alert"       : ["This is your to-do list.","You have to work through the items below. If you don't you might not get paid.","Completed items appear in your <a href='/pyi13/no_page_exists'>journal.</a>"],
