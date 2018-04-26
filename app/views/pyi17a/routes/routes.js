@@ -239,11 +239,11 @@ Enter Reference
 *********/
 
 app.get('/' + version + '/enter_reference', function(req,res) {
-    res.render(version + '/enter_reference', {
+  res.cookie('attempts', '0')
+  res.render(version + '/enter_reference', {
     data     :   content.getTableData(),
-    second_entry  : req.session[version + '-second_entry'],
     version: version
-    });
+  });
 });
 
 app.post('/' + version + '/enter_reference', [
@@ -269,7 +269,6 @@ app.post('/' + version + '/enter_reference', [
     if (!errors.isEmpty()) {
       res.render(version + '/enter_reference', {
         data     :   content.getTableData(),
-        second_entry  : req.session[version + '-second_entry'],
         version: version,
         errors: parsedErrors,
         values: req.body
@@ -294,7 +293,22 @@ app.post('/' + version + '/enter_reference', [
     if(req.cookies.claimantJourneyOption === "System failure") {
       res.redirect('/' + version + '/system_failure');
     } else {
-      res.redirect('/' + version + '/failure');
+      let attempts = parseInt(req.cookies.attempts)
+      attempts++
+      if (attempts < 3) {
+        const remainingAttempts = 3 - attempts
+        res.cookie('attempts', attempts)
+        res.render(version + '/enter_reference', {
+          data        :   content.getTableData(),
+          version: version,
+          errors: {
+            'codeTestInput':
+            'Enter a correct reference. You have ' + remainingAttempts + ' more attempt' + (remainingAttempts === 1 ? '' : 's')
+          }
+        })
+      } else {
+        res.redirect('/' + version + '/failure');
+      }
     }
   }
 });
@@ -337,15 +351,10 @@ Failure
 *********/
 
 app.get('/' + version + '/failure', function(req,res) {
-    req.session.attempts ++;
     res.render(version + '/failure', {
-      attempts    :   (req.session.attempts || 0) + 1,
       data        :   content.getTableData(),
-      version: version
+      version: version,
     });
-    if (req.session.attempts === 2) {
-      req.session.destroy();
-    }
 });
 app.post('/' + version + '/failure', function(req,res) {
     req.session[version + '-failure'] = req.body;

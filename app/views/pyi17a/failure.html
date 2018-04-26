@@ -14,21 +14,9 @@
 
     {{ elements.openGridForm('failure') }}
 
-      {% if attempts < 3 %}
-
-        {{ elements.header(content) }}
-        {{ elements.content(content.info) }}
-        {{ elements.attempts(attempts,3,content.attemptsText) }}
-        {{ elements.continue(content) }}
-
-      {% else %}
-
-        {{ elements.header('','',content.heading2,content.lede2,content.additional2) }}
-      <!--input type="hidden" name="verifyAgain" value="Try using your bank account again"-->
-        {{ elements.content(content.text2) }}
-        {{ elements.continue('','to_do_page','',content.button2,content.exitLink2) }}
-
-      {% endif %}
+      {{ elements.header('','',content.heading2,content.lede2,content.additional2) }}
+      {{ elements.content(content.text2) }}
+      {{ elements.continue('','to_do_page','',content.button2,content.exitLink2) }}
 
     {{ elements.closeGridForm() }}
 </div>
