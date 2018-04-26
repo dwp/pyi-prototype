@@ -46,7 +46,7 @@ var data = [{
   "bank_details"  : [{
       "heading"   : "Use your bank account to prove your identity",
       "text"      : "This is a secure government service to prove your identity.",
-      "exitLink"  : "Go to Task List",
+      "exitLink"  : "Back",
       "button"    : "Next"
   }],
   "has_roll_number"  : [{
@@ -70,7 +70,7 @@ var data = [{
     "heading"   : "Get a reference sent to your bank account",
     "text"      : "To find the reference you’ll need to check your bank statement.",
     "text2"     : "You can use online, mobile or telephone banking. Or go to a cash machine or your branch to get a statement printout.",
-    "exitLink"  : "Go to Task List",
+    "exitLink"  : "Back",
     "button"    : "OK - send the reference"
   }],
   "bank_submitted"  : [{
@@ -95,7 +95,8 @@ var data = [{
     "heading"     : "Enter your reference",
     "lede"        : "",
     "text"        : "It will be a 6-digit code from Universal Credit on your bank statement, for example 12 34 56.",
-    "button"      : "Submit"
+    "button"      : "Submit",
+    "exitLink"    : "Back"
   }],
   "success"       : [{
     "heading"     : "You have correctly entered the reference number",

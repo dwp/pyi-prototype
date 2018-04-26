@@ -154,7 +154,7 @@
   <div{% if side %} class="inline-button"{% endif %}><input type="submit" class="button" value="{% if content %}{{ content.button }}{% elif buttonReplace %}{{ buttonReplace }}{% endif %}" name="submit"></div>
 {% endif %}
 {% if pageName %}
-<div class="exit-link{% if side %}-side inline-button{% endif %}"><a href="/{{ version }}/{{ pageName }}">{% if content %}{{ content.exitLink }}{% elif exitReplace %}{{ exitReplace }}{% endif %}</a></div>
+<div class="exit-link{% if side %}-side inline-button{% endif %}"><a href="{% if pageName == 'js-back' %}javascript:history.back(){% else %}/{{ version }}/{{ pageName }}{% endif %}">{% if content %}{{ content.exitLink }}{% elif exitReplace %}{{ exitReplace }}{% endif %}</a></div>
 {% endif %}
 {% endmacro %}
 
