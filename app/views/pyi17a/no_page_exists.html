@@ -1,0 +1,27 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Page not found - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import version + "/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.no_page_exists %}
+
+<div class="main" id="content" role="main">
+{{ elements.banner() }}
+
+{{ elements.header(content) }}
+
+{{ elements.content(content.text) }}
+
+<p>
+  Or go back to the <a href="uc_login">Universal Credit sign in page.</a>
+</p>
+
+</div>
+
+{% endfor %}
+{% endfor %}
+  {% endblock %}

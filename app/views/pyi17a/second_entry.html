@@ -1,0 +1,42 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Prove your identity - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+{% import version + "/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.how_verify %}
+
+<div class="main" id="content" role="main">
+    {{ elements.banner() }}
+    {{ elements.toDoSection() }}
+    {{ elements.openGridForm('second_entry') }}
+
+
+        {{ elements.heading('3', 'interim', content.toDoTask) }}
+        <!-- {{ elements.header(content) }} -->
+        <!-- {{ elements.content(content.revealContent) }} -->
+        <!-- {{ elements.radioButtons('howVerify',content.question,'',content.radios) }} -->
+        <!-- {{ elements.continue(content) }} -->
+        <!-- <br /> -->
+        <input class="button button-break" type="submit" name="submit" value="Continue using my bank account">
+
+        <!-- <details>{{ elements.panel(content.panelText, 'grey')}}
+          <summary>I can't do this online</summary>
+        </details> -->
+
+        <div class="exit-link-side inline-button"><a href="/pyi13/to_do_page">Go back to to-do list</a></div>
+
+        <!-- <a class="exit-link-side" href="/pyi13/to_do_page">Go back to to-do list</a> -->
+
+
+
+
+{{ elements.closeGridForm() }}
+</div>
+    {% endfor %}
+    {% endfor %}
+    {% endblock %}

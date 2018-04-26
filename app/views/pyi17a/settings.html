@@ -1,0 +1,30 @@
+{% extends version + "/layout.html" %}
+
+{% import version + "/macros/elements.html" as elements %}
+
+{% block page_title %}
+  Prove your identity - Settings page
+{% endblock %}
+
+{% block content %}
+{% for page in data %}
+{% for content in page.settings %}
+
+<div class="main" id="content" role="main">
+    {{ elements.banner() }}
+
+{{ elements.openGridForm('settings') }}
+
+    {{ elements.header(content) }}
+
+    {{ elements.notice('information', 'For claimant user journey, use 123456 as the correct reference') }}
+
+    {{ elements.radioButtons('settings', '', '', content.radios)}}
+
+    {{ elements.continue(content) }}
+
+{{ elements.closeGridForm() }}
+</div>
+    {% endfor %}
+    {% endfor %}
+    {% endblock %}
