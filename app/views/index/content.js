@@ -116,5 +116,15 @@ module.exports = {
             "Add user error messages"
         ],
         researchFindings: [""]
+    },
+    pyi17a: {
+        version: '17a',
+        release: "27 April 2018",
+        changes: [
+            "Full integration with UC assumed (user no longer has to sign in and out of UC)",
+            "User no longer has to enter bank details or say if they have a roll number",
+            "Various content changes based on the above assumptions"
+        ],
+        researchFindings: [""]
     }
 };
