@@ -69,6 +69,19 @@ var data = [{
   "make_payment"  : [{
     "heading"   : "Get a reference sent to your bank account",
     "text"      : "These are the bank details you gave us during your Universal Credit application:",
+    "checkYourAnswersList": [{
+      "question": "Bank Name",
+      "answer": "National Westminster"
+    }, {
+      "question": "Account Name",
+      "answer": "Mrs A Person"
+    }, {
+      "question": "Account Number",
+      "answer": "89898989"
+    }, {
+      "question": "Sort Code",
+      "answer": "12-12-12"
+    }],
     "text2" : "We'll send the reference number to this bank account. It will be a 6-digit code, for example 12 34 56.",
     "text3"     : "You'll find it on your bank statement, using online, mobile or telephone banking. Or go to a cash machine or your branch to get a statement printout.",
     "button"    : "Send the reference"

@@ -285,6 +285,20 @@
   </div>
 {% endmacro %}
 
+{% macro checkYourAnswers(checkYourAnswersList) %}
+  <dl class="govuk-check-your-answers cya-questions-short">
+    {% for listItem in checkYourAnswersList %}
+      <div>
+        <dt class="cya-question">
+          {{ listItem.question }}
+        </dt>
+        <dd class="cya-answer">
+          {{ listItem.answer }}
+        </dd>
+      </div>
+    {% endfor %}
+  </dl>
+{% endmacro %}
 
 {% macro ucfsTaskList(taskList, task) %}
 

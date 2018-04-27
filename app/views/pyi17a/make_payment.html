@@ -10,59 +10,21 @@
 {% for content in page.make_payment %}
 
     <div class="main" role="main" id="content">
-    {{ elements.banner() }}
+      {{ elements.banner() }}
 
-    {{ elements.openGridForm('make_payment') }}
-    {{ elements.header(content) }}
-    {{ elements.content(content.text) }}
+      {{ elements.openGridForm('make_payment') }}
+        {{ elements.header(content) }}
+        {{ elements.content(content.text) }}
 
-     <dl class="govuk-check-your-answers cya-questions-short">
-        <div>
-          <dt class="cya-question">
-            Bank Name
-          </dt>
-          <dd class="cya-answer">
-            NatWest
-          </dd>
-        </div>
+        {{ elements.checkYourAnswers(content.checkYourAnswersList)}}
+        
+        <p style = "margin-top: 30px;"> {{ content.text2 }}</p>
 
-        <div>
-          <dt class="cya-question">
-            Account Name
-          </dt>
-          <dd class="cya-answer">
-            Mr A N Person
-          </dd>
-        </div>
+        {{ elements.content(content.text3) }}
 
-        <div>
-          <dt class="cya-question">
-            Account Number
-          </dt>
-          <dd class="cya-answer">
-            98989898
-          </dd>
-        </div>
+        {{ elements.continue(content) }}
 
-        <div>
-          <dt class="cya-question">
-            Sort Code
-          </dt>
-          <dd class="cya-answer">
-            12-12-12
-          </dd>
-        </div>
-      </dl>
-
-      {{ elements.content(content.text2) }}
-
-      {{ elements.content(content.text3) }}
-
-
-
-      {{ elements.continue(content) }}
-
-    {{ elements.closeGridForm() }}
+      {{ elements.closeGridForm() }}
     </div>
 
 {% endfor %}
