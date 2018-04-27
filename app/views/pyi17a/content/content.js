@@ -144,7 +144,7 @@ var data = [{
       "button"      : "Try again",
       "exitLink"    : "Return to your To-do list and enter the reference later",
       "button2"     : "",
-      "exitLink2"   : "Go to Universal Credit sign in",
+      "exitLink2"   : "Book your interview",
   }],
   "three_fails"       : [{
     "heading"      : "Reference not recognised",
