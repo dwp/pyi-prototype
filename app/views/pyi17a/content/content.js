@@ -104,7 +104,7 @@ var data = [{
     "text"        : "Sign in to Universal Credit to book an appointment at a job centre, if you haven’t already.",
     "text2"       : "You’ll need to bring your identity documents with you.",
     "button"      : "",
-    "exitLink"    : "Go to Universal Credit sign in"
+    "exitLink"    : "Book your interview"
   }],
   "failure"       : [{
     "heading"       : "Reference not recognised",
