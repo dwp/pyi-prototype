@@ -539,4 +539,17 @@ details {
     content: " ";
     display: table;
   }
+
+}
+
+.with-icon {
+  padding-left: 70px;
+  border-style: solid;
+}
+
+.fa-phone {
+  background-image: url("../images/phone.png");
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  background-position: 15px 5px;
 }
