@@ -40,7 +40,7 @@ res.render(version + '/uc_login', {
 
   app.get('/' + version + '/go_to_task', (req, res) => {
     if (req.query.task === '4') {
-      res.redirect('/' + version + '/bank_details')
+      res.redirect('/' + version + '/bank_submitted')
     }
   })
 
