@@ -1,0 +1,31 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  UCFS task list - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  {% import version + "/macros/elements.html" as elements %}
+  {% for page in data %}
+    {% for content in page.ucfs_task_list %}
+      <div class="main" id="content" role="main">
+
+        <div class="column-two-thirds">
+
+          {{ elements.banner() }}
+
+          {{ elements.heading(1, 'large', content.heading) }}
+
+          {{ elements.content(content.text) }}
+
+          {{ elements.content(content.text2) }}
+
+          {{ elements.ucfsTaskList(content.taskList, task) }}
+        </div>
+
+        
+      </div>
+
+    {% endfor %}
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Get Documents Ready - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import version + "/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.get_documents %}
+
+<div class="main" id="content" role="main">
+{{ elements.banner() }}
+
+    {{ elements.openGridForm('') }}
+
+        {{ elements.header(content) }}
+        {{ elements.content(content.text1) }}
+
+        {{ elements.unorderedList(content = content.heading2, listItems = content.listItems, hint = content.hint )}}
+        {{ elements.continue(content) }}
+
+    {{ elements.closeGridForm() }}
+</div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}
