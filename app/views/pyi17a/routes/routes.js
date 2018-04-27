@@ -250,6 +250,17 @@ app.get('/' + version + '/book_interview', (req, res) => {
 })
 
 /********
+Book Interview (failure - documents required)
+*********/
+
+app.get('/' + version + '/get_documents', (req, res) => {
+  res.render(version + '/get_documents', {
+    data        :   content.getTableData(),
+    version: version
+  })
+})
+
+/********
 Second Entry
 *********/
 

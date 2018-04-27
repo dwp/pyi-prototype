@@ -79,11 +79,14 @@
 </div>
 {% endmacro %}
 
-{% macro unorderedList(content,listItems,soft) %}
+{% macro unorderedList(content,listItems,hint) %}
+ 
 <div class="form-group">
 {% if content %}<h4 class="heading-small">{{ content }}</h4>{% endif %}
+{% if hint %}<span class="form-hint">{{ hint }}</span>{% endif %}
+
 <ul class="list list-bullet">
-  {% for item in listItems | safe %}
+  {% for item in listItems %}
   <li>{{ item }}</li>
   {% endfor %}
 </ul>

@@ -106,6 +106,34 @@ var data = [{
     "button"      : "",
     "exitLink"    : "Book your interview"
   }],
+  "book_interview": [{
+    "heading"   : "Book your interview",
+    "text1"      : "To complete your claim, you'll need to book and attend an interview",
+    "phoneText1": "Call to book",
+    "phoneText2": "0800 328 5644 (Textphone: 0800 328 1344)",
+    "phoneText3": "Monday to Friday, 8am to 6pm",
+    "text2": "You'll be asked for your National Insurance Number when you call",
+    "text3": "Book as soon as you can or you might have to start again",
+    "exitLink"  : "Go to Task List"
+  }],
+  "get_documents": [{
+    "heading"   : "Get your identity documents ready",
+    "text1"      : "You need to attend an evidence interview. You'll need to book your interview once you've completed this to-do.",
+    "heading2": "Can you bring 1 of these documents to your interview?",
+    "hint": "It must be the original document. Any photos must look like you.",
+    "listItems": [
+      "UK passport",
+      "EEA passport",
+      "UK photo driving license",
+      "national identity card",
+      "residence permit or card",
+      "immigration status document",
+      "registration or naturalisation certificate",
+      "bank card for the account where you want your Universal Credit to be paid"
+    ],
+    "text2": "If you use a bank card, it must show your name, the account number and sort code",
+    "button"  : "Next"
+  }],
   "failure"       : [{
     "heading"       : "Reference not recognised",
     "heading2"      : "You have not been able to give the correct reference",
@@ -203,16 +231,6 @@ var data = [{
     "text1"      : "You cannot use this service just now. The problem will be fixed as soon as possible.",
     "text2": "Sign in to Universal Credit to book an appointment at a job centre.",
     "exitLink"  : "Go to Universal Credit sign in"
-  }],
-  "book_interview": [{
-    "heading"   : "Book your interview",
-    "text1"      : "To complete your claim, you'll need to book and attend an interview",
-    "phoneText1": "Call to book",
-    "phoneText2": "0800 328 5644 (Textphone: 0800 328 1344)",
-    "phoneText3": "Monday to Friday, 8am to 6pm",
-    "text2": "You'll be asked for your National Insurance Number when you call",
-    "text3": "Book as soon as you can or you might have to start again",
-    "exitLink"  : "Go to Task List"
   }],
   "agent_search"  : [{
     "heading"   : "Find claimant",
