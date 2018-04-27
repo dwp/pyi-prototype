@@ -126,5 +126,14 @@ module.exports = {
             "Various content changes based on the above assumptions"
         ],
         researchFindings: [""]
+    },
+    pyi17b: {
+        version: '17b',
+        release: "27 April 2018",
+        changes: [
+            "Same as 17a, except 1p is sent to user's bank account automatically",
+            "Therefore the entry point from the to-do list is later in the journey"
+        ],
+        researchFindings: [""]
     }
 };
