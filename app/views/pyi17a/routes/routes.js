@@ -14,6 +14,19 @@ const version = 'pyi17a';
     res.redirect('/' + version + '/settings')
   })
 
+
+/*********
+UC Login Page
+**********/
+
+app.get('/' + version + '/uc_login', function(req, res) {
+  debugger;
+res.render(version + '/uc_login', {
+  data : content.getTableData(),
+  version: version
+});
+});
+
 /********
  UCFS Task list
  ********/
