@@ -14,7 +14,7 @@
 
 {{ elements.openGridForm('book_interview') }}
   <div class="govuk-box-highlight">
-    <h1 class="heading-xlarge">
+    <h1 style="margin-bottom: 15px;" class="heading-xlarge">
       {{ content.heading }}
     </h1>
     {#<p class="font-large">
@@ -22,10 +22,14 @@
       <strong class="bold">HDJ2123F</strong>
     </p>#}
   </div>
-
+  
   {{ elements.heading(type='2', size='medium', content=content.heading2) }}
 
+  {{ elements.content(content.text )}}
   {{ elements.unorderedList(listItems = content.listItems) }}
+
+  {{ elements.content(content.text2 )}}
+
 
   {{ elements.continue(content)}}
 

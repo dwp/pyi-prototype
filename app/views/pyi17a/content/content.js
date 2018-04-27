@@ -113,11 +113,12 @@ var data = [{
   "success"       : [{
     "heading"     : "You have successfully confirmed your identity",
     "heading2"    : "What happens next",
+    "text": "To complete your Universal Credit claim, you still need to:",
     "listItems": [
       "book your interview at a Jobcentre",
       "bring some identity documents with you "
     ],
-    "text2": "We'll tell you what you can bring when you book",
+    "text2": "We'll tell you what you can bring when you book.",
     "button"     : "Book your interview"
   }],
   "book_interview": [{
@@ -149,13 +150,13 @@ var data = [{
     "button"  : "Next"
   }],
   "failure"       : [{
-    "heading"      : "You have entered an incorrect reference",
+    "heading"      : "You have entered the wrong reference",
     "text"         : "To complete your Universal Credit claim, you'll need to:",
     "listItems": [
       "book your interview at a Jobcentre",
       "bring some identity documents with you "
     ],
-    "text2": "We'll tell you what you can bring when you book",
+    "text2": "We'll tell you what you can bring when you book.",
     "button"     : "Book your interview"
   }],
   "three_fails"       : [{
