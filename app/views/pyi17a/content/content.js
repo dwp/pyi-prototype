@@ -44,9 +44,9 @@ var data = [{
     "button"    : "Next"
   }],
   "bank_details"  : [{
-      "heading"   : "Use your bank account to prove your identity",
-      "text"      : "This is a secure government service to prove your identity.",
-      "exitLink"  : "Back",
+      "heading"   : "Confirm your identity using your bank account",
+      "text"      : "This is a secure government service to confirm your identity, using the bank account details you gave us during your Universal Credit application.",
+      "exitLink"  : "Or confirm your identity in a Jobcentre",
       "button"    : "Next"
   }],
   "has_roll_number"  : [{
@@ -68,43 +68,40 @@ var data = [{
   }],
   "make_payment"  : [{
     "heading"   : "Get a reference sent to your bank account",
-    "text"      : "To find the reference you’ll need to check your bank statement.",
-    "text2"     : "You can use online, mobile or telephone banking. Or go to a cash machine or your branch to get a statement printout.",
-    "exitLink"  : "Back",
-    "button"    : "OK - send the reference"
+    "text"      : "These are the bank details you gave us during your Universal Credit application:",
+    "text2" : "We'll send the reference number to this bank account. It will be a 6-digit code, for example 12 34 56.",
+    "text3"     : "You'll find it on your bank statement, using online, mobile or telephone banking. Or go to a cash machine or your branch to get a statement printout.",
+    "button"    : "Send the reference"
   }],
   "bank_submitted"  : [{
     "heading"     : "Find your reference",
-    "lede"        : "A reference from Universal Credit has been sent to your bank account. It might take up to 2 hours to appear.",
-    "heading2"    : "A reference has already been sent to your bank account",
-    "lede2"       : "It might take up to 2 hours to appear.",
-    "altText"     : "#",
-    "description" : "It will be a 6-digit code on your bank statement, for example 12 34 56.",
+    "lede"        : "A reference from Universal Credit has been sent to your bank account.",
+    "text1"       : "It might take up to 2 hours to appear. You have 7 days to use it before it expires.",
+    "text2" : "It will be a 6-digit code on your bank statement, for example 12 34 56.",
     "exitLink"    : "Enter your reference later",
     "button"      : "Enter your reference"
   }],
   "reminder"      : [{
-      "heading"   : "You still need to confirm your identity",
-      "lede"      : "Check your bank statement for a reference from Universal Credit. Then sign back into your Universal Credit account as soon as you can to enter the reference.",
-      "text"      : "You also need to sign back in to Universal Credit to book an interview at a job centre.",
-      "text2"     : "Book as soon as you can or you might have to claim again.",
-      "button"    : "",
-      "exitLink"    : "Go to Universal Credit sign in"
+      "heading"   : "You'll need to enter your reference within 7 days",
+      "lede"      : "When you've found your reference, sign back in to Universal Credit to enter the reference and confirm your identity.",
+      "button"    : "Sign out of Universal Credit",
+      "exitLink"    : "Go back to to-do list"
     }],
  "enter_reference": [{
     "heading"     : "Enter your reference",
     "lede"        : "",
-    "text"        : "It will be a 6-digit code from Universal Credit on your bank statement, for example 12 34 56.",
-    "button"      : "Submit",
-    "exitLink"    : "Back"
+    "hint"        : "It will be a 6-digit code from Universal Credit on your bank statement, for example 12 34 56.",
+    "button"      : "Submit"
   }],
   "success"       : [{
-    "heading"     : "You have correctly entered the reference number",
-    "lede"        : "",
-    "text"        : "Sign in to Universal Credit to book an appointment at a job centre, if you haven’t already.",
-    "text2"       : "You’ll need to bring your identity documents with you.",
-    "button"      : "",
-    "exitLink"    : "Book your interview"
+    "heading"     : "You have successfully confirmed your identity",
+    "heading2"    : "What happens next",
+    "listItems": [
+      "book your interview at a Jobcentre",
+      "bring some identity documents with you "
+    ],
+    "text2": "We'll tell you what you can bring when you book",
+    "button"     : "Book your interview"
   }],
   "book_interview": [{
     "heading"   : "Book your interview",
@@ -135,16 +132,14 @@ var data = [{
     "button"  : "Next"
   }],
   "failure"       : [{
-    "heading"       : "Reference not recognised",
-    "heading2"      : "You have not been able to give the correct reference",
-    "lede"          : "Check the reference and try again.",
-    "lede2"         : "Sign in to Universal Credit to book an appointment at a job centre, if you haven’t already.",
-    "text2"         : "You’ll need to bring your identity documents with you.",
-    "attemptsText"  : ["once","twice"],
-      "button"      : "Try again",
-      "exitLink"    : "Return to your To-do list and enter the reference later",
-      "button2"     : "",
-      "exitLink2"   : "Book your interview",
+    "heading"      : "You have entered an incorrect reference",
+    "text"         : "To complete your Universal Credit claim, you'll need to:",
+    "listItems": [
+      "book your interview at a Jobcentre",
+      "bring some identity documents with you "
+    ],
+    "text2": "We'll tell you what you can bring when you book",
+    "button"     : "Book your interview"
   }],
   "three_fails"       : [{
     "heading"      : "Reference not recognised",

@@ -12,14 +12,22 @@
 <div class="main" id="content" role="main">
   {{ elements.banner() }}
 
-{{ elements.openGridForm('success') }}
+{{ elements.openGridForm('book_interview') }}
+  <div class="govuk-box-highlight">
+    <h1 class="heading-xlarge">
+      {{ content.heading }}
+    </h1>
+    {#<p class="font-large">
+      Your reference number is <br>
+      <strong class="bold">HDJ2123F</strong>
+    </p>#}
+  </div>
 
-  {{ elements.header(content) }}
+  {{ elements.heading(type='2', size='medium', content=content.heading2) }}
 
-  {{ elements.content(content.text) }}
-  {{ elements.content(content.text2) }}
+  {{ elements.unorderedList(listItems = content.listItems) }}
 
-  {{ elements.continue(content, 'book_interview' )}}
+  {{ elements.continue(content)}}
 
 {{ elements.closeGridForm() }}
 </div>

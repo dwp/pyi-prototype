@@ -14,6 +14,24 @@
 
     {{ elements.openGridForm('enter_reference') }}
 
+    {% if incorrectReference %}
+      <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+        <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+          You've entered the wrong reference
+        </h2>
+
+        <p>You must:</p>
+
+        <ul class="error-summary-list">
+          <li><a href="#codeTestInput">Check your reference and enter it again</a></li>
+        </ul>
+
+        <p> You have {{ remainingAttempts }} more attempt{% if remainingAttempts != 1 %}s{%endif%}</p>
+
+      </div>
+    {% endif %}
+
     {% if errors %}
         {{ elements.errorSummaryBox(errors) }}
     {% endif %}
@@ -21,18 +39,23 @@
     
 
     {{ elements.header(content) }}
+
+    {% if errors.codeTestInput %}
+      {% set errorMessage = errors.codeTestInput %}
+    {% elif incorrectReference %}
+      {% set errorMessage = 'Check your reference and enter it again' %}
+    {% endif %}
+
     {{ elements.inputField(
       id = 'codeTestInput',
+      hint = content.hint,
       content = 'Reference',
       size = '1-4',
       value = values.codeTestInput,
       type='text',
-      errorMessage=errors.codeTestInput
+      errorMessage=errorMessage
     ) }}
-    {% if second_entry %}
-    <img src="/public/images/Example_transaction_v2.png" alt="">
-    {% endif %}
-
+    
     {{ elements.content(content.text) }}
 
     {{ elements.continue(content, 'js-back') }}

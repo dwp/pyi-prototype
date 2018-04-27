@@ -15,9 +15,52 @@
     {{ elements.openGridForm('make_payment') }}
     {{ elements.header(content) }}
     {{ elements.content(content.text) }}
-    {{ elements.content(content.text2) }}
 
-      {{ elements.continue(content, 'js-back') }}
+     <dl class="govuk-check-your-answers cya-questions-short">
+        <div>
+          <dt class="cya-question">
+            Bank Name
+          </dt>
+          <dd class="cya-answer">
+            NatWest
+          </dd>
+        </div>
+
+        <div>
+          <dt class="cya-question">
+            Account Name
+          </dt>
+          <dd class="cya-answer">
+            Mr A N Person
+          </dd>
+        </div>
+
+        <div>
+          <dt class="cya-question">
+            Account Number
+          </dt>
+          <dd class="cya-answer">
+            98989898
+          </dd>
+        </div>
+
+        <div>
+          <dt class="cya-question">
+            Sort Code
+          </dt>
+          <dd class="cya-answer">
+            12-12-12
+          </dd>
+        </div>
+      </dl>
+
+      {{ elements.content(content.text2) }}
+
+      {{ elements.content(content.text3) }}
+
+
+
+      {{ elements.continue(content) }}
 
     {{ elements.closeGridForm() }}
     </div>

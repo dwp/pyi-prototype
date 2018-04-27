@@ -168,12 +168,11 @@ app.post('/' + version + '/enter_reference', [
         const remainingAttempts = 3 - attempts
         res.cookie('attempts', attempts)
         res.render(version + '/enter_reference', {
-          data        :   content.getTableData(),
+          data: content.getTableData(),
           version: version,
-          errors: {
-            'codeTestInput':
-            'Enter a correct reference. You have ' + remainingAttempts + ' more attempt' + (remainingAttempts === 1 ? '' : 's')
-          }
+          incorrectReference: true,
+          remainingAttempts: remainingAttempts,
+          values: req.body
         })
       } else {
         res.redirect('/' + version + '/failure');

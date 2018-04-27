@@ -21,9 +21,11 @@
 
 
       {#{ elements.helpImage('','','/public/images/Example_transaction_v2.png',content.altText) }#}
-      {{ elements.content(content.description) }}
+      {{ elements.content(content.text1) }}
+      {{ elements.content(content.text2) }}
 
-      {{ elements.continue(content,'reminder', 'side') }}
+
+      {{ elements.continue(content,'reminder', side = false) }}
 
     {{ elements.closeGridForm() }}
     </div>

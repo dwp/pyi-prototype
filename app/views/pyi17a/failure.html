@@ -12,11 +12,15 @@
 <div class="main" id="content" role="main">
 {{ elements.banner() }}
 
-    {{ elements.openGridForm('failure') }}
+    {{ elements.openGridForm('get_documents') }}
 
-        {{ elements.header('','',content.heading2,content.lede2,content.additional2) }}
-        {{ elements.content(content.text2) }}
-        {{ elements.continue('','get_documents','',content.button2,content.exitLink2) }}
+        {{ elements.header(content) }}
+        {{ elements.content(content.text )}}
+        {{ elements.unorderedList(listItems = content.listItems) }}
+
+        {{ elements.content(content.text2 )}}
+
+        {{ elements.continue(content) }}
 
     {{ elements.closeGridForm() }}
 </div>
