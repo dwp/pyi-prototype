@@ -18,6 +18,7 @@
         {{ elements.content(content.text1) }}
 
         {{ elements.unorderedList(content = content.heading2, listItems = content.listItems, hint = content.hint )}}
+        {{ elements.radioButtons(radios=[{"value": "Yes"}, {"value": "No"}], inline = true) }}
         {{ elements.continue(content) }}
 
     {{ elements.closeGridForm() }}
