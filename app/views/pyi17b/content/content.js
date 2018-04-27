@@ -87,7 +87,7 @@ var data = [{
     "button"    : "Send the reference"
   }],
   "bank_submitted"  : [{
-    "heading"     : "Confirm your identity",
+    "heading"     : "Confirm your identity using your bank account",
     "lede"        : "We've sent a reference to your bank account.",
     "text": "You'll need to enter this to confirm you have access to this account. This is quicker than confirming your identity in the Jobcentre.",
     "summary": "How does this work?",
