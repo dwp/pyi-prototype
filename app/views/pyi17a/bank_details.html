@@ -16,6 +16,14 @@
     {{ elements.header(content) }}
     {{ elements.content(content.text) }}
 
+    <details>
+      <summary class="summary">{{ content.summary }}</summary>
+        <div class="panel panel-border-narrow" id="details-content-0">
+          <p>{{ content.details1 }}</p>
+          <p>{{ content.details2 }}</p>
+        </div>
+    </details>
+
       {{ elements.continue(content, 'get_documents', side = false) }}
 
     {{ elements.closeGridForm() }}

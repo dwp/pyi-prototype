@@ -46,6 +46,9 @@ var data = [{
   "bank_details"  : [{
       "heading"   : "Confirm your identity using your bank account",
       "text"      : "This is a secure government service to confirm your identity, using the bank account details you gave us during your Universal Credit application.",
+      "summary": "How does this work?",
+      "details1"     : "We use your Universal Credit bank details to send 1p to your bank account. You enter the 6 digit reference number from the 1p payment.",
+      "details2": " This proves you have access to that bank account and confirms your identity. This is quicker than confirming your identity in the Jobcentre.",
       "exitLink"  : "Or confirm your identity in a Jobcentre",
       "button"    : "Next"
   }],
