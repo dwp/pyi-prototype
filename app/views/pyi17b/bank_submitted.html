@@ -19,9 +19,10 @@
       {{ elements.header("", "", content.heading2, content.lede2) }}
       {% endif %}
 
+      {{ elements.checkYourAnswers(content.checkYourAnswersList)}}
 
       {#{ elements.helpImage('','','/public/images/Example_transaction_v2.png',content.altText) }#}
-      {{ elements.content(content.text1) }}
+      <p style="margin-top: 30px;">{{ content.text1 }}</p>
       {{ elements.content(content.text2) }}
 
 

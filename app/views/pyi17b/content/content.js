@@ -91,6 +91,19 @@ var data = [{
     "lede"        : "A reference from Universal Credit has been sent to your bank account.",
     "text1"       : "It might take up to 2 hours to appear. You have 7 days to use it before it expires.",
     "text2" : "It will be a 6-digit code on your bank statement, for example 12 34 56.",
+    "checkYourAnswersList": [{
+      "question": "Bank Name",
+      "answer": "National Westminster"
+    }, {
+      "question": "Account Name",
+      "answer": "Mrs A Person"
+    }, {
+      "question": "Account Number",
+      "answer": "89898989"
+    }, {
+      "question": "Sort Code",
+      "answer": "12-12-12"
+    }],
     "exitLink"    : "Enter your reference later",
     "button"      : "Enter your reference"
   }],
