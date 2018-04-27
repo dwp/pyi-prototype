@@ -222,7 +222,7 @@ Failure
 app.get('/' + version + '/failure', function(req,res) {
     res.render(version + '/failure', {
       data        :   content.getTableData(),
-      version: version,
+      version: version
     });
 });
 app.post('/' + version + '/failure', function(req,res) {
@@ -237,6 +237,17 @@ app.post('/' + version + '/failure', function(req,res) {
   res.redirect('/' + version + '/enter_reference');
 }
 });
+
+/********
+Book Interview (success)
+*********/
+
+app.get('/' + version + '/book_interview', (req, res) => {
+  res.render(version + '/book_interview', {
+    data        :   content.getTableData(),
+    version: version
+  })
+})
 
 /********
 Second Entry

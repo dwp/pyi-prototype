@@ -204,6 +204,16 @@ var data = [{
     "text2": "Sign in to Universal Credit to book an appointment at a job centre.",
     "exitLink"  : "Go to Universal Credit sign in"
   }],
+  "book_interview": [{
+    "heading"   : "Book your interview",
+    "text1"      : "To complete your claim, you'll need to book and attend an interview",
+    "phoneText1": "Call to book",
+    "phoneText2": "0800 328 5644 (Textphone: 0800 328 1344)",
+    "phoneText3": "Monday to Friday, 8am to 6pm",
+    "text2": "You'll be asked for your National Insurance Number when you call",
+    "text3": "Book as soon as you can or you might have to start again",
+    "exitLink"  : "Go to Task List"
+  }],
   "agent_search"  : [{
     "heading"   : "Find claimant",
     "text"      : "Enter the details of the bank account are using for your Universal Credit payment.",

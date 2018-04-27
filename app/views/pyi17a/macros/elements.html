@@ -310,6 +310,15 @@
 
 {% endmacro %}
 
+{% macro phonecall(phoneText1, phoneText2, phoneText3) %}
+  <div class="panel with-icon">
+    <i class="fa fa-phone"></i>
+    <p><span class="lede">{{ phoneText1 }}</span><br/>
+      <span id="interview-telephone-number" class="bold-large">{{ phoneText2 }}</span><br/>
+      {{ phoneText3 }}</p>
+  </div>
+{% endmacro %}
+
 <!--
 ************************************************************************
 ************************************************************************
