@@ -13,11 +13,19 @@
     {{ elements.banner() }}
 
     {{ elements.openGridForm('bank_submitted') }}
-      {% if not twoPayments %}
       {{ elements.header(content) }}
-      {% else %}
-      {{ elements.header("", "", content.heading2, content.lede2) }}
-      {% endif %}
+
+      {{ elements.content(content.text) }}
+
+      <details>
+        <summary class="summary">{{ content.summary }}</summary>
+          <div class="panel panel-border-narrow" id="details-content-0">
+            <p>{{ content.details1 }}</p>
+            <p>{{ content.details2 }}</p>
+          </div>
+      </details>
+
+
 
       {{ elements.checkYourAnswers(content.checkYourAnswersList)}}
 
@@ -27,6 +35,9 @@
 
 
       {{ elements.continue(content,'reminder', side = false) }}
+      <div style="margin-top: 20px;">
+        <a href = "/{{ version }}/get_documents">{{ content.exitLink2 }}</a>
+      </div>
 
     {{ elements.closeGridForm() }}
     </div>

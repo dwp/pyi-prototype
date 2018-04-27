@@ -87,8 +87,12 @@ var data = [{
     "button"    : "Send the reference"
   }],
   "bank_submitted"  : [{
-    "heading"     : "Find your reference",
-    "lede"        : "A reference from Universal Credit has been sent to your bank account.",
+    "heading"     : "Confirm your identity",
+    "lede"        : "We've sent a reference to your bank account.",
+    "text": "You'll need to enter this to confirm you have access to this account. This is quicker than confirming your identity in the Jobcentre.",
+    "summary": "How does this work?",
+    "details1"     : "We've used your Universal Credit bank details to send 1p to your bank account. You need to enter the 6 digit reference number from the 1p payment.",
+    "details2": "This proves you have access to that bank account and confirms your identity.",
     "text1"       : "It might take up to 2 hours to appear. You have 7 days to use it before it expires.",
     "text2" : "It will be a 6-digit code on your bank statement, for example 12 34 56.",
     "checkYourAnswersList": [{
@@ -105,7 +109,8 @@ var data = [{
       "answer": "12-12-12"
     }],
     "exitLink"    : "Enter your reference later",
-    "button"      : "Enter your reference"
+    "button"      : "Enter your reference",
+    "exitLink2": "Or confirm your identity at the Jobcentre"
   }],
   "reminder"      : [{
       "heading"   : "You'll need to enter your reference within 7 days",
