@@ -244,19 +244,27 @@ var data = [{
   "expired"    : [{
     "heading"   : "Sorry, you can't use this service",
     "lede"      : "Your 7 days to link your bank account has run out.",
-    "additional"  : "Sign in to Universal Credit to book an appointment at a job centre.",
-    "exitLink"  : "Go to Universal Credit sign in"
+    "text"         : "To complete your Universal Credit claim, you'll need to:",
+    "listItems": [
+      "book your interview at a Jobcentre",
+      "bring some identity documents with you "
+    ],
+    "text2": "We'll tell you what you can bring when you book.",
+    "button"     : "Book your interview"
   }],
   "payment_failed"    : [{
     "heading"   : "Something’s gone wrong",
-    "lede"      : "Sorry, you can’t use this service.",
-    "text"  : "Sign in to Universal Credit to book an appointment at a job centre.",
-    "exitLink"  : "Go to Universal Credit sign in"
+    "text"         : "To complete your Universal Credit claim, you'll need to:",
+    "listItems": [
+      "book your interview at a Jobcentre",
+      "bring some identity documents with you "
+    ],
+    "text2": "We'll tell you what you can bring when you book.",
+    "button"     : "Book your interview"
   }],
   "system_failure": [{
     "heading"   : "Something’s gone wrong",
     "text1"      : "You cannot use this service just now. The problem will be fixed as soon as possible.",
-    "text2": "Sign in to Universal Credit to book an appointment at a job centre.",
     "exitLink"  : "Go to Universal Credit sign in"
   }],
   "agent_search"  : [{
