@@ -1,0 +1,57 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Agent Search - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  {% import version + "/macros/elements.html" as elements %}
+  {% for page in data %}
+    {% for content in page.agent_search %}
+
+      <div class="main" role="main" id="content">
+        {{ elements.banner() }}
+
+        {{ elements.openGridForm('agent_search') }}
+
+          {% if errors %}
+            {{ elements.errorSummaryBox(errors) }}
+          {% endif %}
+
+          {{ elements.header(content) }}
+          
+          {{ elements.inputField(
+            id = 'claimantId',
+            content = 'Claimant ID - the URL at the top of the customer claim details view',
+            size = '1-2',
+            value = values.claimantId,
+            type='text',
+            hasError=errors.claimantId
+          ) }}
+
+          {{ elements.inputField(
+            id = 'partialBankAccountNumber',
+            content = 'Last 4 digits of bank account number in the final declaration – bank details view',
+            size = '1-2',
+            value = values.partialBankAccountNumber,
+            type='text',
+            hasError=errors.partialBankAccountNumber
+          ) }}
+
+          {{ elements.inputField(
+            id = 'sortCode',
+            content = 'Sort code in the final declaration – bank details view',
+            size = '1-2',
+            value = values.sortCode,
+            type='text',
+            hasError=errors.sortCode
+          ) }}
+
+          {{ elements.continue(content, 'agent_search') }}
+
+        {{ elements.closeGridForm() }}
+      </div>
+
+    {% endfor %}
+  {% endfor %}
+{% endblock %}

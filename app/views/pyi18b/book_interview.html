@@ -1,0 +1,31 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Book interview - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import version + "/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.book_interview %}
+
+<div class="main" id="content" role="main">
+    <div class="column-two-thirds">
+        {{ elements.banner() }}
+
+        {{ elements.header(content) }}
+
+        {{ elements.content(content.text1) }}
+
+        {{ elements.phonecall(content.phoneText1, content.phoneText2, content.phoneText3) }}
+
+        {{ elements.content(content.text2)}}
+
+        {{ elements.content(content.text3)}}
+    </div>
+
+</div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}
