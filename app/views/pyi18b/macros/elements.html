@@ -1,5 +1,5 @@
 
-{% set version = 'pyi17b' %}
+{% set version = 'pyi18b' %}
 
 <!--  Phase banner and account section (top of each page) -->
 {% macro account() %}
@@ -305,12 +305,12 @@
   <ol style="margin-top: 60px;">
     {% for taskNumber, taskName in taskList %}
        <li>
+          {% if taskNumber < task %}
+            <strong class="task-completed" id="eligibility-completed">Completed</strong>
+          {% endif %}
           <h2 class="task-list-section">
             <span class="task-list-section-number">{{ taskNumber }}.</span> {{ taskName }}
           </h2>
-          {% if taskNumber < task %}
-            <strong class="task-completed" id="eligibility-completed" style="margin-top:-32px;">Completed</strong>
-          {% endif %}
           {% if taskNumber == task %}
             <ul class="task-list-items" style="margin-bottom:30px">
               <li class="task-list-item cf">
