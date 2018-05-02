@@ -40,7 +40,11 @@ res.render(version + '/uc_login', {
 
   app.get('/' + version + '/go_to_task', (req, res) => {
     if (req.query.task === '4') {
-      res.redirect('/' + version + '/bank_submitted')
+      if (req.cookies.claimantJourneyOption === 'Payment failed') {
+        res.redirect('/' + version + '/payment_failed');
+      } else {
+        res.redirect('/' + version + '/bank_submitted');
+      }
     }
   })
 
@@ -168,6 +172,9 @@ app.post('/' + version + '/enter_reference', [
       case 'Expired reference':
         res.redirect('/' + version + '/expired');
         break;
+      case 'User time-out':
+        res.redirect('/' + version + '/session_expired');
+      break;
       default:
       res.redirect('/' + version + '/success');
     }
