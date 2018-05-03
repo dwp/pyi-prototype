@@ -110,7 +110,7 @@ var data = [{
       "heading"   : "You'll need to enter your reference within 7 days",
       "lede"      : "When you've found your reference, sign back in to Universal Credit to enter the reference and confirm your identity.",
       "button"    : "Sign out of Universal Credit",
-      "exitLink"    : "Go back to to-do list"
+      "exitLink"    : "Go back to your to-do list"
     }],
  "enter_reference": [{
     "heading"     : "Enter your reference",
@@ -161,10 +161,10 @@ var data = [{
     "heading"      : "You have entered the wrong reference",
     "text"         : "To complete your Universal Credit claim, you'll need to:",
     "listItems": [
-      "book your interview at a Jobcentre",
+      "book an interview at a Jobcentre",
       "bring some identity documents with you "
     ],
-    "text2": "We'll tell you what you can bring when you book.",
+    "text2": "We'll tell you what documents you can bring when you book.",
     "button"     : "Book your interview"
   }],
   "three_fails"       : [{
