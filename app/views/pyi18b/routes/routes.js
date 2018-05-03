@@ -43,7 +43,7 @@ res.render(version + '/uc_login', {
       if (req.cookies.claimantJourneyOption === 'Payment failed') {
         res.redirect('/' + version + '/payment_failed');
       } else {
-        res.redirect('/' + version + '/bank_submitted');
+        res.redirect('/' + version + '/bank_details');
       }
     }
   })

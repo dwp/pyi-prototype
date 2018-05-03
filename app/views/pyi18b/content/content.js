@@ -88,22 +88,17 @@ var data = [{
   }],
   "bank_submitted"  : [{
     "heading"     : "Confirm your identity using your bank account",
-    "lede"        : "We've sent a reference to your bank account.",
-    "text": "You'll need to enter this to confirm you have access to this account. This is quicker than confirming your identity in the Jobcentre.",
+    "information": "Your Universal Credit claim is not yet complete. You still need to confirm your identity.",
+    "text": "To do this, we've sent a reference to the bank account your Universal Credit will be paid into. This is quicker than confirming your identity in the Jobcentre.",
     "summary": "How does this work?",
-    "details1"     : "We've used your Universal Credit bank details to send 1p to your bank account. You need to enter the 6 digit reference number from the 1p payment.",
-    "details2": "This proves you have access to that bank account and confirms your identity.",
+    "details1"     : "A reference from Universal Credit will show on your bank statement.",
+    "details2"     : "You'll need to enter the 6 digit reference number.",
+    "details3": "This proves you have access to that bank account and confirms your identity.",
     "text1"       : "It might take up to 2 hours to appear. You have 7 days to use it before it expires.",
     "text2" : "It will be a 6-digit code on your bank statement, for example 12 34 56.",
     "checkYourAnswersList": [{
-      "question": "Bank Name",
-      "answer": "National Westminster"
-    }, {
-      "question": "Account Name",
-      "answer": "Mrs A Person"
-    }, {
       "question": "Account Number",
-      "answer": "89898989"
+      "answer": "****8989"
     }, {
       "question": "Sort Code",
       "answer": "12-12-12"

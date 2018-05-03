@@ -16,6 +16,8 @@
 
     {{ elements.openGridForm('bank_details') }}
     {{ elements.header(content) }}
+    {{ elements.notice('information', content.information) }}
+
     {{ elements.content(content.text) }}
 
       {{ elements.continue(content, 'get_documents', side = false) }}
