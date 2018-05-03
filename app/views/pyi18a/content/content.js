@@ -72,7 +72,7 @@ var data = [{
     "button"    : "Next"
   }],
   "make_payment"  : [{
-    "heading"   : "Get a reference sent to your bank account",
+    "heading"   : "Send a reference to your bank account",
     "text"      : "These are the bank details you gave us during your Universal Credit application:",
     "checkYourAnswersList": [{
       "question": "Account Number",
@@ -88,10 +88,10 @@ var data = [{
   "bank_submitted"  : [{
     "heading"     : "Find your reference",
     "lede"        : "A reference from Universal Credit has been sent to your bank account.",
-    "text1"       : "It might take up to 2 hours to appear. You have 7 days to use it before it expires.",
-    "text2" : "It will be a 6-digit code on your bank statement, for example 12 34 56.",
-    "exitLink"    : "Enter your reference later",
-    "link2": "I can't find my reference",
+    "text1" : "It will be a 6-digit code on your bank statement, for example 12 34 56.",
+    "text2"       : "It might take up to 2 hours to appear. You have 7 days to use it before it expires.",
+    "exitLink"    : "I can't find my reference",
+    "link2": "Enter your reference later",
     "button"      : "Enter your reference"
   }],
   "ref_not_found"  : [{

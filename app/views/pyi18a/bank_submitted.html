@@ -24,14 +24,23 @@
       {{ elements.content(content.text1) }}
       {{ elements.content(content.text2) }}
 
+      
+      
+      {{ elements.continue(content) }}
 
-      {{ elements.continue(content,'reminder', side = false) }}
+      <div style="margin-top: 30px;">
+        <h2 class="heading-small">Cannot get your reference now?</h2>
+        <a href="reminder">{{ content.link2 }}</a>
+      </div> 
+
+      <div style="margin-top: 30px;">
+        <h2 class="heading-small">Having problems?</h2>
+        <a href="ref_not_found">I can't find my reference</a>
+      </div> 
 
 
       {{ elements.closeGridForm() }}
-      <div style="padding-top:15px !important;">
-        <a href="ref_not_found">{{ content.link2 }}</a>
-      </div>
+      
     </div>
 
   {% endfor %}
