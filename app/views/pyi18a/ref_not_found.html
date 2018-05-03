@@ -1,0 +1,34 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Reference not found - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import version + "/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.ref_not_found %}
+
+    <div class="main" id="content" role="main">
+    {{ elements.banner() }}
+
+    {{ elements.openGridForm('ref_not_found') }}
+      {{ elements.header(content) }}
+
+      {{ elements.content(content.text1) }}
+      {{ elements.content(content.text2) }}
+      {{ elements.checkYourAnswers(content.checkYourAnswersList)}}
+      {{ elements.continue(content,'reminder', side = false) }}
+
+      <p>Note: User Journey not complete.</p>
+
+
+    {{ elements.closeGridForm() }}
+
+    <a href="" style="margin-top:20px;">{{ content.link2 }}</a>
+
+    </div>
+
+  {% endfor %}
+    {% endfor %}
+      {% endblock %}

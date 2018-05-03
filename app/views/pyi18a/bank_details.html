@@ -16,8 +16,9 @@
 
     {{ elements.openGridForm('bank_details') }}
     {{ elements.header(content) }}
+    {{ elements.notice('information', content.information) }}
+
     {{ elements.content(content.text) }}
-    {{ elements.content(content.text2) }}
 
 
     <details>
@@ -25,6 +26,7 @@
         <div class="panel panel-border-narrow" id="details-content-0">
           <p>{{ content.details1 }}</p>
           <p>{{ content.details2 }}</p>
+          <p>{{ content.details3 }}</p>
         </div>
     </details>
 

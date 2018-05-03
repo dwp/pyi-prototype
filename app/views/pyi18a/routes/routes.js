@@ -97,6 +97,18 @@ app.post('/' + version + '/bank_submitted', function(req,res) {
   res.redirect('/' + version + '/enter_reference');
 });
 
+/*****
+User can't find reference
+******/
+
+app.get('/' + version + '/ref_not_found', function(req,res) {
+  res.render(version + '/ref_not_found', {
+    data    : content.getTableData(),
+    version: version
+  });
+});
+
+
 
 /*****
 reminder

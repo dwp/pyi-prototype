@@ -45,11 +45,12 @@ var data = [{
   }],
   "bank_details"  : [{
       "heading"   : "Confirm your identity using your bank account",
-      "text"      : "This is a secure government service to confirm your identity, using the bank account details you gave us during your Universal Credit application.",
-      "text2" : "This is quicker than confirming your identity in the Jobcentre.",
+      "information": "Your Universal Credit claim is not yet complete. You still need to confirm your identity.",
+      "text"      : "We can do this by sending a reference to the bank account your Universal Credit will be paid into. This is quicker than confirming your identity in the Jobcentre.",
       "summary": "How does this work?",
-      "details1"     : "We use your Universal Credit bank details to send 1p to your bank account. You enter the 6 digit reference number from the 1p payment.",
-      "details2": "This proves you have access to that bank account and confirms your identity.",
+      "details1"     : "A reference from Universal Credit will show on your bank statement.",
+      "details2"     : "You'll need to enter the 6 digit reference number.",
+      "details3": "This proves you have access to that bank account and confirms your identity.",
       "exitLink"  : "Or confirm your identity in a Jobcentre",
       "button"    : "Next"
   }],
@@ -74,14 +75,8 @@ var data = [{
     "heading"   : "Get a reference sent to your bank account",
     "text"      : "These are the bank details you gave us during your Universal Credit application:",
     "checkYourAnswersList": [{
-      "question": "Bank Name",
-      "answer": "National Westminster"
-    }, {
-      "question": "Account Name",
-      "answer": "Mrs A Person"
-    }, {
       "question": "Account Number",
-      "answer": "89898989"
+      "answer": "****8989"
     }, {
       "question": "Sort Code",
       "answer": "12-12-12"
@@ -96,7 +91,20 @@ var data = [{
     "text1"       : "It might take up to 2 hours to appear. You have 7 days to use it before it expires.",
     "text2" : "It will be a 6-digit code on your bank statement, for example 12 34 56.",
     "exitLink"    : "Enter your reference later",
+    "link2": "I can't find my reference",
     "button"      : "Enter your reference"
+  }],
+  "ref_not_found"  : [{
+    "heading"     : "Cannot find your reference?",
+    "text1"       : "Make sure you're checking the correct bank account.",
+    "text2": "This is the bank account we've sent the reference to:",
+    "checkYourAnswersList": [{
+      "question": "Account Number",
+      "answer": "****8989"
+    }, {
+      "question": "Sort Code",
+      "answer": "12-12-12"
+    }]
   }],
   "reminder"      : [{
       "heading"   : "You'll need to enter your reference within 7 days",
