@@ -10,30 +10,37 @@
 {% for content in page.success %}
 
 <div class="main" id="content" role="main">
-  {{ elements.banner() }}
+  <div class="govuk-box-highlight incomplete">
+ <h2 class="heading-medium">Identity confirmed</h2>
+ <p>We've confirmed your identity but your claim is not yet complete.</p>
+</div>
 
-{{ elements.openGridForm('book_interview') }}
-  <div class="govuk-box-highlight">
-    <h1 style="margin-bottom: 15px;" class="heading-xlarge">
-      {{ content.heading }}
-    </h1>
-    {#<p class="font-large">
-      Your reference number is <br>
-      <strong class="bold">HDJ2123F</strong>
-    </p>#}
-  </div>
-  
-  {{ elements.heading(type='2', size='medium', content=content.heading2) }}
+<h1 class="heading-large">
+ To complete your claim, you still need to:
+</h1>
 
-  {{ elements.content(content.text )}}
-  {{ elements.unorderedList(listItems = content.listItems) }}
+<ol class="list list-number">
+ <li>Book an apppointment in the Jobcentre.</li>
+ <li>Attend your appointment.</li>
+ <li>Bring some proof of your identity - such as a bank card or driving licence.</li>
+ <li>Bring evidence to support your claim.</li>
+</ol>
 
-  {{ elements.content(content.text2 )}}
+<div class="notice">
+ <i class="icon icon-important">
+   <span class="visually-hidden">Warning</span>
+ </i>
+ <p>
+   <strong class="bold-small">
+     If you don't book and attend an appointment in the Jobcentre by 17 June 2018, your claim may be terminated and you'll need to claim again.
+   </strong>
+ </p>
 
+</div>
 
-  {{ elements.continue(content)}}
-
-{{ elements.closeGridForm() }}
+<div>
+<input class="button" type="submit" value="Book appointment">
+</div>
 </div>
 
 {% endfor %}
