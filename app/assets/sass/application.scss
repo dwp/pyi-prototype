@@ -68,7 +68,7 @@ $path: '/public/images/';
 
 .current-version {
   border-bottom: 1px solid $border-colour;
-  padding-bottom: $gutter;
+  padding-bottom: $gutter / 2;
 }
 
 .older-versions {
