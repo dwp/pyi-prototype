@@ -1,6 +1,6 @@
 {# Macros for index page #}
 
-{% macro current(versionNumber, releaseDate, startLink, changeArray, researchDlLink, dlSize) %}
+{% macro current(versionNumber, releaseDate, startLink, changeArray, researchDlLink, dlSize, information) %}
 <div class="current-version">
   <div class="version-number">
     <p class="index-p">Current version</p>
@@ -21,6 +21,16 @@
       {% endfor %}
     </ul>
   </div>
+  {% if information %}
+    <div style="margin-bottom:20px;"class="notice">
+      <i class="icon icon-information">
+        <span class="visually-hidden">information</span>
+      </i>
+      <strong class="bold-small">
+        {{ information }}
+      </strong>
+    </div>
+  {% endif %}
   <!-- <div class="research-findings">
     <h4 class="heading-small">Research insights from testing this version</h4>
   </div> -->
