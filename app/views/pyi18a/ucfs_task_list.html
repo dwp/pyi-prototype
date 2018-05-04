@@ -7,13 +7,10 @@
 {% block content %}
   
   <div class="main" id="content" role="main">
-    <div class="column-two-thirds">        
-      <div class="phase-banner-beta">
-        <p><strong class="phase-tag" style="background-color:#1562A1;"><a class="settings-link" href="/pyi18a/settings">Prototype</a></strong>
-          <span>This is being used to test out a new element of the service</span>
-        </p>
-      </div>
+    <div class="column-two-thirds">      
 
+      {% include version + '/includes/phase_banner_prototype.html' %}
+    
       <h1 class="heading-large">Apply for Universal Credit</h1>
       <p>You must complete the remaining 2 sections or your application will not be processed.</p>
       <p>The information you have given us so far will be saved if you need to come back later to finish your application.</p>
