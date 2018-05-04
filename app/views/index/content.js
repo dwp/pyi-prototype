@@ -138,15 +138,21 @@ module.exports = {
     },
     pyi18a: {
         version: '18a',
-        release: "TBC",
-        changes: [""],
+        release: "4 May 2018",
+        changes: [
+            "Content and design changes based on feedback from UCFS team",
+            "Shows less of customer account details",
+            "Added option for when user can't find reference (full user journey work in progress)",
+            "Made it clearer that claim isn't yet complete"    
+        ],
         researchFindings: [""]
     },
     pyi18b: {
         version: '18b',
-        release: "TBC",
+        release: "4 May 2018",
         changes: [
-            ""
+            "Same as 18a, except 1p is sent to user's bank account automatically",
+            "Therefore the entry point from the to-do list is later in the journey"
         ],
         researchFindings: [""]
     }

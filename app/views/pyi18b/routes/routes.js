@@ -63,7 +63,7 @@ app.post('/' + version + '/bank_details', function(req,res) {
     res.redirect('/' + version + '/session_expired');
   } else {
     req.session[version + '-bank_details'] = req.body;
-    res.redirect('/' + version + '/make_payment');
+    res.redirect('/' + version + '/bank_submitted');
   }
 });
 
@@ -101,6 +101,17 @@ app.post('/' + version + '/bank_submitted', function(req,res) {
   res.redirect('/' + version + '/enter_reference');
 });
 
+
+/*****
+User can't find reference
+******/
+
+app.get('/' + version + '/ref_not_found', function(req,res) {
+  res.render(version + '/ref_not_found', {
+    data    : content.getTableData(),
+    version: version
+  });
+});
 
 /*****
 reminder

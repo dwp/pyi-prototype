@@ -106,7 +106,7 @@
 <div class="form-group {% if errorMessage or hasError %}form-group-error{% endif %}" id="form-group-{{ id }}">
   <label class="form-label-bold" for="{{ id }}">{{ content }}
   {% if errorMessage %}<span class="error-message">{{ errorMessage}}</span>{% endif %}
-  {% if hint %} <br><span class="form-hint">{{ hint }}</span> {% endif %}
+  {% if hint %} <span class="form-hint">{{ hint }}</span> {% endif %}
   </label>
   <input id="{{ id }}" type="{{ type }}" class="form-control {% if size %}form-control-{{ size }}{% endif %}" name="{{ id }}" value="{{ value }}">
 </div>

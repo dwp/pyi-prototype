@@ -21,14 +21,10 @@
     {{ elements.content(content.text) }}
 
 
-    <details>
-      <summary class="summary">{{ content.summary }}</summary>
-        <div class="panel panel-border-narrow" id="details-content-0">
-          <p>{{ content.details1 }}</p>
-          <p>{{ content.details2 }}</p>
-          <p>{{ content.details3 }}</p>
-        </div>
-    </details>
+    <p>{{ content.details1 }}</p>
+    <p>{{ content.details2 }}</p>
+    <p>{{ content.details3 }}</p>
+    <p>This is quicker than confirming your identity in the Jobcentre.</p>
 
       {{ elements.continue(content, 'get_documents', side = false) }}
 

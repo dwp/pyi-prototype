@@ -52,7 +52,7 @@ var data = [{
       "details2"     : "You'll need to enter the 6 digit reference number.",
       "details3": "This proves you have access to that bank account and confirms your identity.",
       "exitLink"  : "Or confirm your identity in a Jobcentre",
-      "button"    : "Next"
+      "button"    : "Continue"
   }],
   "has_roll_number"  : [{
     "heading"   : "Bank account details: roll number",
@@ -88,8 +88,14 @@ var data = [{
   "bank_submitted"  : [{
     "heading"     : "Find your reference",
     "lede"        : "A reference from Universal Credit has been sent to your bank account.",
-    "text1" : "It will be a 6-digit code on your bank statement, for example 12 34 56.",
-    "text2"       : "It might take up to 2 hours to appear. You have 7 days to use it before it expires.",
+    "text1"       : "It might take up to 2 hours to appear. You have 7 days to use it before it expires.",
+    "checkYourAnswersList": [{
+      "question": "Account Number",
+      "answer": "****8989"
+    }, {
+      "question": "Sort Code",
+      "answer": "12-12-12"
+    }],
     "exitLink"    : "I can't find my reference",
     "link2": "Enter your reference later",
     "button"      : "Enter your reference"

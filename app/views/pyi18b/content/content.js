@@ -45,9 +45,14 @@ var data = [{
   }],
   "bank_details"  : [{
       "heading"   : "Confirm your identity using your bank account",
-      "text"      : "This is a secure government service to confirm your identity, using the bank account details you gave us during your Universal Credit application.",
-      "exitLink"  : "Or confirm your identity in a Jobcentre",
-      "button"    : "Next"
+      "information": "Your Universal Credit claim is not yet complete. You still need to confirm your identity.",
+      "text"      : "We have sent a reference to the bank account your Universal Credit will be paid into.",
+      "summary": "How does this work?",
+      "details1"     : "A reference from Universal Credit will show on your bank statement.",
+      "details2"     : "You'll need to enter the 6 digit reference number.",
+      "details3": "This proves you have access to that bank account and confirms your identity.",
+      "exitLink"  : "Or confirm your identity in a Jobcentre",      "exitLink"  : "Or confirm your identity in a Jobcentre",
+      "button"    : "Continue"
   }],
   "has_roll_number"  : [{
     "heading"   : "Bank account details: roll number",
@@ -87,15 +92,8 @@ var data = [{
     "button"    : "Send the reference"
   }],
   "bank_submitted"  : [{
-    "heading"     : "Confirm your identity using your bank account",
-    "information": "Your Universal Credit claim is not yet complete. You still need to confirm your identity.",
-    "text": "To do this, we've sent a reference to the bank account your Universal Credit will be paid into. This is quicker than confirming your identity in the Jobcentre.",
-    "summary": "How does this work?",
-    "details1"     : "A reference from Universal Credit will show on your bank statement.",
-    "details2"     : "You'll need to enter the 6 digit reference number.",
-    "details3": "This proves you have access to that bank account and confirms your identity.",
-    "text1"       : "It might take up to 2 hours to appear. You have 7 days to use it before it expires.",
-    "text2" : "It will be a 6-digit code on your bank statement, for example 12 34 56.",
+    "heading"     : "Find your reference",
+    "lede"        : "A reference from Universal Credit has been sent to this bank account:",
     "checkYourAnswersList": [{
       "question": "Account Number",
       "answer": "****8989"
@@ -103,15 +101,29 @@ var data = [{
       "question": "Sort Code",
       "answer": "12-12-12"
     }],
-    "exitLink"    : "Enter your reference later",
-    "button"      : "Enter your reference",
-    "exitLink2": "Or confirm your identity at the Jobcentre"
+    "text1" : "It will be a 6-digit code on your bank statement, for example 12 34 56.",
+    "text2"       : "It might take up to 2 hours to appear. You have 7 days to use it before it expires.",
+    "exitLink"    : "I can't find my reference",
+    "link2": "Enter your reference later",
+    "button"      : "Enter your reference"
+  }],
+  "ref_not_found"  : [{
+    "heading"     : "Cannot find your reference?",
+    "text1"       : "Make sure you're checking the correct bank account.",
+    "text2": "This is the bank account we've sent the reference to:",
+    "checkYourAnswersList": [{
+      "question": "Account Number",
+      "answer": "****8989"
+    }, {
+      "question": "Sort Code",
+      "answer": "12-12-12"
+    }]
   }],
   "reminder"      : [{
       "heading"   : "You'll need to enter your reference within 7 days",
       "lede"      : "When you've found your reference, sign back in to Universal Credit to enter the reference and confirm your identity.",
       "button"    : "Sign out of Universal Credit",
-      "exitLink"    : "Go back to to-do list"
+      "exitLink"    : "Go back to your to-do list"
     }],
  "enter_reference": [{
     "heading"     : "Enter your reference",
