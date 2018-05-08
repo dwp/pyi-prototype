@@ -23,7 +23,7 @@
           </div>
         {% endif %}
 
-        <form action="/pyi18a/agent_search" method="post" class="form">  
+        <form action="/{{ version }}/agent_search" method="post" class="form">  
           <header>
             <h1 class="heading-xlarge form-title ">
               Find claimant
@@ -53,7 +53,7 @@
 
           <div><input type="submit" class="button" value="Search" name="submit"></div>
 
-          <div class="exit-link"><a href="/pyi18a/agent_search">Clear information and start again</a></div>
+          <div class="exit-link"><a href="/{{ version }}/agent_search">Clear information and start again</a></div>
         </form>
       </div>
     </div>
