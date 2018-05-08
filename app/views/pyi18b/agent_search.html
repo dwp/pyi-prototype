@@ -5,53 +5,57 @@
 {% endblock %}
 
 {% block content %}
-  {% import version + "/macros/elements.html" as elements %}
-  {% for page in data %}
-    {% for content in page.agent_search %}
+  <div class="main" role="main" id="content">       
+  {% include version + '/includes/phase_banner_prototype.html' %}
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        {% if errors %}
+          <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+            <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+              There's a problem
+            </h2>
+            <p>You must:</p>
+            <ul class="error-summary-list">
+              {% for id, error in errors %}
+                <li><a href="#{{ id }}">{{ error }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
 
-      <div class="main" role="main" id="content">
-        {{ elements.banner() }}
+        <form action="/{{ version }}/agent_search" method="post" class="form">  
+          <header>
+            <h1 class="heading-xlarge form-title ">
+              Find claimant
+            </h1>
+          </header> 
+          <div class="form-group {% if errors.claimantId %} form-group-error {% endif %}" id="form-group-claimantId">
+            <label class="form-label-bold" for="claimantId">
+              Claimant ID - the URL at the top of the customer claim details view
+              {% if errors.claimantId %}<span class="error-message">{{ errors.claimantId }}</span>{% endif %}
+            </label>
+            <input id="claimantId" type="text" class="form-control form-control-1-2" name="claimantId" value="">
+          </div>
+          <div class="form-group {% if errors.partialBankAccountNumber %} form-group-error {% endif %}" id="form-group-partialBankAccountNumber">
+            <label class="form-label-bold" for="partialBankAccountNumber">
+              Last 4 digits of bank account number in the final declaration – bank details view
+              {% if errors.partialBankAccountNumber %}<span class="error-message">{{ errors.partialBankAccountNumber }}</span>{% endif %}
+            </label>
+            <input id="partialBankAccountNumber" type="text" class="form-control form-control-1-2" name="partialBankAccountNumber" value="">
+          </div>
+          <div class="form-group {% if errors.sortCode %} form-group-error {% endif %}" id="form-group-sortCode">
+            <label class="form-label-bold" for="sortCode">
+              Sort code in the final declaration – bank details view
+              {% if errors.sortCode %}<span class="error-message">{{ errors.sortCode }}</span>{% endif %}
+            </label>
+            <input id="sortCode" type="text" class="form-control form-control-1-2" name="sortCode" value="">
+          </div>
 
-        {{ elements.openGridForm('agent_search') }}
+          <div><input type="submit" class="button" value="Search" name="submit"></div>
 
-          {% if errors %}
-            {{ elements.errorSummaryBox(errors) }}
-          {% endif %}
-
-          {{ elements.header(content) }}
-          
-          {{ elements.inputField(
-            id = 'claimantId',
-            content = 'Claimant ID - the URL at the top of the customer claim details view',
-            size = '1-2',
-            value = values.claimantId,
-            type='text',
-            hasError=errors.claimantId
-          ) }}
-
-          {{ elements.inputField(
-            id = 'partialBankAccountNumber',
-            content = 'Last 4 digits of bank account number in the final declaration – bank details view',
-            size = '1-2',
-            value = values.partialBankAccountNumber,
-            type='text',
-            hasError=errors.partialBankAccountNumber
-          ) }}
-
-          {{ elements.inputField(
-            id = 'sortCode',
-            content = 'Sort code in the final declaration – bank details view',
-            size = '1-2',
-            value = values.sortCode,
-            type='text',
-            hasError=errors.sortCode
-          ) }}
-
-          {{ elements.continue(content, 'agent_search') }}
-
-        {{ elements.closeGridForm() }}
+          <div class="exit-link"><a href="/{{ version }}/agent_search">Clear information and start again</a></div>
+        </form>
       </div>
-
-    {% endfor %}
-  {% endfor %}
+    </div>
+  </div>
 {% endblock %}
