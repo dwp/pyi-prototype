@@ -5,22 +5,46 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.get_documents %}
 
-<div class="main" id="content" role="main">
-{{ elements.banner() }}
+  <div class="main" id="content" role="main">
+    {% include version + '/includes/phase_banner_prototype.html' %}
+      <header>
+        <h1 class="heading-xlarge form-title">
+          Get your identity documents ready
+        </h1>
+      </header>
 
-    {{ elements.header(content) }}
-    {{ elements.content(content.text1) }}
+      <p>You need to attend an evidence interview. You&#39;ll need to book your interview once you&#39;ve completed this to-do.</p>
 
-    {{ elements.unorderedList(content = content.heading2, listItems = content.listItems, hint = content.hint )}}
-    {{ elements.radioButtons(radios=[{"value": "Yes"}, {"value": "No"}], inline = true) }}
+      <div class="form-group">
+        <h4 class="heading-small">Can you bring 1 of these documents to your interview?</h4>
+        <span class="form-hint">It must be the original document. Any photos must look like you.</span>
 
-    <input type="submit" class="button" value="Next" />
-</div>
+          <ul class="list list-bullet">
+            <li>UK passport</li>
+            <li>EEA passport</li>
+            <li>UK photo driving license</li>
+            <li>national identity card</li>
+            <li>residence permit or card</li>
+            <li>immigration status document</li>
+            <li>registration or naturalisation certificate</li>
+            <li>bank card for the account where you want your Universal Credit to be paid</li>
+          </ul>
+      </div>
+      <div>
+        <fieldset class="form-group inline">
+          <div class="multiple-choice">
+            <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+            <label for="radio-inline-1">Yes</label>
+          </div>
+          <div class="multiple-choice">
+            <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+            <label for="radio-inline-2">No</label>
+          </div>
+        </fieldset>
+      </div>
 
-{% endfor %}
-{% endfor %}
+      <input type="submit" class="button" value="Next" />
+    </div>
+
 {% endblock %}

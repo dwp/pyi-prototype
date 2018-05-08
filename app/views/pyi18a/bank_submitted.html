@@ -5,48 +5,64 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.bank_submitted %}
 
-    <div class="main" id="content" role="main">
-    {{ elements.banner() }}
-
-    {{ elements.openGridForm('bank_submitted') }}
-      {{ elements.header(content) }}
-
-      {#{ elements.helpImage('','','/public/images/Example_transaction_v2.png',content.altText) }#}
-      {{ elements.content(content.text1) }}
-
-      
-      
-      {{ elements.continue(content) }}
-
-      <details>
-        <summary class="summary" style="margin-top: 15px;">I can't find my reference</summary>
-        <div class="panel panel-border-narrow" id="details-content-0">
-          <p>Check you’re looking in the correct bank account. This is the account we’ve sent your reference to:</p>
-          {{ elements.checkYourAnswers(content.checkYourAnswersList)}}
-          <p style="margin-top: 20px;">Look for a 1p payment from Universal Credit on your bank statement. The payment will show a 6 digit code, for example 12 34 56.</p>
-          <p style="margin-top: 20px;">Allow up to 2 hours after requesting a reference for it to appear in your bank account.</p>
-          <h2 class="heading-small" style="margin-top: 20px;">Still having problems?</h2>
-          <p>
-            You can only generate 1 reference, so you’ll now need to 
-              <a href="get_documents">confirm your identity in the Jobcentre.</a>
+  <div class="main" id="content" role="main">
+          {% include version + '/includes/phase_banner_prototype.html' %}
+  
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <form action="/pyi18a/bank_submitted" method="post" class="form" >
+          <header>
+            <h1 class="heading-xlarge form-title ">
+              Find your reference
+            </h1>
+          </header>
+          <p class="lede ">
+            A reference from Universal Credit has been sent to your bank account.
           </p>
-        </div>
-      </details>
+    
+          <p>It might take up to 2 hours to appear. You have 7 days to use it before it expires.</p>
 
-      <div style="margin-top: 30px;">
-        <h2 class="heading-small">Cannot get your reference now?</h2>
-        <a href="reminder">{{ content.link2 }}</a>
-      </div> 
+          <div><input type="submit" class="button" value="Enter your reference" name="submit"></div>
 
+          <details>
+            <summary class="summary" style="margin-top: 15px;">I can't find my reference</summary>
+            <div class="panel panel-border-narrow" id="details-content-0">
+              <p>Check you’re looking in the correct bank account. This is the account we’ve sent your reference to:</p>      
+              <dl class="govuk-check-your-answers cya-questions-short">       
+                <div>
+                  <dt class="cya-question">
+                    Account Number
+                  </dt>
+                  <dd class="cya-answer">
+                    ****8989
+                  </dd>
+                </div>
+                <div>
+                  <dt class="cya-question">
+                    Sort Code
+                  </dt>
+                  <dd class="cya-answer">
+                    12-12-12
+                  </dd>
+                </div> 
+              </dl>
+              <p style="margin-top: 20px;">Look for a 1p payment from Universal Credit on your bank statement. The payment will show a 6 digit code, for example 12 34 56.</p>
+              <p style="margin-top: 20px;">Allow up to 2 hours after requesting a reference for it to appear in your bank account.</p>
+              <h2 class="heading-small" style="margin-top: 20px;">Still having problems?</h2>
+              <p>
+                You can only generate 1 reference, so you’ll now need to 
+                <a href="get_documents">confirm your identity in the Jobcentre.</a>
+              </p>
+            </div>
+          </details>
 
-      {{ elements.closeGridForm() }}
-      
-    </div>
-
-  {% endfor %}
-    {% endfor %}
-      {% endblock %}
+          <div style="margin-top: 30px;">
+            <h2 class="heading-small">Cannot get your reference now?</h2>
+            <a href="reminder">Enter your reference later</a>
+          </div> 
+        </form>
+      </div>
+    </div>  
+  </div>
+{% endblock %}
