@@ -5,27 +5,26 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.book_interview %}
 
-<div class="main" id="content" role="main">
-    <div class="column-two-thirds">
-        {{ elements.banner() }}
+    <div class="main" id="content" role="main">
+        <div class="column-two-thirds">
+            {% include version + '/includes/phase_banner_prototype.html' %}
+        
+            <header>
+                <h1 class="heading-xlarge form-title ">
+                    Book your interview
+                </h1>
+            </header>
 
-        {{ elements.header(content) }}
-
-        {{ elements.content(content.text1) }}
-
-        {{ elements.phonecall(content.phoneText1, content.phoneText2, content.phoneText3) }}
-
-        {{ elements.content(content.text2)}}
-
-        {{ elements.content(content.text3)}}
+            <p>To complete your claim, you&#39;ll need to book and attend an interview</p>     
+            <div class="panel with-icon fa-phone">
+                <p><span class="lede">Call to book</span><br/>
+                <span id="interview-telephone-number" class="bold-large">0800 328 5644 (Textphone: 0800 328 1344)</span><br/>
+                Monday to Friday, 8am to 6pm</p>
+            </div>
+            <p>You&#39;ll be asked for your National Insurance Number when you call</p>
+            <p>Book as soon as you can or you might have to start again</p>
+        </div>
     </div>
 
-</div>
-
-{% endfor %}
-{% endfor %}
 {% endblock %}

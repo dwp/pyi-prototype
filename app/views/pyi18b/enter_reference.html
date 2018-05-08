@@ -5,66 +5,66 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.enter_reference %}
-
-    <div class="main" id="content" role="main">
-    {{ elements.banner() }}
-
-    {{ elements.backlink() }}
-
-    {{ elements.openGridForm('enter_reference') }}
+  <div class="main" id="content" role="main">  
+    {% include version + '/includes/phase_banner_prototype.html' %}
+    {% include version + '/includes/back_link.html' %}
 
     {% if incorrectReference %}
       <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
-
         <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
           You've entered the wrong reference
         </h2>
-
         <p>You must:</p>
-
         <ul class="error-summary-list">
           <li><a href="#codeTestInput">Check your reference and enter it again</a></li>
         </ul>
-
         <p> You have {{ remainingAttempts }} more attempt{% if remainingAttempts != 1 %}s{%endif%}</p>
-
       </div>
     {% endif %}
 
     {% if errors %}
-        {{ elements.errorSummaryBox(errors) }}
+      <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+        <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+          There's a problem
+        </h2>
+        <p>You must:</p>
+          <ul class="error-summary-list">
+            {% for id, error in errors %}
+              <li><a href="#{{ id }}">{{ error }}</a></li>
+            {% endfor %}
+          </ul>
+      </div>
     {% endif %}
 
-    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <form action="/{{ version }}/enter_reference" method="post" class="form" >    
+          <header>
+            <h1 class="heading-xlarge form-title">
+              Enter your reference
+            </h1>
+          </header>
 
-    {{ elements.header(content) }}
+          {% if errors.codeTestInput %}
+            {% set errorMessage = errors.codeTestInput %}
+          {% elif incorrectReference %}
+            {% set errorMessage = 'Check your reference and enter it again' %}
+          {% endif %}
 
-    {% if errors.codeTestInput %}
-      {% set errorMessage = errors.codeTestInput %}
-    {% elif incorrectReference %}
-      {% set errorMessage = 'Check your reference and enter it again' %}
-    {% endif %}
+          <div class="form-group {% if errorMessage %}form-group-error{% endif %}" id="form-group-codeTestInput">
+            <label class="form-label-bold" for="codeTestInput">
+              Reference
+              {% if errorMessage %}<span class="error-message">{{ errorMessage}}</span>{% endif %}
+              <span class="form-hint">It will be a 6-digit code from Universal Credit on your bank statement, for example 12 34 56.</span> 
+            </label>
+            <input id="codeTestInput" type="text" class="form-control form-control-1-4" name="codeTestInput" value="{{ values.codeTestInput }}">
+          </div>
 
-    {{ elements.inputField(
-      id = 'codeTestInput',
-      hint = content.hint,
-      content = 'Reference',
-      size = '1-4',
-      value = values.codeTestInput,
-      type='text',
-      errorMessage=errorMessage
-    ) }}
-    
-    {{ elements.content(content.text) }}
+          <div><input type="submit" class="button" value="Submit" name="submit"></div>
 
-    {{ elements.continue(content, 'js-back') }}
-
-    {{ elements.closeGridForm() }}
+          <div class="exit-link"><a href="javascript:history.back()"></a></div>
+        </form>
+      </div>
     </div>
-
-{% endfor %}
-{% endfor %}
+  </div>
 {% endblock %}

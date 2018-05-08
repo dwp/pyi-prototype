@@ -5,27 +5,54 @@
 {% endblock %}
 
 {% block content %}
-  {% import version + "/macros/elements.html" as elements %}
-  {% for page in data %}
-    {% for content in page.ucfs_task_list %}
-      <div class="main" id="content" role="main">
+  
+  <div class="main" id="content" role="main">
+    <div class="column-two-thirds">      
 
-        <div class="column-two-thirds">
+      {% include version + '/includes/phase_banner_prototype.html' %}
+    
+      <h1 class="heading-large">Apply for Universal Credit</h1>
+      <p>You must complete the remaining 2 sections or your application will not be processed.</p>
+      <p>The information you have given us so far will be saved if you need to come back later to finish your application.</p>
 
-          {{ elements.banner() }}
+      <ol style="margin-top: 60px;">
+        <li>
+          <strong class="task-completed" id="eligibility-completed">Completed</strong>
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">1.</span> Create a Universal Credit account
+          </h2>
+        </li>
+        <li>
+          <strong class="task-completed" id="eligibility-completed">Completed</strong>
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">2.</span> Start claim
+          </h2> 
+        </li>
+        <li>
+          <strong class="task-completed" id="eligibility-completed">Completed</strong>
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">3.</span> Check your details
+          </h2>  
+        </li>
+        <li>
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">4.</span> Confirm your identity
+          </h2>
+          <ul class="task-list-items" style="margin-bottom:30px">
+            <li class="task-list-item cf">
+              <a class="task-name" href="/{{ version }}/go_to_task?task=4">
+                Confirm your identity
+              </a>
+            </li>
+          </ul>  
+        </li>
+        <li>  
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">5.</span> Book a Jobcentre Plus appointment
+          </h2>    
+        </li>
+      </ol>
+    </div> <!--column-two-thirds-->       
+  </div> <!--main content-->
 
-          {{ elements.heading(1, 'large', content.heading) }}
-
-          {{ elements.content(content.text) }}
-
-          {{ elements.content(content.text2) }}
-
-          {{ elements.ucfsTaskList(content.taskList, task) }}
-        </div>
-
-        
-      </div>
-
-    {% endfor %}
-  {% endfor %}
 {% endblock %}

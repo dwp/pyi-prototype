@@ -5,26 +5,32 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.payment_failed %}
 
-<div class="main" id="content" role="main">
-{{ elements.banner() }}
+    <div class="main" id="content" role="main">
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                {% include version + '/includes/phase_banner_prototype.html' %}
 
-    {{ elements.openGridForm('get_documents') }}
+                <header>
+                    <h1 class="heading-xlarge form-title ">
+                    Something’s gone wrong
+                    </h1>
+                </header>
+                <p class="lede">
+                    Sorry, you can’t use this service.
+                </p>
+        
+                <p>To complete your Universal Credit claim, you&#39;ll need to:</p>
 
-        {{ elements.header(content) }}
-        {{ elements.content(content.text )}}
-        {{ elements.unorderedList(listItems = content.listItems) }}
-
-        {{ elements.content(content.text2 )}}
-
-        {{ elements.continue(content) }} 
-
-    {{ elements.closeGridForm() }}
-</div>
-
-{% endfor %}
-{% endfor %}
+                <ul class="list list-bullet">
+                    <li>book your interview at a Jobcentre</li>
+                    <li>bring some identity documents with you </li>
+                </ul>
+        
+                <p>We&#39;ll tell you what you can bring when you book.</p>
+                <a class="button" role="button" href="get_documents">Book your interview</a>
+            </div>
+        </div>
+    </div>
+    
 {% endblock %}

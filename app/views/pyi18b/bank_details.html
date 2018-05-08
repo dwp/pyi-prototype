@@ -5,31 +5,42 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.bank_details %}
+  <div class="main" role="main" id="content">
+    {% include version + '/includes/phase_banner_prototype.html' %}
+    {% include version + '/includes/back_link.html' %}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <form action="/pyi18b/bank_details" method="post" class="form" >
 
-    <div class="main" role="main" id="content">
-    {{ elements.banner() }}
+          <header>
+            <h1 class="heading-xlarge form-title ">
+              Confirm your identity using your bank account
+            </h1>
+          </header>
 
-    {{ elements.backlink() }}
+          <div style="margin-bottom:20px;"class="notice">
+            <i class="icon icon-information">
+              <span class="visually-hidden">information</span>
+            </i>
+            <strong class="bold-small">
+              Your Universal Credit claim is not yet complete. You still need to confirm your identity.
+            </strong>
+          </div>
 
-    {{ elements.openGridForm('bank_details') }}
-      {{ elements.header(content) }}
-      {{ elements.notice('information', content.information) }}
+          <p>We have sent a reference to the bank account your Universal Credit will be paid into.</p>
+          <p>A reference from Universal Credit will show on your bank statement.</p>
+          <p>You&#39;ll need to enter the 6 digit reference number.</p>
+          <p>This proves you have access to that bank account and confirms your identity.</p>
+          <p>This is quicker than confirming your identity in the Jobcentre.</p>
 
-      {{ elements.content(content.text) }}
+          <div><input type="submit" class="button" value="Continue" name="submit"></div>
 
-      <p>{{ content.details1 }}</p>
-      <p>{{ content.details2 }}</p>
-      <p>{{ content.details3 }}</p>
-      <p>This is quicker than confirming your identity in the Jobcentre.</p>
+          <div class="exit-link"><a href="/pyi18b/get_documents">Or confirm your identity in a Jobcentre</a></div>
 
-      {{ elements.continue(content, 'get_documents', side = false) }}
-
-    {{ elements.closeGridForm() }}
+        </form>
+      </div>
     </div>
+  </div>
 
-{% endfor %}
-{% endfor %}
 {% endblock %}

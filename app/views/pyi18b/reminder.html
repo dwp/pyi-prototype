@@ -5,28 +5,22 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.reminder %}
 
   <div class="main" id="content" role="main">
-  {{ elements.banner() }}
 
-  {{ elements.backlink() }}
-
-  {{ elements.openGridForm('uc_login') }}
-
-    {{ elements.heading('1', 'xlarge', content.heading) }}
-    {{ elements.content(content.lede,'','',true) }}
-
-    {{ elements.content(content.text) }}
-    {{ elements.content(content.text2) }}
-
-    {{ elements.continue(content, 'ucfs_task_list?task=4', side = false) }}
-
-  {{ elements.closeGridForm() }}
+    {% include version + '/includes/phase_banner_prototype.html' %}
+    {% include version + '/includes/back_link.html' %}
+      
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <form action="/{{ version }}/uc_login" method="post" class="form">
+          <h1 class="heading-xlarge">You'll need to enter your reference within 7 days</h1>
+            <p class="lede">When you&#39;ve found your reference, sign back in to Universal Credit to enter the reference and confirm your identity.</p>
+            <div><input type="submit" class="button" value="Sign out of Universal Credit" name="submit"></div>
+            <div class="exit-link"><a href="/{{ version }}/ucfs_task_list?task=4">Go back to your to-do list</a></div>
+        </form>
+      </div>
+    </div>
   </div>
 
-{% endfor %}
-{% endfor %}
 {% endblock %}

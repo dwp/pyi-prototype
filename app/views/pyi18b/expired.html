@@ -1,32 +1,39 @@
 {% extends version + "/layout.html" %}
 
 {% block page_title %}
-  Reference not recognised - GOV.UK prototype kit
+    Reference not recognised - GOV.UK prototype kit
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.expired %}
 
-<div class="main" id="content" role="main">
-{{ elements.banner() }}
+    <div class="main" id="content" role="main">
+        {% include version + '/includes/phase_banner_prototype.html' %}
 
-    {{ elements.openGridForm('get_documents') }}
-
-
-        {{ elements.header(content) }}
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <form action="/{{ version }}/get_documents" method="post" class="form" >
+      
+                <header>
+                    <h1 class="heading-xlarge form-title ">
+                    Sorry, you can&#39;t use this service
+                    </h1>
+                </header>
+                <p class="lede ">
+                    Your 7 days to link your bank account has run out.
+                </p>
         
-        {{ elements.content(content.text )}}
-        {{ elements.unorderedList(listItems = content.listItems) }}
+                <p>To complete your Universal Credit claim, you&#39;ll need to:</p>
+                
+                <ul class="list list-bullet">
+                    <li>book your interview at a Jobcentre</li>
+                    <li>bring some identity documents with you </li>
+                </ul>
+        
+                <p>We&#39;ll tell you what you can bring when you book.</p>
+            
+                <a class="button" role="button" href="get_documents">Book your interview</a> 
+            </div>
+        </div>
+    </div>
 
-        {{ elements.content(content.text2 )}}
-
-        {{ elements.continue(content) }}
-
-    {{ elements.closeGridForm() }}
-</div>
-
-{% endfor %}
-{% endfor %}
 {% endblock %}
