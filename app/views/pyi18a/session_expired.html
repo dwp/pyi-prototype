@@ -5,22 +5,20 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.session_expired %}
-
-<div class="main" id="content" role="main">
-{{ elements.banner() }}
-
-    {{ elements.openGridForm('session_expired') }}
-
-        {{ elements.header(content) }}
-        {{ elements.continue(content, 'uc_login') }}
-
-
-    {{ elements.closeGridForm() }}
-</div>
-
-{% endfor %}
-{% endfor %}
+    <div class="main" id="content" role="main"> 
+        {% include version + '/includes/phase_banner_prototype.html' %}
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <header>
+                    <h1 class="heading-xlarge form-title ">
+                        Sorry, you’ll have to start again
+                    </h1>
+                </header>
+                <p class="lede">
+                    You have not entered any details for 20 minutes, so we have cleared your information to keep it secure.
+                </p>
+                <div class="exit-link"><a href="/pyi18a/uc_login">Go to Universal Credit sign in</a></div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

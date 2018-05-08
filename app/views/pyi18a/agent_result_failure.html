@@ -5,29 +5,31 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.agent_result_failure %}
 
-<div class="main" id="content" role="main">
-  {{ elements.banner() }}
+  <div class="main" id="content" role="main">
+    {% include version + '/includes/phase_banner_prototype.html' %}
 
-  {{ elements.header(content) }}
+    <header>
+      <h1 class="heading-xlarge form-title ">
+        The claimant’s identity has not been verified online
+      </h1>
+    </header>
+
+    <h2 class="heading-medium">What you need to do next</h2>
   
-  {{ elements.heading("2", "medium", content.heading2_1) }}
+    <ol class="list list-number">
+      <li>Continue with the standard identity interview using documents or biographical questions.</li>
+      <li>Complete the identity ALP (agent-led process).</li>
+    </ol>
+  
+    <h2 class="heading-medium">What you can tell the claimant</h2>
 
-  {{ elements.orderedList(listItems = content.orderedList)}}
+    <p>It has not been possible to verify the claimant’s identity online.</p>
 
-  {{ elements.heading("2", "medium", content.heading2_2) }}
+    <p>This is because the claimant did not use the Prove your Identity service.</p>
 
-  {{ elements.content(content.text1) }}
+    <div class="exit-link"><a href="/pyi18a/agent_search">Go back to search</a></div>
 
-  {{ elements.content(content.text2) }}
+  </div>
 
-  {{ elements.continue(content, "agent_search") }}
-
-</div>
-
-{% endfor %}
-{% endfor %}
 {% endblock %}

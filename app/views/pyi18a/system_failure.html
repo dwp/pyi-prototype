@@ -5,24 +5,18 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.system_failure %}
-
-<div class="main" id="content" role="main">
-{{ elements.banner() }}
-
-    {{ elements.openGridForm('expired') }}
-
-        {{ elements.header(content) }}
-
-        {{ elements.content(content.text1) }}
-
-        {{ elements.continue(content, 'uc_login') }}
-
-    {{ elements.closeGridForm() }}
-</div>
-
-{% endfor %}
-{% endfor %}
+    <div class="main" id="content" role="main">
+        {% include version + '/includes/phase_banner_prototype.html' %}
+        <div class="grid-row">
+            <div class="column-two-thirds">    
+                <header>
+                    <h1 class="heading-xlarge form-title ">
+                        Something’s gone wrong
+                    </h1>
+                </header>
+                <p>You cannot use this service just now. The problem will be fixed as soon as possible.</p>
+                <div class="exit-link"><a href="/pyi18a/uc_login">Go to Universal Credit sign in</a></div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
