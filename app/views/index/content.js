@@ -113,7 +113,8 @@ module.exports = {
             "Add agent screens",
             "Add new Prototype Options screen to select different user journeys",
             "Correct 'Something's gone wrong' screens",
-            "Add user error messages"
+            "Add user error messages",
+            "Amend content on 'has roll number?' screen"
         ],
         researchFindings: [""]
     },
