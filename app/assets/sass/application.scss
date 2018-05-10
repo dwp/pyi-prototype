@@ -110,6 +110,20 @@ $path: '/public/images/';
 // End of Index page styles
 
 
+.alert {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    clear: both;
+    border-left-style: solid;
+    border-color: #bfc1c3;
+    padding: 0.78947em;
+    margin-bottom: 0.78947em;
+    border-left-width: 10px;
+    border-color: #2b8cc4;
+    background-color: #eaf4f9
+}
+
 .govuk-related-items {
   margin-top: $gutter;
   border-top: 10px solid $govuk-blue;
@@ -426,13 +440,13 @@ details {
 .task-list {
 	margin-top: 30px;
   }
-  
+
   @media (min-width: 641px) {
 	.task-list {
 	  margin-top: 60px;
 	}
   }
-  
+
   .task-list-section {
 	display: table;
 	font-family: "nta", Arial, sans-serif;
@@ -442,58 +456,58 @@ details {
 	line-height: 1.2;
 	padding-bottom: 5px;
   }
-  
+
   @media (min-width: 641px) {
 	.task-list-section {
 	  font-size: 24px;
 	  line-height: 1.25;
 	}
   }
-  
+
   .task-list-section-number {
 	display: table-cell;
 	padding-right: 5px;
   }
-  
+
   @media (min-width: 641px) {
 	.task-list-section-number {
 	  min-width: 35px;
 	  padding-right: 0;
 	}
   }
-  
+
   .task-list-items {
 	margin-bottom: 30px;
   }
-  
+
   @media (min-width: 641px) {
 	.task-list-items {
 	  margin-bottom: 60px;
 	}
   }
-  
+
   @media (min-width: 641px) {
 	.task-list-items {
 	  padding-left: 35px;
 	}
   }
-  
+
   .task-list-item {
 	border-bottom: 1px solid #bfc1c3;
 	padding-top: 10px;
   padding-bottom: 10px;
   height: 25px;
   }
-  
+
   .task-list-item:first-child {
 	border-top: 1px solid #bfc1c3;
   }
-  
+
   .task-name {
 	width: 66.6666666667%;
 	float: left;
   }
-  
+
   .task-completed {
 	float: right;
 	display: -moz-inline-stack;
@@ -510,31 +524,31 @@ details {
 	letter-spacing: 1px;
 	text-decoration: none;
   }
-  
+
   .task-list {
 	.task-completed {
 	  display: none;
 	}
-  
+
 	.completed {
 	  .task-name {
 		color: #6f777b;
 		pointer-events: none;
 		text-decoration: none;
 	  }
-  
+
 	  .task-completed {
 		display: inline;
 	  }
 	}
   }
-  
+
   @media (min-width: 641px) {
 	.task-completed {
 	  font-size: 16px;
 	  line-height: 1.25;
   }
-  
+
   .cf:before, .cf:after {
     content: " ";
     display: table;
