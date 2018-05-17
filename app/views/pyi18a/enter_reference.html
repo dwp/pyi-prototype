@@ -52,6 +52,9 @@
 
 
           <p>
+            It will be a 6-digit code from Universal Credit on your bank statement, for example 12 34 56.
+          </p>
+          <p>
             It might take up to 2 hours to appear. You have 7 days to use it before it expires.
           </p>
 
@@ -63,9 +66,9 @@
 
           <div class="form-group {% if errorMessage %}form-group-error{% endif %}" id="form-group-codeTestInput">
             <label class="form-label-bold" for="codeTestInput">
-              Reference
+              Enter reference
               {% if errorMessage %}<span class="error-message">{{ errorMessage}}</span>{% endif %}
-              <span class="form-hint">It will be a 6-digit code from Universal Credit on your bank statement, for example 12 34 56.</span>
+
             </label>
             <input id="codeTestInput" type="text" class="form-control form-control-1-4" name="codeTestInput" value="{{ values.codeTestInput }}">
           </div>
@@ -76,7 +79,7 @@
         </form>
 
         <details>
-          <summary class="summary" style="margin-top: 15px;">I can't find my reference</summary>
+          <summary class="summary" style="margin-top: 15px;">Cannot find your reference?</summary>
           <div class="panel panel-border-narrow" id="details-content-0">
             <p>Check you’re looking in the correct bank account. This is the account we’ve sent your reference to:</p>
             <dl class="govuk-check-your-answers cya-questions-short">
