@@ -121,7 +121,7 @@ module.exports = {
         version: '17a',
         release: "27 April 2018",
         changes: [
-            "Full integration with UC assumed (user no longer has to sign in and out of UC)",
+            "User no longer has to sign in and out of UC",
             "User no longer has to enter bank details or say if they have a roll number",
             "Various content changes based on the above assumptions"
         ],
@@ -142,8 +142,9 @@ module.exports = {
         changes: [
             "Content and design changes based on feedback from UCFS team",
             "Shows less of customer account details",
-            "Added option for when user can't find reference (full user journey work in progress)",
-            "Made it clearer that claim isn't yet complete"    
+            "Added option for when user can't find reference",
+            "Made it clearer that claim isn't yet complete",
+            "Combined Find Your Reference and Enter Your Reference into one screen"   
         ],
         researchFindings: [""]
     },
