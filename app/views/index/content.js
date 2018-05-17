@@ -156,5 +156,21 @@ module.exports = {
             "Therefore the entry point from the to-do list is later in the journey"
         ],
         researchFindings: [""]
+    },
+    pyi19a: {
+        version: '19a',
+        release: "TBC",
+        changes: [
+            "" 
+        ],
+        researchFindings: [""]
+    },
+    pyi19b: {
+        version: '19b',
+        release: "TBC",
+        changes: [
+            ""
+        ],
+        researchFindings: [""]
     }
 };

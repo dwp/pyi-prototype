@@ -1,0 +1,27 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Make Payment - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import version + "/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.make_payment %}
+
+    <div class="main" role="main" id="content">
+    {{ elements.banner() }}
+
+    {{ elements.openGridForm('make_payment') }}
+    {{ elements.header(content) }}
+    {{ elements.content(content.text) }}
+    {{ elements.content(content.text2) }}
+
+      {{ elements.continue(content, 'uc_login', 'side') }}
+
+    {{ elements.closeGridForm() }}
+    </div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

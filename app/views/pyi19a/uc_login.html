@@ -1,0 +1,64 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  UC Login page - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="main" id="content" role="main">
+    {% include version + '/includes/phase_banner_prototype.html' %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <form action="/{{ version }}/uc_login" method="post" class="form" >   
+          <header>
+            <h1 class="heading-xlarge form-title ">
+              Sign in to your Universal Credit account
+            </h1>
+          </header>
+
+          <div class="form-group " id="form-group-ucUser">
+            <label class="form-label-bold" for="ucUser">
+              Username
+            </label>
+            <input id="ucUser" type="text" class="form-control form-control-3-4" name="ucUser" value="">
+          </div>
+
+          <div class="form-group " id="form-group-ucPass">
+            <label class="form-label-bold" for="ucPass">
+              Password
+            </label>
+            <input id="ucPass" type="text" class="form-control form-control-3-4" name="ucPass" value="">
+          </div>
+
+          <div><input type="submit" class="button" value="Sign In" name="submit"></div>
+
+          <details role="group" class="uc-login-details">
+            <summary role="button"><span class="summary">Problems signing in?</span></summary>
+            <div class="panel panel-indent">
+              <p class="form-hint">You can't sign in with your Universal Jobmatch user ID and password.</p>
+              <a href="#">Forgotten your username?</a><br />
+              <a href="#">Forgotten your password?</a>
+            </div>
+          </details>
+
+          <h4 class="heading-small">Don't have an online account?</h4>
+          <p>You may be able to use the <a href="#">Universal Credit online service</a> to:</p>
+          <ul class="list list-bullet">
+            <li>make a new claim</li>
+            <li>switch your existing Universal Credit account online</li>
+          </ul>
+
+          <h4 class="heading-small">Used GOV.UK Verify to confirm your identity?</h4>
+          <p>If you have an online Universal Credit account, you can also <a href="#">sign in with GOV.UK Verify</a></p>
+
+          <input type="hidden" name="login" value="returned">
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

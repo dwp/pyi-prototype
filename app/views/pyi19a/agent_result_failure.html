@@ -1,0 +1,35 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Reference number accepted - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="main" id="content" role="main">
+    {% include version + '/includes/phase_banner_prototype.html' %}
+
+    <header>
+      <h1 class="heading-xlarge form-title ">
+        The claimant’s identity has not been verified online
+      </h1>
+    </header>
+
+    <h2 class="heading-medium">What you need to do next</h2>
+  
+    <ol class="list list-number">
+      <li>Continue with the standard identity interview using documents or biographical questions.</li>
+      <li>Complete the identity ALP (agent-led process).</li>
+    </ol>
+  
+    <h2 class="heading-medium">What you can tell the claimant</h2>
+
+    <p>It has not been possible to verify the claimant’s identity online.</p>
+
+    <p>This is because the claimant did not use the Prove your Identity service.</p>
+
+    <div class="exit-link"><a href="/{{ version }}/agent_search">Go back to search</a></div>
+
+  </div>
+
+{% endblock %}

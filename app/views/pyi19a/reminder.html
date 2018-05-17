@@ -1,0 +1,26 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Use your bank account - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="main" id="content" role="main">
+
+    {% include version + '/includes/phase_banner_prototype.html' %}
+    {% include version + '/includes/back_link.html' %}
+      
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <form action="/{{ version }}/uc_login" method="post" class="form">
+          <h1 class="heading-xlarge">You'll need to enter your reference within 7 days</h1>
+            <p class="lede">When you&#39;ve found your reference, sign back in to Universal Credit to enter the reference and confirm your identity.</p>
+            <div><input type="submit" class="button" value="Sign out of Universal Credit" name="submit"></div>
+            <div class="exit-link"><a href="/{{ version }}/ucfs_task_list?task=4">Go back to your to-do list</a></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

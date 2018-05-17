@@ -1,0 +1,26 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Page not found - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="main" id="content" role="main">
+    {% include version + '/includes/phase_banner_prototype.html' %}
+
+    <header>
+      <h1 class="heading-xlarge form-title">
+        Something&#39;s gone wrong
+      </h1>
+    </header>
+
+    <p>This page can’t be found. Check the link you’re using and try again.</p>
+
+    <p>
+      Or go back to the <a href="uc_login">Universal Credit sign in page.</a>
+    </p>
+
+  </div>
+
+{% endblock %}

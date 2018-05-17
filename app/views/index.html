@@ -21,26 +21,28 @@
       <br />
       <br />
       {{ elements.current(
-        content.pyi18a.version,
-        content.pyi18a.release,
-        '/pyi18a/ucfs_task_list?task=4',
-        content.pyi18a.changes, content.pyi18a.researchFindings,
+        content.pyi19a.version,
+        content.pyi19a.release,
+        '/pyi19a/ucfs_task_list?task=4',
+        content.pyi19a.changes, content.pyi19a.researchFindings,
         '0Kb',
         information = 'On Enter Reference screen, use 123456 as the correct reference'
       ) }}
       <br />
       {{ elements.current(
-        content.pyi18b.version,
-        content.pyi18b.release,
-        '/pyi18b/ucfs_task_list?task=4',
-        content.pyi18b.changes,
-        content.pyi18b.researchFindings,
+        content.pyi19b.version,
+        content.pyi19b.release,
+        '/pyi19b/bank_details',
+        content.pyi19b.changes,
+        content.pyi19b.researchFindings,
         '0Kb',
         information = 'On Enter Reference screen, use 123456 as the correct reference'
       ) }}
       
       <div class="older-versions">
         <h3 class="heading-medium index-heading-medium">Older versions</h3>
+        {{ elements.older(content.pyi18a.version, content.pyi18a.release, '/pyi17a/', content.pyi18a.changes, content.pyi18a.researchFindings, '0Kb') }}
+        {{ elements.older(content.pyi18b.version, content.pyi18b.release, '/pyi17a/', content.pyi18b.changes, content.pyi18b.researchFindings, '0Kb') }}
         {{ elements.older(content.pyi17a.version, content.pyi17a.release, '/pyi17a/', content.pyi17a.changes, content.pyi17a.researchFindings, '0Kb') }}
         {{ elements.older(content.pyi17b.version, content.pyi17b.release, '/pyi17b/', content.pyi17b.changes, content.pyi17b.researchFindings, '0Kb') }}
         {{ elements.older(content.pyi16.version, content.pyi16.release, '/pyi16/bank_details', content.pyi16.changes, content.pyi16.researchFindings, '0Kb') }}

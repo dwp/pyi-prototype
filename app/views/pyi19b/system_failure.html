@@ -1,0 +1,28 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  System failure - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+{% import version + "/macros/elements.html" as elements %}
+{% for page in data %}
+{% for content in page.system_failure %}
+
+<div class="main" id="content" role="main">
+{{ elements.banner() }}
+
+    {{ elements.openGridForm('expired') }}
+
+        {{ elements.header(content) }}
+
+        {{ elements.content(content.text1, content.text2)}}
+
+        {{ elements.continue(content, 'uc_login') }}
+
+    {{ elements.closeGridForm() }}
+</div>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

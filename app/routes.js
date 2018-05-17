@@ -33,3 +33,5 @@ require('./views/pyi17a/routes/routes')(app);
 require('./views/pyi17b/routes/routes')(app);
 require('./views/pyi18a/routes/routes')(app);
 require('./views/pyi18b/routes/routes')(app);
+require('./views/pyi19a/routes/routes')(app);
+require('./views/pyi19b/routes/routes')(app);

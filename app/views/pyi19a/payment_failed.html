@@ -1,0 +1,36 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Payment Failed - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+    <div class="main" id="content" role="main">
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                {% include version + '/includes/phase_banner_prototype.html' %}
+
+                <header>
+                    <h1 class="heading-xlarge form-title ">
+                    Something’s gone wrong
+                    </h1>
+                </header>
+                <p class="lede">
+                    Sorry, you can’t use this service.
+                </p>
+        
+                <p>To complete your Universal Credit claim, you&#39;ll need to:</p>
+
+                <ul class="list list-bullet">
+                    <li>book your interview at a Jobcentre</li>
+                    <li>bring some identity documents with you </li>
+                </ul>
+        
+                <p>We&#39;ll tell you what you can bring when you book.</p>
+                <a class="button" role="button" href="get_documents">Book your interview</a>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

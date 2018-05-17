@@ -1,0 +1,41 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Reference number accepted - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="main" id="content" role="main">
+    {% include version + '/includes/phase_banner_prototype.html' %}
+
+    <div class="govuk-box-highlight incomplete">
+      <h2 class="heading-medium">Identity confirmed</h2>
+      <p>We've confirmed your identity, but your claim is not yet complete.</p>
+    </div>
+
+    <h1 class="heading-large">
+      To complete your claim, you still need to:
+    </h1>
+
+    <ol class="list list-number">
+      <li>Book an apppointment in the Jobcentre.</li>
+      <li>Attend your appointment.</li>
+      <li>Bring some proof of your identity - such as a bank card or driving licence.</li>
+      <li>Bring evidence to support your claim.</li>
+    </ol>
+
+    <div class="notice">
+      <i class="icon icon-important">
+        <span class="visually-hidden">Warning</span>
+      </i>
+      <p>
+        <strong class="bold-small">
+          If you don't attend an appointment by 17 June 2018, you may need to start your claim again.
+        </strong>
+      </p>
+    </div>
+    <a role="button" class="button" type="submit" href="book_interview">Book appointment</a>
+  </div>
+
+{% endblock %}

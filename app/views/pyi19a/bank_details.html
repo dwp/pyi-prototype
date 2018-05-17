@@ -1,0 +1,51 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Confirm the payment - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="main" role="main" id="content">
+    {% include version + '/includes/phase_banner_prototype.html' %}
+    {% include version + '/includes/back_link.html' %}
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <form action="/{{ version }}/bank_details" method="post" class="form" >
+
+            <header>
+              <h1 class="heading-xlarge form-title ">
+                Confirm your identity using your bank account
+              </h1>
+            </header>
+            <div style="margin-bottom:20px;"class="notice">
+              <i class="icon icon-information">
+                <span class="visually-hidden">information</span>
+              </i>
+              <strong class="bold-small">
+                Your Universal Credit claim is not yet complete. You still need to confirm your identity.
+              </strong>
+            </div>
+            <p>We can do this by sending a reference to bank account you gave us during your Universal Credit application.</p>
+            <p>You'll need to:</p>
+              <ul class="list list-bullet">
+                <li>find a 6-digit reference from Universal Credit on your bank statement</li>
+                <li>enter it online when asked to</li>
+              </ul>
+            <p>This will: </p>
+              <ul class="list list-bullet">
+                <li>prove you have access to that bank account
+                <li>confirm your identity
+                <li>be quicker than confirming your identity in the Jobcentre</li>
+              </ul>
+
+            <div><input type="submit" class="button" value="Continue" name="submit"></div>
+
+          <div class="exit-link"><a href="/{{ version }}/get_documents">Or confirm your identity in a Jobcentre</a></div>
+        </form>
+      </div><!--column-two-thirds-->
+    </div><!--grid-row-->
+  </div><!--content-->
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+    Reference not recognised - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+    <div class="main" id="content" role="main">
+        {% include version + '/includes/phase_banner_prototype.html' %}
+
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <form action="/{{ version }}/get_documents" method="post" class="form" >
+                    <header>
+                        <h1 class="heading-xlarge form-title ">
+                            You have entered the wrong reference
+                        </h1>
+                    </header>
+      
+                    <p>To complete your Universal Credit claim, you&#39;ll need to:</p>
+
+                    <div class="form-group">
+                        <ul class="list list-bullet">
+                        
+                        <li>book an interview at a Jobcentre</li>
+                        
+                        <li>bring some identity documents with you </li>
+                        
+                        </ul>
+                    </div>
+      
+                    <p>We&#39;ll tell you what documents you can bring when you book.</p>
+
+                    <div><input type="submit" class="button" value="Book your interview" name="submit"></div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

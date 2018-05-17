@@ -1,0 +1,53 @@
+{% extends version + "/layout.html" %}
+
+{% block page_title %}
+  Make Payment - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+    <div class="main" role="main" id="content">
+
+      {% include version + '/includes/phase_banner_prototype.html' %}
+      {% include version + '/includes/back_link.html' %}
+      
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <form action="/{{ version }}/make_payment" method="post" class="form" >
+    
+            <header>
+              <h1 class="heading-xlarge form-title ">
+                Send a reference to your bank account
+              </h1>
+            </header>
+      
+            <p>These are the bank details you gave us during your Universal Credit application:</p>
+
+            <dl class="govuk-check-your-answers cya-questions-short">
+              <div>
+                <dt class="cya-question">
+                  Account Number
+                </dt>
+                <dd class="cya-answer">
+                  ****8989
+                </dd>
+              </div>     
+              <div>
+                <dt class="cya-question">
+                  Sort Code
+                </dt>
+                <dd class="cya-answer">
+                  12-12-12
+                </dd>
+              </div>    
+            </dl>
+            <p style = "margin-top: 30px;"> We&#39;ll send the reference number to this bank account. It will be a 6-digit code, for example 12 34 56.</p>
+            <p>You&#39;ll find it on your bank statement, using online, mobile or telephone banking. Or go to a cash machine or your branch to get a statement printout.</p>
+
+            <div><input type="submit" class="button" value="Send the reference" name="submit"></div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}
