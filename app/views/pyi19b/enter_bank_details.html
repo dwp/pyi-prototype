@@ -5,48 +5,59 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.enter_bank_details %}
 
-    <div class="main" role="main" id="content">
-    {{ elements.banner() }}
+  <div class="main" role="main" id="content">
 
-    {{ elements.openGridForm('enter_bank_details') }}
+    {% include version + '/includes/phase_banner_prototype.html' %}
 
-      {% if errors %}
-        {{ elements.errorSummaryBox(errors) }}
-      {% endif %}
+    <div class="grid-row">
+      <div class="column-two-thirds">
 
-      {{ elements.header(content) }}
-      {{ elements.content(content.text, content.text4) }}
+        {% if errors %}
+          <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+            <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+              There's a problem
+            </h2>
+            <p>You must:</p>
+              <ul class="error-summary-list">
+                {% for id, error in errors %}
+                  <li><a href="#{{ id }}">{{ error }}</a></li>
+                {% endfor %}
+              </ul>
+          </div>
+        {% endif %}
 
-      {{ elements.inputField(
-        id = 'sortCode',
-        content = 'Sort code',
-        size = '1-4',
-        value = values.sortCode,
-        type='text',
-        errorMessage=errors.sortCode
-      ) }}
+        <form action="/{{ version }}/enter_bank_details" method="post" class="form" >
 
-      {{ elements.inputField(
-        id='accountNumber',
-        content='Account number',
-        size='1-2',
-        value=values.accountNumber,
-        type='text',
-        errorMessage=errors.accountNumber
-      ) }}
+          <header>
+            <h1 class="heading-xlarge form-title ">
+              Confirm your bank details
+            </h1>
+          </header>
 
+          <p>Enter the details of the bank account are using for your Universal Credit payment.</p>
+          <p>Make sure the details look exactly the same as they do on your bank statement.</p>
 
+          <div class="form-group {% if errors.sortCode %}form-group-error{% endif %}" id="form-group-sortCode">
+            <label class="form-label-bold" for="sortCode">Sort code</label>
+            {% if errors.sortCode %}<span class="error-message">{{ errors.sortCode }}</span>{% endif %}
+            <input id="sortCode" type="text" class="form-control form-control-1-4" name="sortCode" value="">
+          </div>
 
+          <div class="form-group {% if errors.accountNumber %}form-group-error{% endif %}" id="form-group-accountNumber">
+            <label class="form-label-bold" for="accountNumber">Account number</label>
+            {% if errors.accountNumber %}<span class="error-message">{{ errors.accountNumber }}</span>{% endif %}
+            <input id="accountNumber" type="text" class="form-control form-control-1-2" name="accountNumber" value="">
+          </div>
 
-      {{ elements.continue(content, 'uc_login', 'side') }}
+          <div class="inline-button"><input type="submit" class="button" value="Next" name="submit"></div>
 
-    {{ elements.closeGridForm() }}
+          <div class="exit-link-side inline-button"><a href="/{{ version }}/uc_login">Go to Universal Credit sign in</a></div>
+   
+        </form>
+      </div>
     </div>
 
-{% endfor %}
-{% endfor %}
+  </div>
+
 {% endblock %}
