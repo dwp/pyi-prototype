@@ -5,45 +5,86 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.has_roll_number %}
 
-    <div class="main" role="main" id="content">
-
-    {{ elements.banner() }}
-
-    {{ elements.openGridForm('has_roll_number') }}
-      {% if errors %}
-        {{ elements.errorSummaryBox(errors) }}
-      {% endif %}
-      {{ elements.header(content) }}
-      {{ elements.content(content.text) }}
-
-      <details>
-          <summary class="summary">{{ content.summary }}</summary>
-            <div class="panel panel-border-narrow" id="details-content-0">
-              {{ content.details }}
-            </div>
-      </details>
-
-      <div id="rollNumber" class="form-group {% if errors %} form-group-error {% endif %}">
-        {{ elements.radioButtons(
-          'rollNumber',
-          'Does your bank account have a building society roll number?',
-          '',
-          content.radios,
-          '',
-          type='radio',
-          errorMessage=errors.rollNumber
-        ) }}
-      </div>
-
-      {{ elements.continue(content, 'uc_login', 'side') }}
-
-    {{ elements.closeGridForm() }}
+  <div class="main" role="main" id="content">
+    
+    <div class="phase-banner-beta">
+      <p>
+        <strong class="phase-tag" style="background-color:#1562A1;">
+          <a class="settings-link" href="/pyi19b/settings">Prototype</a>
+        </strong>
+        <span>This is being used to test out a new element of the service</span>
+      </p>
     </div>
 
-{% endfor %}
-{% endfor %}
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        {% if errors %}
+          <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+            <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+              There's a problem
+            </h2>
+            <p>You must:</p>
+              <ul class="error-summary-list">
+                {% for id, error in errors %}
+                  <li><a href="#{{ id }}">{{ error }}</a></li>
+                {% endfor %}
+              </ul>
+          </div>
+        {% endif %}
+
+        <form action="/pyi19b/has_roll_number" method="post" class="form" >
+
+          <header>
+            <h1 class="heading-xlarge form-title ">
+              Bank account details: roll number
+            </h1>
+          </header>
+
+          <p class="lede">
+            Some accounts need a roll or reference number for payments
+          </p>
+      
+          <p>You’ll find this on your card, statement or passbook.</p>
+
+          <details>
+            <summary class="summary">What is this?</summary>
+            <div class="panel panel-border-narrow" id="details-content-0">
+              Most standard bank accounts have an account number and a sort code. But some building society accounts also have a roll number - a reference code with letters and numbers. If you have one, you’ll have used it to make payments.
+            </div>
+          </details>
+
+          <div id="rollNumber" class="form-group {% if errors.rollNumber %}form-group-error{% endif %}">      
+            <div>
+              <fieldset class="form-group">
+                <legend class="form-label-bold">
+                  Does your bank account have a building society roll number?
+                </legend>
+
+                {% if errors.rollNumber %}<span class="error-message">{{ errors.rollNumber }}</span>{% endif %}
+      
+                <label class="block-label form-label" for="rollNumber_1">
+                  Yes
+                  <input type="radio" id="rollNumber_1" name="rollNumber" value="Yes">
+                </label>
+        
+                <label class="block-label form-label " for="rollNumber_2">
+                  No
+                  <input type="radio" id="rollNumber_2" name="rollNumber" value="No">
+                </label>
+              </fieldset>
+            </div>
+          </div>
+
+          <div class="inline-button"><input type="submit" class="button" value="Next" name="submit"></div>
+
+          <div class="exit-link-side inline-button"><a href="/{{ version }}/uc_login">Go to Universal Credit sign in</a></div>
+ 
+        </form>
+      </div>
+    </div>
+
+  </div>
+
 {% endblock %}
