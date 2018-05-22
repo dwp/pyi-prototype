@@ -5,24 +5,29 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.system_failure %}
+  <div class="main" id="content" role="main">
+    {% include version + '/includes/phase_banner_prototype.html' %}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <form action="/{{ version }}/expired" method="post" class="form" >
+        
+          <header>
+            <h1 class="heading-xlarge form-title ">
+              Something’s gone wrong
+            </h1>
+          </header>
+        
+          <p>You cannot use this service just now. The problem will be fixed as soon as possible.</p>
+          <p>Sign in to Universal Credit to book an appointment at a job centre.</p>
 
-<div class="main" id="content" role="main">
-{{ elements.banner() }}
+          <div class="exit-link">
+            <a href="/{{ version }}/uc_login">Go to Universal Credit sign in</a>
+          </div>
 
-    {{ elements.openGridForm('expired') }}
+        </form>
+      </div>
+    </div>
+  </div>
 
-        {{ elements.header(content) }}
-
-        {{ elements.content(content.text1, content.text2)}}
-
-        {{ elements.continue(content, 'uc_login') }}
-
-    {{ elements.closeGridForm() }}
-</div>
-
-{% endfor %}
-{% endfor %}
 {% endblock %}
