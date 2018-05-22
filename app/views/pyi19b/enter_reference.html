@@ -5,41 +5,63 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.enter_reference %}
 
-    <div class="main" id="content" role="main">
-    {{ elements.banner() }}
+  <div class="main" id="content" role="main">
+    {% include version + '/includes/phase_banner_prototype.html' %}
 
-    {{ elements.openGridForm('enter_reference') }}
+    <div class="grid-row">
+      <div class="column-two-thirds">
 
-    {% if errors %}
-        {{ elements.errorSummaryBox(errors) }}
-    {% endif %}
+        {% if errors %}
+          <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+            <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+              There's a problem
+            </h2>
+            <p>You must:</p>
+              <ul class="error-summary-list">
+                {% for id, error in errors %}
+                  <li><a href="#{{ id }}">{{ error }}</a></li>
+                {% endfor %}
+              </ul>
+          </div>
+        {% endif %}
 
-    
+        <form action="/pyi19b/enter_reference" method="post" class="form">
 
-    {{ elements.header(content) }}
-    {{ elements.inputField(
-      id = 'codeTestInput',
-      content = 'Reference',
-      size = '1-4',
-      value = values.codeTestInput,
-      type='text',
-      errorMessage=errors.codeTestInput
-    ) }}
-    {% if second_entry %}
-    <img src="/public/images/Example_transaction_v2.png" alt="">
-    {% endif %}
+          <header>
+            <h1 class="heading-xlarge form-title ">
+              Enter your reference
+            </h1>
+          </header>
 
-    {{ elements.content(content.text) }}
+          {% if errors.codeTestInput %}
+            {% set errorMessage = errors.codeTestInput %}
+          {% elif incorrectReference %}
+            {% set errorMessage = 'Check your reference and enter it again' %}
+          {% endif %}
 
-    {{ elements.continue(content,'reminder', 'side') }}
+          <div class="form-group {% if errorMessage %}form-group-error{% endif %}" id="form-group-codeTestInput">
+            <label class="form-label-bold" for="codeTestInput">
+              Reference
+              {% if errorMessage %}<span class="error-message">{{ errorMessage}}</span>{% endif %}
+            </label>
+            <input id="codeTestInput" type="text" class="form-control form-control-1-4" name="codeTestInput" value="">
+          </div>
+  
+          <p>It will be a 6-digit code from Universal Credit on your bank statement, for example 12 34 56.</p>
 
-    {{ elements.closeGridForm() }}
+          <div class="inline-button">
+            <input type="submit" class="button" value="Submit" name="submit">
+          </div>
+
+          <div class="exit-link-side inline-button">
+            <a href="/pyi19b/reminder">Enter your reference later</a>
+          </div>
+
+        </form>
+      </div>
     </div>
 
-{% endfor %}
-{% endfor %}
+  </div>
+
 {% endblock %}

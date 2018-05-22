@@ -5,23 +5,37 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.make_payment %}
 
-    <div class="main" role="main" id="content">
-    {{ elements.banner() }}
+  <div class="main" role="main" id="content">
+    
+    {% include version + '/includes/phase_banner_prototype.html' %}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <form action="/{{ version }}/make_payment" method="post" class="form" >
 
-    {{ elements.openGridForm('make_payment') }}
-    {{ elements.header(content) }}
-    {{ elements.content(content.text) }}
-    {{ elements.content(content.text2) }}
+          <header>
+            <h1 class="heading-xlarge form-title">
+              Get a reference sent to your bank account
+            </h1>
+          </header>
 
-      {{ elements.continue(content, 'uc_login', 'side') }}
+          <p>To find the reference you’ll need to check your bank statement.</p>
 
-    {{ elements.closeGridForm() }}
+          <p>You can use online, mobile or telephone banking. Or go to a cash machine or your branch to get a statement printout.</p>
+
+          <div class="inline-button">
+            <input type="submit" class="button" value="OK - send the reference" name="submit">
+          </div>
+
+          <div class="exit-link-side inline-button">
+            <a href="/{{ version }}/uc_login">Go to Universal Credit sign in</a>
+          </div>
+
+        </form>
+      </div>
     </div>
 
-{% endfor %}
-{% endfor %}
+  </div>
+
 {% endblock %}
