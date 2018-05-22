@@ -26,7 +26,7 @@
           </div>
         {% endif %}
 
-        <form action="/pyi19b/enter_reference" method="post" class="form">
+        <form action="/{{ version }}/enter_reference" method="post" class="form">
 
           <header>
             <h1 class="heading-xlarge form-title ">
@@ -45,7 +45,7 @@
               Reference
               {% if errorMessage %}<span class="error-message">{{ errorMessage}}</span>{% endif %}
             </label>
-            <input id="codeTestInput" type="text" class="form-control form-control-1-4" name="codeTestInput" value="">
+            <input id="codeTestInput" type="text" class="form-control form-control-1-4" name="codeTestInput" value="{{ values.codeTestInput }}">
           </div>
   
           <p>It will be a 6-digit code from Universal Credit on your bank statement, for example 12 34 56.</p>

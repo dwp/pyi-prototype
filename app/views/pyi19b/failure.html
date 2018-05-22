@@ -5,34 +5,49 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.failure %}
+  <div class="main" id="content" role="main">
+    {% include version + '/includes/phase_banner_prototype.html' %}  
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        {% if attempts < 3 %}
+          <form action="/{{ version }}/failure" method="post" class="form" >
+            <header>
+              <h1 class="heading-xlarge form-title ">
+                Reference not recognised
+              </h1>
+            </header>
+            <p class="lede">
+              Check the reference and try again.
+            </p>
 
-<div class="main" id="content" role="main">
-{{ elements.banner() }}
+            <p>
+              You've entered the reference twice.
+              You have {{ 3 - attempts }} more {% if attempts === 2 %}try {% else %}tries{% endif %}.
+            </p>
 
-    {{ elements.openGridForm('failure') }}
+            <div>
+              <input type="submit" class="button" value="Try again" name="submit">
+            </div>
+          </form>
+        {% else %}
+          <form action="/{{ version }}/failure" method="post" class="form" >
+            <header>
+              <h1 class="heading-xlarge form-title ">
+                You have not been able to give the correct reference
+              </h1>
+            </header>
+            <p class="lede">
+              Sign in to Universal Credit to book an appointment at a job centre, if you haven’t already.
+            </p>
 
-      {% if attempts < 3 %}
+            <p>You’ll need to bring your identity documents with you.</p>
 
-        {{ elements.header(content) }}
-        {{ elements.content(content.info) }}
-        {{ elements.attempts(attempts,3,content.attemptsText) }}
-        {{ elements.continue(content) }}
-
-      {% else %}
-
-        {{ elements.header('','',content.heading2,content.lede2,content.additional2) }}
-      <!--input type="hidden" name="verifyAgain" value="Try using your bank account again"-->
-        {{ elements.content(content.text2) }}
-        {{ elements.continue('','to_do_page','',content.button2,content.exitLink2) }}
-
-      {% endif %}
-
-    {{ elements.closeGridForm() }}
-</div>
-
-{% endfor %}
-{% endfor %}
+            <div class="exit-link">
+              <a href="/{{ version }}/uc_login">Go to Universal Credit sign in</a>
+            </div>
+          </form>
+        {% endif %}
+      </div>
+    </div>
+  </div>
 {% endblock %}

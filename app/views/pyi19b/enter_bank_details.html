@@ -41,13 +41,13 @@
           <div class="form-group {% if errors.sortCode %}form-group-error{% endif %}" id="form-group-sortCode">
             <label class="form-label-bold" for="sortCode">Sort code</label>
             {% if errors.sortCode %}<span class="error-message">{{ errors.sortCode }}</span>{% endif %}
-            <input id="sortCode" type="text" class="form-control form-control-1-4" name="sortCode" value="">
+            <input id="sortCode" type="text" class="form-control form-control-1-4" name="sortCode" value="{{ values.sortCode }}">
           </div>
 
           <div class="form-group {% if errors.accountNumber %}form-group-error{% endif %}" id="form-group-accountNumber">
             <label class="form-label-bold" for="accountNumber">Account number</label>
             {% if errors.accountNumber %}<span class="error-message">{{ errors.accountNumber }}</span>{% endif %}
-            <input id="accountNumber" type="text" class="form-control form-control-1-2" name="accountNumber" value="">
+            <input id="accountNumber" type="text" class="form-control form-control-1-2" name="accountNumber" value="{{ values.accountNumber }}">
           </div>
 
           <div class="inline-button"><input type="submit" class="button" value="Next" name="submit"></div>

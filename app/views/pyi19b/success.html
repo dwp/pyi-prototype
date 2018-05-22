@@ -5,25 +5,29 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.success %}
 
-<div class="main" id="content" role="main">
-  {{ elements.banner() }}
+  <div class="main" id="content" role="main">
+    {% include version + '/includes/phase_banner_prototype.html' %}
 
-{{ elements.openGridForm('success') }}
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <form action="/{{ version }}/success" method="post" class="form">
+          <header>
+            <h1 class="heading-xlarge form-title">
+              You have correctly entered the reference number
+            </h1>
+          </header>
+        
+          <p>Sign in to Universal Credit to book an appointment at a job centre, if you haven’t already.</p>
+    
+          <p>You’ll need to bring your identity documents with you.</p>
 
-        {{ elements.header(content) }}
+          <a href="/{{ version }}/uc_login">Go to Universal Credit sign in</a>
 
-        {{ elements.content(content.text) }}
-        {{ elements.content(content.text2) }}
+        </form>
+      </div>
+    </div>
 
-        <a href="/pyi13/uc_login">Go to Universal Credit sign in</a>
+  </div>
 
-{{ elements.closeGridForm() }}
-</div>
-
-{% endfor %}
-{% endfor %}
 {% endblock %}

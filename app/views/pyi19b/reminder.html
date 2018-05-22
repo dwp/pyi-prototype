@@ -5,27 +5,23 @@
 {% endblock %}
 
 {% block content %}
-{% import version + "/macros/elements.html" as elements %}
-{% for page in data %}
-{% for content in page.reminder %}
 
   <div class="main" id="content" role="main">
-  {{ elements.banner() }}
+  
+    {% include version + '/includes/phase_banner_prototype.html' %}
 
-  {{ elements.openGridForm('reminder') }}
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <form action="/{{ version }}/reminder" method="post" class="form" >
+          <h1 class="heading-xlarge">You still need to confirm your identity</h1>
+            <p class="lede">Check your bank statement for a reference from Universal Credit. Then sign back into your Universal Credit account as soon as you can to enter the reference.</p>
+            <p>You also need to sign back in to Universal Credit to book an interview at a job centre.</p>
+            <p>Book as soon as you can or you might have to claim again.</p>
+            <a href="/{{ version }}/uc_login">Go to Universal Credit sign in</a>
+        </form>
+      </div>
+    </div>
 
-    {{ elements.heading('1', 'xlarge', content.heading) }}
-    {{ elements.content(content.lede,'','',true) }}
-
-    {{ elements.content(content.text) }}
-    {{ elements.content(content.text2) }}
-
-
-    <a href="/pyi14/uc_login">Go to Universal Credit sign in</a>
-
-  {{ elements.closeGridForm() }}
   </div>
 
-{% endfor %}
-{% endfor %}
 {% endblock %}
