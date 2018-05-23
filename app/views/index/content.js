@@ -163,7 +163,8 @@ module.exports = {
         changes: [
             "" 
         ],
-        researchFindings: [""]
+        researchFindings: [""],
+        headingInfo: "A seamless journey from Universal Credit to Prove Your Identity. The user is not required to re-enter their bank details, as this information is taken directly from their Universal Credit application."
     },
     pyi19b: {
         version: '19b',
@@ -171,6 +172,7 @@ module.exports = {
         changes: [
             ""
         ],
-        researchFindings: [""]
+        researchFindings: [""],
+        headingInfo: "The user is signed out of Universal Credit in order to progress their application with Prove Your Identity. They are required to re-enter their bank details, prior to receiving a reference number. The user will then be required to sign back in to Universal Credit in order to book their appointment."
     }
 };

@@ -1,6 +1,6 @@
 {# Macros for index page #}
 
-{% macro current(versionNumber, releaseDate, startLink, changeArray, researchDlLink, dlSize, information) %}
+{% macro current(versionNumber, releaseDate, startLink, changeArray, researchDlLink, dlSize, information, headingInfo) %}
 <div class="current-version">
   <div class="version-number">
     <p class="index-p">Current version</p>
@@ -13,6 +13,9 @@
   <div class="start-now clearfix">
     <a class="button start-journey" href="{{ startLink }}">Start now</a>
   </div>
+  {% if headingInfo %}
+    <p>{{ headingInfo }}</p>
+  {% endif %}
   <div class="changes-made">
     <h4 class="heading-small">Changes made to this version</h4>
     <ul class="list list-bullet">
