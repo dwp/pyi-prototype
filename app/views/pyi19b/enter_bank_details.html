@@ -9,6 +9,7 @@
   <div class="main" role="main" id="content">
 
     {% include version + '/includes/phase_banner_prototype.html' %}
+    {% include version + '/includes/back_link.html' %}
 
     <div class="grid-row">
       <div class="column-two-thirds">
@@ -38,6 +39,7 @@
           <p>Enter the details of the bank account are using for your Universal Credit payment.</p>
           <p>Make sure the details look exactly the same as they do on your bank statement.</p>
 
+
           <div class="form-group {% if errors.sortCode %}form-group-error{% endif %}" id="form-group-sortCode">
             <label class="form-label-bold" for="sortCode">Sort code</label>
             {% if errors.sortCode %}<span class="error-message">{{ errors.sortCode }}</span>{% endif %}
@@ -50,10 +52,13 @@
             <input id="accountNumber" type="text" class="form-control form-control-1-2" name="accountNumber" value="{{ values.accountNumber }}">
           </div>
 
-          <div class="inline-button"><input type="submit" class="button" value="Next" name="submit"></div>
+          <p>We'll send the reference number to this bank account. It will be a 6-digit code, for example 12 34 56.</p>
 
-          <div class="exit-link-side inline-button"><a href="/{{ version }}/uc_login">Go to Universal Credit sign in</a></div>
-   
+          <p>You'll find it on your bank statement, using online, mobile or telephone banking. Or go to a cash machine or your branch to get a statement printout.</p>
+
+          <div class="inline-button"><input type="submit" class="button" value="Send the reference" name="submit"></div>
+
+
         </form>
       </div>
     </div>

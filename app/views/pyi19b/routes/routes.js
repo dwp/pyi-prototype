@@ -19,7 +19,7 @@ app.get('/' + version + '/uc_login', function(req, res) {
 });
 app.post('/' + version + '/uc_login', function(req, res) {
   req.session[version + '-uc_login'] = req.body;
-  res.redirect('/' + version + '/bank_details');
+  res.redirect('/' + version + '/ucfs_task_list?task=4');
 });
 
 /********
@@ -43,6 +43,23 @@ app.post('/' + version + '/to_do_page', function (req, res) {
   res.redirect('/' + version + '/bank_details');
 });
 
+/********
+ UCFS Task list
+ ********/
+  app.get('/' + version + '/ucfs_task_list', (req, res) => {
+    res.render(version + '/ucfs_task_list', {
+      data : content.getTableData(),
+      version: version,
+      task: req.query.task
+    })
+  })
+
+  app.get('/' + version + '/go_to_task', (req, res) => {
+    if (req.query.task === '4') {
+      res.redirect('/' + version + '/bank_details')
+    }
+  })
+
 /*****
 bank_details
 ******/
@@ -58,9 +75,36 @@ app.post('/' + version + '/bank_details', function(req,res) {
     res.redirect('/' + version + '/session_expired');
   } else {
     req.session[version + '-bank_details'] = req.body;
-    res.redirect('/' + version + '/has_roll_number');
+    res.redirect('/' + version + '/signing_out');
   }
 });
+
+/********
+Book Interview (failure - documents required)
+*********/
+
+app.get('/' + version + '/get_documents', (req, res) => {
+  res.render(version + '/get_documents', {
+    data        :   content.getTableData(),
+    version: version
+  })
+})
+
+/********
+Signing out
+*********/
+
+app.get('/' + version + '/signing_out', (req, res) => {
+  res.render(version + '/signing_out', {
+    data        :   content.getTableData(),
+    version: version
+  })
+})
+app.post('/' + version + '/signing_out', function(req,res) {
+    res.redirect('/' + version + '/has_roll_number');
+});
+
+
 
 /*****
 has_roll_number
@@ -152,7 +196,7 @@ app.post('/' + version + '/enter_bank_details', [
       });
     } else {
       req.session[version + '-enter_bank_details'] = req.body;
-      res.redirect('/' + version + '/make_payment');
+      res.redirect('/' + version + '/enter_reference');
     }
 });
 

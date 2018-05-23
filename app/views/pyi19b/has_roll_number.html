@@ -7,7 +7,7 @@
 {% block content %}
 
   <div class="main" role="main" id="content">
-    
+
     {% include version + '/includes/phase_banner_prototype.html' %}
 
     <div class="grid-row">
@@ -38,7 +38,7 @@
           <p class="lede">
             Some accounts need a roll or reference number for payments
           </p>
-      
+
           <p>You’ll find this on your card, statement or passbook.</p>
 
           <details>
@@ -48,7 +48,7 @@
             </div>
           </details>
 
-          <div id="rollNumber" class="form-group {% if errors.rollNumber %}form-group-error{% endif %}">      
+          <div id="rollNumber" class="form-group {% if errors.rollNumber %}form-group-error{% endif %}">
             <div>
               <fieldset class="form-group">
                 <legend class="form-label-bold">
@@ -56,12 +56,12 @@
                 </legend>
 
                 {% if errors.rollNumber %}<span class="error-message">{{ errors.rollNumber }}</span>{% endif %}
-      
+
                 <label class="block-label form-label" for="rollNumber_1">
                   Yes
                   <input type="radio" id="rollNumber_1" name="rollNumber" value="Yes">
                 </label>
-        
+
                 <label class="block-label form-label " for="rollNumber_2">
                   No
                   <input type="radio" id="rollNumber_2" name="rollNumber" value="No">
@@ -72,8 +72,7 @@
 
           <div class="inline-button"><input type="submit" class="button" value="Next" name="submit"></div>
 
-          <div class="exit-link-side inline-button"><a href="/{{ version }}/uc_login">Go to Universal Credit sign in</a></div>
- 
+
         </form>
       </div>
     </div>

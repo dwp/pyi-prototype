@@ -5,34 +5,58 @@
 {% endblock %}
 
 {% block content %}
-
   <div class="main" id="content" role="main">
     {% include version + '/includes/phase_banner_prototype.html' %}
+    {% include version + '/includes/back_link.html' %}
+    <div class="alert alert-default">
+        A reference from Universal Credit has been sent to your bank account.
+    </div>
+    {% if incorrectReference %}
+      <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+        <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+          You've entered the wrong reference
+        </h2>
+        <p>You must:</p>
+        <ul class="error-summary-list">
+          <li><a href="#codeTestInput">Check your reference and enter it again</a></li>
+        </ul>
+        <p> You have {{ remainingAttempts }} more attempt{% if remainingAttempts != 1 %}s{%endif%}</p>
+      </div>
+    {% endif %}
+
+    {% if errors %}
+      <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+        <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+          There's a problem
+        </h2>
+        <p>You must:</p>
+          <ul class="error-summary-list">
+            {% for id, error in errors %}
+              <li><a href="#{{ id }}">{{ error }}</a></li>
+            {% endfor %}
+          </ul>
+      </div>
+    {% endif %}
+
+
 
     <div class="grid-row">
       <div class="column-two-thirds">
-
-        {% if errors %}
-          <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
-            <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-              There's a problem
-            </h2>
-            <p>You must:</p>
-              <ul class="error-summary-list">
-                {% for id, error in errors %}
-                  <li><a href="#{{ id }}">{{ error }}</a></li>
-                {% endfor %}
-              </ul>
-          </div>
-        {% endif %}
-
-        <form action="/{{ version }}/enter_reference" method="post" class="form">
-
+        <form action="/{{ version }}/enter_reference" method="post" class="form" >
           <header>
-            <h1 class="heading-xlarge form-title ">
+            <h1 class="heading-xlarge form-title">
               Enter your reference
             </h1>
           </header>
+
+
+
+          <p>
+            It will be a 6-digit code from Universal Credit on your bank statement, for example 12 34 56.
+          </p>
+          <p>
+            It might take up to 2 hours to appear. You have 7 days to use it before it expires.
+          </p>
 
           {% if errors.codeTestInput %}
             {% set errorMessage = errors.codeTestInput %}
@@ -42,26 +66,55 @@
 
           <div class="form-group {% if errorMessage %}form-group-error{% endif %}" id="form-group-codeTestInput">
             <label class="form-label-bold" for="codeTestInput">
-              Reference
+              Enter reference
               {% if errorMessage %}<span class="error-message">{{ errorMessage}}</span>{% endif %}
+
             </label>
             <input id="codeTestInput" type="text" class="form-control form-control-1-4" name="codeTestInput" value="{{ values.codeTestInput }}">
           </div>
-  
-          <p>It will be a 6-digit code from Universal Credit on your bank statement, for example 12 34 56.</p>
 
-          <div class="inline-button">
-            <input type="submit" class="button" value="Submit" name="submit">
-          </div>
+          <div><input type="submit" class="button" value="Submit" name="submit"></div>
 
-          <div class="exit-link-side inline-button">
-            <a href="/pyi19b/reminder">Enter your reference later</a>
-          </div>
-
+          <div class="exit-link"><a href="javascript:history.back()"></a></div>
         </form>
+
+        <details>
+          <summary class="summary" style="margin-top: 15px;">Cannot find your reference?</summary>
+          <div class="panel panel-border-narrow" id="details-content-0">
+            <p>Check you’re looking in the correct bank account. This is the account we’ve sent your reference to:</p>
+            <dl class="govuk-check-your-answers cya-questions-short">
+              <div>
+                <dt class="cya-question">
+                  Account Number
+                </dt>
+                <dd class="cya-answer">
+                  ****8989
+                </dd>
+              </div>
+              <div>
+                <dt class="cya-question">
+                  Sort Code
+                </dt>
+                <dd class="cya-answer">
+                  12-12-12
+                </dd>
+              </div>
+            </dl>
+            <p style="margin-top: 20px;">Look for a 1p payment from Universal Credit on your bank statement. The payment will show a 6 digit code, for example 12 34 56.</p>
+            <p style="margin-top: 20px;">Allow up to 2 hours after requesting a reference for it to appear in your bank account.</p>
+            <h2 class="heading-small" style="margin-top: 20px;">Still having problems?</h2>
+            <p>
+              You can only generate 1 reference, so you’ll now need to
+              <a href="get_documents">confirm your identity in the Jobcentre.</a>
+            </p>
+          </div>
+        </details>
+
+        <div style="margin-top: 30px;">
+          <h2 class="heading-small">Cannot get your reference now?</h2>
+          <a href="reminder">Enter your reference later</a>
+        </div>
       </div>
     </div>
-
   </div>
-
 {% endblock %}

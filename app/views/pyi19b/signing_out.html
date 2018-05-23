@@ -1,0 +1,39 @@
+{% extends version + "/layout_UC.html" %}
+
+{% block page_title %}
+  Make Payment - GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="main" role="main" id="content">
+
+    {% include version + '/includes/phase_banner_prototype.html' %}
+    {% include version + '/includes/back_link.html' %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <form action="/{{ version }}/signing_out" method="post" class="form" >
+
+          <header>
+            <h1 class="heading-xlarge form-title">
+              You're signing out
+            </h1>
+          </header>
+
+          <p>You're visiting a different government website, so for security you'll be signed out of your Universal Credit account.</p>
+
+          <p>You're going to the prove your identity service.</p>
+
+          <div class="inline-button">
+            <input type="submit" class="button" value="Continue" name="submit">
+          </div>
+
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}
