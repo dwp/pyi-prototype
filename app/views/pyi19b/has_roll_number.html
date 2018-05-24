@@ -36,17 +36,10 @@
           </header>
 
           <p class="lede">
-            Some accounts need a roll or reference number for payments
+            Some accounts need a roll or reference number for payments.
           </p>
 
           <p>You’ll find this on your card, statement or passbook.</p>
-
-          <details>
-            <summary class="summary">What is this?</summary>
-            <div class="panel panel-border-narrow" id="details-content-0">
-              Most standard bank accounts have an account number and a sort code. But some building society accounts also have a roll number - a reference code with letters and numbers. If you have one, you’ll have used it to make payments.
-            </div>
-          </details>
 
           <div id="rollNumber" class="form-group {% if errors.rollNumber %}form-group-error{% endif %}">
             <div>
@@ -54,6 +47,13 @@
                 <legend class="form-label-bold">
                   Does your bank account have a building society roll number?
                 </legend>
+
+                <details>
+                  <summary class="summary">What's a roll number'?</summary>
+                  <div class="panel panel-border-narrow" id="details-content-0" style="margin-bottom: 30px">
+                    Most standard bank accounts have an account number and a sort code. But some building society accounts also have a roll number - a reference code with letters and numbers. If you have one, you’ll have used it to make payments.
+                  </div>
+                </details>
 
                 {% if errors.rollNumber %}<span class="error-message">{{ errors.rollNumber }}</span>{% endif %}
 

@@ -19,7 +19,7 @@ app.get('/' + version + '/uc_login', function(req, res) {
 });
 app.post('/' + version + '/uc_login', function(req, res) {
   req.session[version + '-uc_login'] = req.body;
-  res.redirect('/' + version + '/ucfs_task_list?task=4');
+  res.redirect('/' + version + '/sign_in_continue');
 });
 
 /********
@@ -56,7 +56,7 @@ app.post('/' + version + '/to_do_page', function (req, res) {
 
   app.get('/' + version + '/go_to_task', (req, res) => {
     if (req.query.task === '4') {
-      res.redirect('/' + version + '/bank_details')
+      res.redirect('/' + version + '/signing_out')
     }
   })
 
@@ -75,7 +75,7 @@ app.post('/' + version + '/bank_details', function(req,res) {
     res.redirect('/' + version + '/session_expired');
   } else {
     req.session[version + '-bank_details'] = req.body;
-    res.redirect('/' + version + '/signing_out');
+    res.redirect('/' + version + '/has_roll_number');
   }
 });
 
@@ -101,10 +101,22 @@ app.get('/' + version + '/signing_out', (req, res) => {
   })
 })
 app.post('/' + version + '/signing_out', function(req,res) {
-    res.redirect('/' + version + '/has_roll_number');
+    res.redirect('/' + version + '/bank_details');
 });
 
+/********
+UC sign in continue
+*********/
 
+app.get('/' + version + '/sign_in_continue', (req, res) => {
+  res.render(version + '/sign_in_continue', {
+    data        :   content.getTableData(),
+    version: version
+  })
+})
+app.post('/' + version + '/sign_in_continue', function(req,res) {
+    res.redirect('/' + version + '/sign_in_continue');
+});
 
 /*****
 has_roll_number
@@ -258,11 +270,11 @@ Enter Reference
 *********/
 
 app.get('/' + version + '/enter_reference', function(req,res) {
-    res.render(version + '/enter_reference', {
+  res.cookie('attempts', '0')
+  res.render(version + '/enter_reference', {
     data     :   content.getTableData(),
-    second_entry  : req.session[version + '-second_entry'],
     version: version
-    });
+  });
 });
 
 app.post('/' + version + '/enter_reference', [
@@ -288,7 +300,6 @@ app.post('/' + version + '/enter_reference', [
     if (!errors.isEmpty()) {
       res.render(version + '/enter_reference', {
         data     :   content.getTableData(),
-        second_entry  : req.session[version + '-second_entry'],
         version: version,
         errors: parsedErrors,
         values: req.body
@@ -313,7 +324,21 @@ app.post('/' + version + '/enter_reference', [
     if(req.cookies.claimantJourneyOption === "System failure") {
       res.redirect('/' + version + '/system_failure');
     } else {
-      res.redirect('/' + version + '/failure');
+      let attempts = parseInt(req.cookies.attempts)
+      attempts++
+      if (attempts < 3) {
+        const remainingAttempts = 3 - attempts
+        res.cookie('attempts', attempts)
+        res.render(version + '/enter_reference', {
+          data: content.getTableData(),
+          version: version,
+          incorrectReference: true,
+          remainingAttempts: remainingAttempts,
+          values: req.body
+        })
+      } else {
+        res.redirect('/' + version + '/failure');
+      }
     }
   }
 });

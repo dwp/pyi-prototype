@@ -144,7 +144,7 @@ module.exports = {
             "Shows less of customer account details",
             "Added option for when user can't find reference",
             "Made it clearer that claim isn't yet complete",
-            "Combined Find Your Reference and Enter Your Reference into one screen"   
+            "Combined Find Your Reference and Enter Your Reference into one screen"
         ],
         researchFindings: [""]
     },
@@ -159,20 +159,12 @@ module.exports = {
     },
     pyi19a: {
         version: '19a',
-        release: "TBC",
-        changes: [
-            "" 
-        ],
+        release: "24 May 2018",
         researchFindings: [""],
-        headingInfo: "A seamless journey from Universal Credit to Prove Your Identity. The user is not required to re-enter their bank details, as this information is taken directly from their Universal Credit application."
-    },
+        headingInfo: "A seamless journey from Universal Credit to Confirm your identity. The user is not required to re-enter their bank details, as this information is taken directly from their Universal Credit application."    },
     pyi19b: {
         version: '19b',
-        release: "TBC",
-        changes: [
-            ""
-        ],
+        release: "24 May 2018",
         researchFindings: [""],
-        headingInfo: "The user is signed out of Universal Credit in order to progress their application with Prove Your Identity. They are required to re-enter their bank details, prior to receiving a reference number. The user will then be required to sign back in to Universal Credit in order to book their appointment."
-    }
+        headingInfo: "The user is signed out of Universal Credit to progress their application with Confirm your identity. They're required to re-enter their bank details, prior to receiving a reference number. The user will then need to sign back in to Universal Credit in order to book their appointment, or to continue confirming their identity if they leave the Confirm their identity journey without completing it."    }
 };

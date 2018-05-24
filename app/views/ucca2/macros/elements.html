@@ -16,6 +16,8 @@
   {% if headingInfo %}
     <p>{{ headingInfo }}</p>
   {% endif %}
+
+{% if changeArray %}
   <div class="changes-made">
     <h4 class="heading-small">Changes made to this version</h4>
     <ul class="list list-bullet">
@@ -24,6 +26,7 @@
       {% endfor %}
     </ul>
   </div>
+  {% endif %}
   {% if information %}
     <div style="margin-bottom:20px;"class="notice">
       <i class="icon icon-information">
