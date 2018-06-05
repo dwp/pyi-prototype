@@ -381,27 +381,10 @@ Failure
 *********/
 
 app.get('/' + version + '/failure', function(req,res) {
-    req.session.attempts ++;
     res.render(version + '/failure', {
-      attempts    :   (req.session.attempts || 0) + 1,
       data        :   content.getTableData(),
       version: version
     });
-    if (req.session.attempts === 2) {
-      req.session.destroy();
-    }
-});
-app.post('/' + version + '/failure', function(req,res) {
-    req.session[version + '-failure'] = req.body;
-    if (req.body.verifyAgain == 'Try GOV.UK Verify again') {
-      res.redirect('/' + version + '/404');
-    } else if (req.body.verifyAgain == 'Try using your bank account again') {
-      res.redirect('/' + version + '/bank_details');
-    } else if (req.body.verifyAgain == 'Attend a face to face interview') {
-      res.redirect('/' + version + '/404');
-    } else {
-  res.redirect('/' + version + '/enter_reference');
-}
 });
 
 /********
